@@ -1,0 +1,13 @@
+.input-filed-shape {
+  border: 0;
+  background: rgba(238, 242, 243, 1);
+  width: 14rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+}
+
+.input-filed-shape::placeholder {
+  color: rgba(53, 53, 53, 1);
+  font-size: 0.875rem;
+}
