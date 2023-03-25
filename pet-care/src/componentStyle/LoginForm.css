@@ -1,0 +1,26 @@
+.Login-container {
+  width: 73rem;
+  height: 43.563rem;
+  background: blue;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image-holder {
+  width: calc(73rem / 2);
+  border-radius: 3rem 0 0 3rem;
+  background-image: url("../Image/cat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-holder > form {
+  width: calc(73rem / 2);
+  background: aqua;
+  border-radius: 0 3rem 3rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 43.563rem;
+  align-items: center;
+}
