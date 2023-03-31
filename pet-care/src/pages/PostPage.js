@@ -1,6 +1,6 @@
 import React from "react";
-import "../PagesStyle/BackGround.css";
+import MainBackGround from "../UI/MainBackGround";
 
 export default function Post(props) {
-  return <div className="pages-background">Hello there  </div>;
+  return <MainBackGround></MainBackGround>;
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import "../PagesStyle/BackGround.css";
 import LoginForm from "../components/LoginForm";
+import MainBackGround from "../UI/MainBackGround";
 
 export default function Login(props) {
   return (
-    <div className="pages-background">
+    <MainBackGround>
       <LoginForm />
-    </div>
+    </MainBackGround>
   );
 }

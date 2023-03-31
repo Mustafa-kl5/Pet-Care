@@ -1,6 +1,6 @@
 import React from "react";
-import "../PagesStyle/BackGround.css";
+import MainBackGround from "../UI/MainBackGround";
 
 export default function Registration(props) {
-  return <div className="pages-background"></div>;
+  return <MainBackGround></MainBackGround>;
 }
