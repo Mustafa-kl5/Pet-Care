@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import "../../componentStyle/LoginForm/LoginForm.css";
+import "../../../componentStyle/LoginForm/LoginForm.css";
 import LeftImage from "./LeftImage";
+
 import { Link } from "react-router-dom";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState({
-    userEmail: email,
-    userPassword: password,
-  });
-  const arr = [];
+
   const emailHandler = (event) => {
     setEmail(event.target.value);
   };
@@ -19,15 +16,14 @@ export default function LoginForm() {
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    setUserData({
+    const userData = {
       userEmail: email,
       userPassword: password,
-    });
-    arr.push(userData);
-    console.log(arr);
-    console.log(userData);
+    };
+
     setEmail("");
     setPassword("");
+    props.sendLoginData(userData);
   };
   return (
     <div className="Login-form-container">
@@ -46,7 +42,7 @@ export default function LoginForm() {
           <input
             className="input-filed-shape"
             placeholder="Password"
-            type="text"
+            type="password"
             onChange={passwordHandler}
             value={password}
           />

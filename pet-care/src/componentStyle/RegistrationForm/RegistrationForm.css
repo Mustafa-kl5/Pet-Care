@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 1.5rem;
 }
 .logo-registration {
   width: 5rem;
@@ -41,4 +42,38 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.125rem;
+}
+.birthday-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.188rem;
+}
+.birthday-holder-text {
+  font-size: 1.9rem;
+}
+.birthday-holder-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.375rem;
+}
+.selector {
+  padding: 1rem 0.688rem 0.688rem 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background: unset;
+  width: 5.688rem;
+}
+.form-button-registration {
+  padding: 0.6rem 0.6rem;
+  border: 0;
+  color: white;
+  background: rgba(14, 38, 49, 1);
+  border-radius: 0.625rem;
+  width: 18.75rem;
+}
+.AlreadyAccount {
+  color: black;
 }

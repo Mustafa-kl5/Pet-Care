@@ -1,5 +1,5 @@
 import React from "react";
-import "../../componentStyle/LoginForm/LeftImage.css";
+import "../../../componentStyle/LoginForm/LeftImage.css";
 
 function LeftImage(props) {
   return (
