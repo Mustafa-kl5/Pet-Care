@@ -1,5 +1,4 @@
 .image-holder {
-  width: calc(73rem / 2);
   border-radius: 3rem 0 0 3rem;
   background-image: url("../../Image/cat.jpg");
   background-repeat: no-repeat;

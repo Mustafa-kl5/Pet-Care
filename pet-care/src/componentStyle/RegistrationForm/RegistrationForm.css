@@ -1,0 +1,44 @@
+.registration-container {
+  width: 73rem;
+  height: 43.563rem;
+  background: rgb(255, 255, 255);
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.registration-form-holder {
+  width: calc(73rem - 29.25rem);
+  height: 43.563rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo-registration {
+  width: 5rem;
+  height: 5rem;
+  background-image: url("../../Image//logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signup-word {
+  color: black;
+  font-size: 3rem;
+}
+.inpuFeild-holder {
+  display: flex;
+  justify-content: center;
+  gap: 2.688rem;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.125rem;
+}
+.rigth-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.125rem;
+}

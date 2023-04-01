@@ -1,6 +1,5 @@
 import "./App.css";
-import LoginPage from "./pages/LoginPage";
-import InputFiled from "./shaerdComponents/InputFiled";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import routes from "./Routes/routes";
 function App() {
