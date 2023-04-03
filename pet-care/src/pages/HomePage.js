@@ -1,11 +1,11 @@
 import React from "react";
-import NavigationMenu from "../shaerdComponents/NavigationMenu";
+import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 
 export default function Home(props) {
   return (
     <MainBackGround>
-      <NavigationMenu />
+      <ContentHolder></ContentHolder>
     </MainBackGround>
   );
 }

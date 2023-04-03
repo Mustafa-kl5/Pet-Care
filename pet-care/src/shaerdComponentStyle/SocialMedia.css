@@ -1,0 +1,22 @@
+.social-media-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-media-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.social-media-item {
+  width: 2.7rem;
+  height: 2.7rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.copy-right {
+  font-size: 1rem;
+  text-align: center;
+}

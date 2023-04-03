@@ -1,0 +1,34 @@
+.header-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70rem;
+  padding-bottom: 1em;
+}
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 2rem;
+}
+.header-logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-image: url("../Image/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-text {
+  font-size: 3.125rem;
+}
+.backet {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../Image/backet.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.payment {
+  padding-right: 2rem;
+}

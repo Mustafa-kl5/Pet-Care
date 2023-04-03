@@ -31,7 +31,7 @@ export default function NavigationMenu() {
         </Link>
       </div>
       <div className="link-item">
-        <Link to={"/Posts"} className="link-item-path">
+        <Link to={"/AdoptionPost"} className="link-item-path">
           <div
             className="item-icon"
             style={{ backgroundImage: `url("${AdoptionIcon}")` }}
@@ -40,7 +40,7 @@ export default function NavigationMenu() {
         </Link>
       </div>
       <div className="link-item">
-        <Link to={"/Posts"} className="link-item-path">
+        <Link to={"/Store"} className="link-item-path">
           <div
             className="item-icon"
             style={{ backgroundImage: `url("${storeIcon}")` }}
@@ -49,7 +49,7 @@ export default function NavigationMenu() {
         </Link>
       </div>
       <div className="link-item">
-        <Link to={"/Posts"} className="link-item-path">
+        <Link to={"/InformationTreatment"} className="link-item-path">
           <div
             className="item-icon"
             style={{ backgroundImage: `url("${infoIcon}")` }}
@@ -58,7 +58,7 @@ export default function NavigationMenu() {
         </Link>
       </div>
       <div className="link-item">
-        <Link to={"/Posts"} className="link-item-path">
+        <Link to={"/Profile"} className="link-item-path">
           <div
             className="item-icon"
             style={{ backgroundImage: `url("${settingIcon}")` }}

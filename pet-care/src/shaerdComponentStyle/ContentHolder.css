@@ -1,0 +1,32 @@
+.content-holder {
+  width: 71rem;
+  height: 50rem;
+  background: rgba(241, 250, 255, 1);
+  border-radius: 2rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.content-header-holder {
+  padding-top: 1rem;
+}
+.left-riht-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 19rem;
+  gap: 1rem;
+}
+.right-section {
+  width: 51rem;
+  height: 42rem;
+  background-color: white;
+  border-radius: 1rem;
+  border: 0.1rem solid #e0d4d4;
+}

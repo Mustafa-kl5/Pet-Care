@@ -1,0 +1,34 @@
+.user-information-holder {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 16rem;
+  height: 5rem;
+  background-color: white;
+  border-radius: 1rem;
+  border: 0.1rem solid #e0d4d4;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+.user-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.user-text {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.userName {
+  font-size: 1.1rem;
+}
+.Menu-word {
+  font-size: 1.875rem;
+  text-align: left;
+  width: 16rem;
+}

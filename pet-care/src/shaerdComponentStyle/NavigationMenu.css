@@ -3,6 +3,7 @@
   height: 28rem;
   background: white;
   border-radius: 2.188rem;
+  border: 0.1rem solid #e0d4d4;
 }
 
 .link-item-path {
