@@ -1,0 +1,35 @@
+.navigation-holder {
+  width: 17rem;
+  height: 28rem;
+  background: white;
+  border-radius: 2.188rem;
+}
+
+.link-item-path {
+  color: black;
+  text-decoration: none;
+  width: 14rem;
+  display: flex;
+  align-items: center;
+  gap: 0.563rem;
+  height: 3.92rem;
+  font-size: 0.938rem;
+  width: 16rem;
+  padding-left: 1rem;
+}
+.item-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.link-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 0.1rem solid #e0d4d4;
+}
+.link-item:last-child {
+  border: none;
+}
