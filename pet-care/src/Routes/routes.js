@@ -10,7 +10,7 @@ import Registration from "../pages/RegistrationPage";
 
 const routes = [
   {
-    path: "/Home",
+    path: "/",
     element: <Home />,
   },
   {

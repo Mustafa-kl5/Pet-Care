@@ -1,14 +1,12 @@
 import React from "react";
-import "../../componentStyle/AdoptionPost/AdoptionPostHolder.css";
+import "../../componentStyle/AdoptionPost/AdoptionPostCard.css";
 function AdoptionPostCard() {
   return (
-    <div className="Post">
-      <div className="PostCardHolder">
-        <div className="FavIcon"></div>
-      </div>
-      <div className="user-info">
+    <div className="Adoption-card">
+      <div className="post-image"></div>
+      <div className="post-info">
         <div className="user-image"></div>
-        <div className="user-name">ahmad{""}</div>
+        <div className="user-name">Ahmad zuoid</div>
       </div>
     </div>
   );

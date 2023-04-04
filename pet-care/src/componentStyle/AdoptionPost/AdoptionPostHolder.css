@@ -1,40 +1,14 @@
-.Post {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: fit-content;
-  flex-wrap: wrap;
-  margin-left: 30px;
+.post-adoption-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 15.2rem);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1rem;
 }
-.PostCardHolder {
-  width: 300px;
-  height: 165px;
-  border-radius: 30px;
-  background-image: url("../../Image/images.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.user-info {
-  display: flex;
-}
-.user-image {
-  background-image: url("../../Image/cat.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  width: 28px;
-  height: 30px;
-  margin-right: 15px;
-}
-.user-name {
-  margin-top: 5px;
-}
-.FavIcon {
-  width: 29px;
-  height: 28px;
-  background-image: url("../../Image/—Pngtree—vector\ favorite\ icon_4275783.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
+.post-adoption-scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(50rem - 15rem);
+  width: 49rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
