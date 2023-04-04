@@ -1,0 +1,19 @@
+select {
+  width: 122px;
+  height: 36px;
+  border-radius: 8px;
+}
+.form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+input {
+  width: 122px;
+  height: 36px;
+  border-radius: 8px;
+}
+.Text {
+  margin-top: 10px;
+  font-size: larger;
+}
