@@ -1,19 +1,37 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react";
 import AdoptionPostCard from "./AdoptionPostCard";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/scrollbar";
-
-// import required modules
-import { FreeMode, Scrollbar, Mousewheel } from "swiper";
+import "../../componentStyle/AdoptionPost/AdoptionPostHolder.css";
 function AdoptionHolder() {
   return (
-    <div className="">
-      <AdoptionPostCard></AdoptionPostCard>
+    <div className="post-adoption-scroll">
+      <div className="post-adoption-holder">
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+        <AdoptionPostCard />
+      </div>
     </div>
   );
 }

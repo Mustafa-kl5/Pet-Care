@@ -1,0 +1,41 @@
+.Adoption-card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-image {
+  width: 15.2rem;
+  height: 11rem;
+  border-radius: 2rem;
+  background-image: url("../../Image/images.jpg");
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+.user-image {
+  background-image: url("../../Image/cat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  width: 2rem;
+  height: 2rem;
+}
+
+.FavIcon {
+  width: 29px;
+  height: 28px;
+  background-image: url("../../Image/—Pngtree—vector\ favorite\ icon_4275783.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+.post-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

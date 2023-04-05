@@ -1,0 +1,19 @@
+.type-image {
+  width: 60px;
+  height: 60px;
+  background-image: url("../../Image/CatLogo.png");
+  background-size: cover;
+}
+.type-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  padding: 10px;
+}
+.type-holder {
+  display: flex;
+  padding: 1.25rem 1.25rem;
+  align-items: center;
+}

@@ -10,8 +10,8 @@ export default function AdoptionPost(props) {
   return (
     <MainBackGround>
       <ContentHolder>
-        <FilterForm></FilterForm>
-        <AdoptionHolder></AdoptionHolder>
+        <FilterForm />
+        <AdoptionHolder />
       </ContentHolder>
     </MainBackGround>
   );

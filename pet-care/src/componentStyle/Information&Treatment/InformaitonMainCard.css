@@ -1,0 +1,28 @@
+.main-card {
+  display: flex;
+  align-items: flex-end;
+  width: 22.875rem;
+  height: 13.125rem;
+  flex-direction: column;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+}
+.breed-image {
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  background-image: url("../../Image/Cat-Breed1.png");
+  background-size: cover;
+  width: 22.875rem;
+  height: 13.125rem;
+  background-size: cover;
+}
+.breed-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 2.188rem;
+  padding-left: 10px;
+  color: white;
+}

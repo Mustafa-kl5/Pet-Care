@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 21.875rem;
+  height: 13.125rem;
+  background: #fdfcfc;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+  margin: 1.875px;
+}
+.card-image {
+  background-image: url("../../Image/CatLogo.png");
+  width: 7.375rem;
+  height: 7.313rem;
+  background-size: cover;
+}
+.card-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 2.188rem;
+}
