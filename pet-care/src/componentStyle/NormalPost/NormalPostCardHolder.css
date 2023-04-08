@@ -1,0 +1,8 @@
+.normal-post-card-holder {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: black;
+  width: 51rem;
+  height: 34.8rem;
+  padding-top: 1rem;
+}
