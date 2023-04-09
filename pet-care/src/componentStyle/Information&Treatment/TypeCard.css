@@ -1,4 +1,4 @@
-.card {
+.type-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +10,13 @@
   border-radius: 30px;
   margin: 1.875px;
 }
-.card-image {
+.type-image {
   background-image: url("../../Image/CatLogo.png");
   width: 7.375rem;
   height: 7.313rem;
   background-size: cover;
 }
-.card-name {
+.type-name {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

@@ -7,7 +7,7 @@
 .Information-Scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(43rem - 15rem);
+  height: calc(50rem - 15rem);
   width: 49rem;
   padding-left: 1rem;
   padding-right: 1rem;
