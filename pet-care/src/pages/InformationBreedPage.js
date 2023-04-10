@@ -4,15 +4,17 @@ import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 import InformationAndTreatmentHeader from "../shaerdComponents/Information&TreatmentHeader";
 import InformationCardHolder from "../components/Information&Treatment/InformationCardHolder";
+import { useParams } from "react-router-dom";
+import catImage from "../Image/Cat-Breed2.png";
 export default function InformationBreedPage() {
-  const Breed1 = "/src/Image/Cat-Breed1.png";
-  const Breed2 = "../Image/Cat-Breed2.png";
+  const { type } = useParams();
+  console.log(type);
   return (
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
         <InformationCardHolder>
-          <BreedCard BreedName="Ragdoll Cat" BreedImage />
+          <BreedCard BreedName="Ragdoll Cat" BreedImage={catImage} />
           <BreedCard BreedName="Persian Cat" />
           <BreedCard BreedName="Scoflot" />
           <BreedCard BreedName="Scoflot" />
