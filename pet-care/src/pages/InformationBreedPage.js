@@ -1,18 +1,21 @@
+import React from "react";
+import BreedCard from "../components/Information&Treatment/BreedCard";
 import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 import InformationAndTreatmentHeader from "../shaerdComponents/Information&TreatmentHeader";
-import TypeCard from "../components/Information&Treatment/TypeCard";
 import InformationCardHolder from "../components/Information&Treatment/InformationCardHolder";
-export default function InformationTreatmentPage() {
+export default function InformationBreedPage() {
+  const Breed1 = "/src/Image/Cat-Breed1.png";
+  const Breed2 = "../Image/Cat-Breed2.png";
   return (
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
         <InformationCardHolder>
-          <TypeCard TypeName="Cats"></TypeCard>
-          <TypeCard TypeName="Dogs"></TypeCard>
-          <TypeCard TypeName="Birds" TypeImage></TypeCard>
-          <TypeCard TypeName="Rabbits" TypeImage></TypeCard>
+          <BreedCard BreedName="Ragdoll Cat" BreedImage />
+          <BreedCard BreedName="Persian Cat" />
+          <BreedCard BreedName="Scoflot" />
+          <BreedCard BreedName="Scoflot" />
         </InformationCardHolder>
       </ContentHolder>
     </MainBackGround>

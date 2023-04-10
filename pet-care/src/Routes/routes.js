@@ -8,6 +8,8 @@ import Profile from "../pages/ProfilePage";
 import Store from "../pages/StorePage";
 import Registration from "../pages/RegistrationPage";
 import InfoAndTreatData from "../pages/InfoAndTreatData";
+import InformationBreed from "../pages/InformationBreedPage";
+import InformationBreedPage from "../pages/InformationBreedPage";
 
 const routes = [
   {
@@ -47,8 +49,8 @@ const routes = [
     element: <Registration />,
   },
   {
-    path: "/InfoAndTreatData",
-    element: <InfoAndTreatData />,
+    path: "/InformationBreedPage",
+    element: <InformationBreedPage />,
   },
 ];
 

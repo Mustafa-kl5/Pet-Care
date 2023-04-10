@@ -11,11 +11,13 @@
   display: flex;
   justify-content: start;
   align-items: flex-end;
+
   background-image: url("../../Image/Cat-Breed1.png");
-  background-size: cover;
+  border-radius: 30px;
   width: 22.875rem;
   height: 13.125rem;
   background-size: cover;
+  background-position: center;
 }
 .breed-name {
   font-family: "Roboto";
