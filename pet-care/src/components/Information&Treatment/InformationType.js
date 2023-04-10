@@ -4,7 +4,7 @@ export default function () {
   return (
     <div className="type-holder">
       <div className="type-image"></div>
-      <div className="type-name">{}Cats</div>
+      <div className="type-name"></div>
     </div>
   );
 }
