@@ -17,3 +17,8 @@ input {
   margin-top: 10px;
   font-size: larger;
 }
+hr {
+  background-color: #e0d4d4;
+  height: 2px;
+  border: none;
+}
