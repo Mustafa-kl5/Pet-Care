@@ -8,9 +8,5 @@ export default function InformationCardHolder(props) {
   // const HandleClick = () => {
   //   useNav("/Store");
   // };
-  return (
-    <div className="Information-Scroll">
-      <div className="Information-Holder">{props.children}</div>
-    </div>
-  );
+  return <div className="Information-Holder">{props.children}</div>;
 }
