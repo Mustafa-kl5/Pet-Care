@@ -49,7 +49,7 @@ const routes = [
     element: <Registration />,
   },
   {
-    path: "/InformationBreedPage",
+    path: "/InformationBreedPage/:type",
     element: <InformationBreedPage />,
   },
 ];
