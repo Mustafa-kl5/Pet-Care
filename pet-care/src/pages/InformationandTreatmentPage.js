@@ -15,16 +15,19 @@ export default function InformationTreatmentPage() {
       <ContentHolder>
         <InformationAndTreatmentHeader />
         <InformationCardHolder>
-          <Link to="/InformationBreedPage/:Cats">
+          <Link to="/InformationBreedPage/:Cats" className="animal-type-link">
             <TypeCard TypeName="Cats" TypeImage={CatType}></TypeCard>
           </Link>
-          <Link to="/InformationBreedPage/:Dogs">
+          <Link to="/InformationBreedPage/:Dogs" className="animal-type-link">
             <TypeCard TypeName="Dogs" TypeImage={DogType}></TypeCard>
           </Link>
-          <Link to="/InformationBreedPage/:Birds">
+          <Link to="/InformationBreedPage/:Birds" className="animal-type-link">
             <TypeCard TypeName="Birds" TypeImage={BirdType}></TypeCard>
           </Link>
-          <Link to="/InformationBreedPage/:Rabbits">
+          <Link
+            to="/InformationBreedPage/:Rabbits"
+            className="animal-type-link"
+          >
             <TypeCard TypeName="Rabbits" TypeImage={RabbitType}></TypeCard>
           </Link>
         </InformationCardHolder>
