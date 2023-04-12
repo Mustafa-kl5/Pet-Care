@@ -10,6 +10,7 @@ import Registration from "../pages/RegistrationPage";
 import InfoAndTreatData from "../pages/InfoAndTreatData";
 import InformationBreed from "../pages/InformationBreedPage";
 import InformationBreedPage from "../pages/InformationBreedPage";
+import InformationandTreatmentMainPage from "../pages/InformationandTreatmentMainPage";
 
 const routes = [
   {
@@ -51,6 +52,10 @@ const routes = [
   {
     path: "/InformationBreedPage/:type",
     element: <InformationBreedPage />,
+  },
+  {
+    path: "/InformationandTreatmentMainPage",
+    element: <InformationandTreatmentMainPage />,
   },
 ];
 

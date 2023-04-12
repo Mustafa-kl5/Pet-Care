@@ -6,13 +6,13 @@
 
   padding-right: 2.8rem;
 }
-.Information-Scrol::-webkit-scrollbar {
+.Information-Scroll::-webkit-scrollbar {
   width: 0.625rem;
   background: #e0d4d4;
   -webkit-border-radius: 1ex;
 }
 
-.Information-Scrol::-webkit-scrollbar-thumb {
+.Information-Scroll::-webkit-scrollbar-thumb {
   background: #124c5f;
   -webkit-border-radius: 1ex;
 }

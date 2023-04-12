@@ -4,7 +4,7 @@
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 1rem;
   padding-top: 2.5rem;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 .animal-type-link {
   text-decoration: none;

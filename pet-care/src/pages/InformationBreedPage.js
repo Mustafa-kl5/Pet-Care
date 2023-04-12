@@ -8,19 +8,29 @@ import catbreed1 from "../Image/Cat-Breed1.png";
 import ScrollBar from "../shaerdComponents/ScrollBar";
 import { useParams } from "react-router-dom";
 
+import InformationandTreatmentHeaderType from "../shaerdComponents/InformationandTreatmentHeaderType";
 export default function InformationBreedPage() {
   const { type } = useParams();
-  console.log(type);
+
+  const scrollHeight = 47;
   return (
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
-        <ScrollBar>
+
+        <InformationandTreatmentHeaderType AnimalType={type} />
+        <ScrollBar Height={scrollHeight}>
           <InformationCardHolder>
             <BreedCard BreedName="Ragdoll Cat" BreedImage={catbreed1} />
-            <BreedCard BreedName="Persian Cat" />
-            <BreedCard BreedName="Scoflot" />
-            <BreedCard BreedName="Scoflot" />
+
+            <BreedCard BreedName="Persian Cat" BreedImage={catbreed1} />
+
+            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
+            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
+            <BreedCard BreedName="Ragdoll Cat" BreedImage={catbreed1} />
+            <BreedCard BreedName="Persian Cat" BreedImage={catbreed1} />
+            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
+            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
           </InformationCardHolder>
         </ScrollBar>
       </ContentHolder>
