@@ -1,0 +1,63 @@
+.addpost-form-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addpost-form-left-section {
+  width: calc(60rem / 2);
+  height: calc(39rem - 5.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 0.2rem solid rgba(224, 212, 212, 1);
+  gap: 2.5rem;
+}
+.addpost-form-right-section {
+  width: calc(60rem / 2);
+  height: calc(39rem - 5.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addpost-descirption-input-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.addpost-descirption-input {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.addpost-descirption {
+  font-size: 1.3rem;
+}
+.addpost-input {
+  width: 16.5rem;
+  height: 6.5rem;
+  background: rgba(238, 242, 243, 1);
+  border: 0;
+}
+.addpost-input::placeholder {
+  color: black;
+}
+.addpost-type-select {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex-direction: column;
+  height: 9rem;
+}
+.type-word {
+  font-size: 1.3rem;
+}
+.select-post-type {
+  width: 6rem;
+  background: unset;
+  border: 0.2rem solid rgba(238, 242, 243, 1);
+  padding-left: 0.5rem;
+}

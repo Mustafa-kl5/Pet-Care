@@ -1,0 +1,69 @@
+.image-preview-holder {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+}
+.preview-logo-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.preview-logo {
+  width: 3rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.preview-word {
+  font-size: 1.3rem;
+}
+.preview-scrollholder {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 28rem;
+  height: 26rem;
+}
+.card-image-preview-holder {
+  width: 27.5rem;
+
+  background: rgb(191, 225, 243);
+  border-radius: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, calc(25rem / 2));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.post-image-card {
+  width: calc(25rem / 2);
+  height: calc(25rem / 2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: end;
+}
+.delete-icon {
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.preview-scrollholder::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #baaaaa;
+  border-radius: 1rem;
+}
+
+.preview-scrollholder::-webkit-scrollbar-thumb {
+  background: #124c5f;
+  -webkit-border-radius: 1ex;
+}
