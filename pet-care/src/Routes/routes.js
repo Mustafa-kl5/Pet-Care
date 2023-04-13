@@ -54,7 +54,7 @@ const routes = [
     element: <InformationBreedPage />,
   },
   {
-    path: "/InformationandTreatmentMainPage",
+    path: "/InformationandTreatmentMainPage/:breed/:type",
     element: <InformationandTreatmentMainPage />,
   },
 ];

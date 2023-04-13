@@ -15,10 +15,7 @@ export default function InformationTreatmentPage() {
       <ContentHolder>
         <InformationAndTreatmentHeader />
         <InformationCardHolder>
-          <Link
-            to="/InformationandTreatmentMainPage"
-            className="animal-type-link"
-          >
+          <Link to="/InformationBreedPage/:Cats" className="animal-type-link">
             <TypeCard TypeName="Cats" TypeImage={CatType}></TypeCard>
           </Link>
           <Link to="/InformationBreedPage/:Dogs" className="animal-type-link">
