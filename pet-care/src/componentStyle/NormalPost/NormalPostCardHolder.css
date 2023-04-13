@@ -1,8 +1,43 @@
-.normal-post-card-holder {
+.normal-post-card-scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  background: black;
   width: 51rem;
-  height: 34.8rem;
+  height: 31.5rem;
   padding-top: 1rem;
+  border-bottom: 0.2rem solid #e0d4d4;
+}
+.normal-post-card-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 15.2rem);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1.5rem;
+  padding-left: 0.5rem;
+}
+.post-struct {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  gap: 0.5rem;
+}
+
+.post-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.post-word {
+  font-size: 1.5rem;
+}
+.normal-post-card-scroll::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #baaaaa;
+  border-radius: 1rem;
+}
+
+.normal-post-card-scroll::-webkit-scrollbar-thumb {
+  background: #124c5f;
+  -webkit-border-radius: 1ex;
 }

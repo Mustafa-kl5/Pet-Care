@@ -4,63 +4,22 @@ import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 import InformationAndTreatmentHeader from "../shaerdComponents/Information&TreatmentHeader";
 import InformationCardHolder from "../components/Information&Treatment/InformationCardHolder";
-import catbreed1 from "../Image/Cat-Breed1.png";
-import ScrollBar from "../shaerdComponents/ScrollBar";
 import { useParams } from "react-router-dom";
-import InformationandTreatmentHeaderType from "../shaerdComponents/InformationandTreatmentHeaderType";
-import { Link } from "react-router-dom";
+import catImage from "../Image/Cat-Breed2.png";
 export default function InformationBreedPage() {
   const { type } = useParams();
-  var Type = type.replace(":", "");
-  const scrollHeight = 47;
+  console.log(type);
+
   return (
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
-
-        <ScrollBar Height={scrollHeight}>
-          <InformationandTreatmentHeaderType AnimalType={Type} />
-          <InformationCardHolder>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Ragdoll Cat" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Ragdoll Cat" BreedImage={catbreed1} />
-            </Link>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Persian Cat" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Persian Cat" BreedImage={catbreed1} />
-            </Link>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Scoflot" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
-            </Link>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Scoflot" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
-            </Link>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Ragdoll Cat" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Ragdoll Cat" BreedImage={catbreed1} />
-            </Link>
-            <Link
-              to={"/InformationandTreatmentMainPage/:Persian Cat" + "/:" + Type}
-              className="Animal-Breed-Link"
-            >
-              <BreedCard BreedName="Persian Cat" BreedImage={catbreed1} />
-            </Link>
-            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
-            <BreedCard BreedName="Scoflot" BreedImage={catbreed1} />
-          </InformationCardHolder>
-        </ScrollBar>
+        <InformationCardHolder>
+          <BreedCard BreedName="Ragdoll Cat" BreedImage={catImage} />
+          <BreedCard BreedName="Persian Cat" />
+          <BreedCard BreedName="Scoflot" />
+          <BreedCard BreedName="Scoflot" />
+        </InformationCardHolder>
       </ContentHolder>
     </MainBackGround>
   );

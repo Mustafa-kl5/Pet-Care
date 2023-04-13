@@ -6,9 +6,10 @@
   padding-top: 2.5rem;
   padding-left: 1rem;
 }
-.animal-type-link {
-  text-decoration: none;
-  color: black;
+::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #baaaaa;
+  -webkit-border-radius: 1ex;
 }
 .Animal-Breed-Link {
   text-decoration: none;

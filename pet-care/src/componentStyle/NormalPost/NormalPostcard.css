@@ -1,1 +1,65 @@
- 
+.normal-post-card-body {
+  width: 16rem;
+  height: 11rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.normal-post-card-image {
+  width: 16rem;
+  height: 11rem;
+  border-radius: 2rem;
+  background-image: url("../../Image/cat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.footer-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.normal-post-card-user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.normal-post-card-user-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.normal-post-card-user-name {
+  font-size: 0.8rem;
+}
+.like-comment-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.normal-post-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+.like-comment-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.comment-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.like-comment-number {
+  font-size: 0.8rem;
+}

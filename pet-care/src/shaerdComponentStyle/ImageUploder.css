@@ -1,0 +1,36 @@
+.image-upload-holder {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+.upload-word {
+  font-size: 1.3rem;
+}
+.drag-drop-section {
+  background-color: rgb(219, 219, 226);
+  border: 0.2rem dashed rgba(56, 78, 183, 0.3);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.upload-icon {
+  width: 4rem;
+  height: 4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.drag-massage {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.browse-word {
+  color: rgba(72, 62, 168, 1);
+  text-decoration: underline;
+}
+.support-type {
+  color: #676767;
+}

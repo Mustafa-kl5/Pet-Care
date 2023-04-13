@@ -11,6 +11,7 @@ import InfoAndTreatData from "../pages/InfoAndTreatData";
 import InformationBreed from "../pages/InformationBreedPage";
 import InformationBreedPage from "../pages/InformationBreedPage";
 import InformationandTreatmentMainPage from "../pages/InformationandTreatmentMainPage";
+import NormalPostData from "../pages/NormalPostData";
 
 const routes = [
   {
@@ -56,6 +57,10 @@ const routes = [
   {
     path: "/InformationandTreatmentMainPage/:breed/:type",
     element: <InformationandTreatmentMainPage />,
+  },
+  {
+    path: "/postData",
+    element: <NormalPostData />,
   },
 ];
 

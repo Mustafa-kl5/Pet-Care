@@ -1,0 +1,18 @@
+.create-normal-post-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.65rem;
+}
+.create-normal-post-button {
+  border: 0;
+  height: 1.8rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background: rgba(14, 38, 49, 1);
+  border-radius: 0.5rem;
+  color: white;
+}
+.create-normal-post-button:hover {
+  filter: blur(1px);
+}
