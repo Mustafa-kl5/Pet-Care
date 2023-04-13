@@ -7,7 +7,10 @@ import Post from "../pages/PostPage";
 import Profile from "../pages/ProfilePage";
 import Store from "../pages/StorePage";
 import Registration from "../pages/RegistrationPage";
-import NormalPostData from "../pages/NormalPostData";
+import InfoAndTreatData from "../pages/InfoAndTreatData";
+import InformationBreed from "../pages/InformationBreedPage";
+import InformationBreedPage from "../pages/InformationBreedPage";
+import InformationandTreatmentMainPage from "../pages/InformationandTreatmentMainPage";
 
 const routes = [
   {
@@ -47,8 +50,12 @@ const routes = [
     element: <Registration />,
   },
   {
-    path: "/postData",
-    element: <NormalPostData />,
+    path: "/InformationBreedPage/:type",
+    element: <InformationBreedPage />,
+  },
+  {
+    path: "/InformationandTreatmentMainPage/:breed/:type",
+    element: <InformationandTreatmentMainPage />,
   },
 ];
 

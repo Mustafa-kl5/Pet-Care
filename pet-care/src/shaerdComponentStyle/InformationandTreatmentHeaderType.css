@@ -1,0 +1,20 @@
+.Header-Holder {
+  display: flex;
+  justify-content: stretch;
+  padding-left: 1.875rem;
+}
+.Type-Image {
+  background-image: url("../Image/CatLogo.png");
+  width: 2.813rem;
+  height: 2.563rem;
+  background-size: cover;
+}
+.Type-Text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+  margin-left: 1.5rem;
+  margin-top: 0.3rem;
+}
