@@ -7,6 +7,7 @@ import Post from "../pages/PostPage";
 import Profile from "../pages/ProfilePage";
 import Store from "../pages/StorePage";
 import Registration from "../pages/RegistrationPage";
+import NormalPostData from "../pages/NormalPostData";
 
 const routes = [
   {
@@ -44,6 +45,10 @@ const routes = [
   {
     path: "/Registration",
     element: <Registration />,
+  },
+  {
+    path: "/postData",
+    element: <NormalPostData />,
   },
 ];
 

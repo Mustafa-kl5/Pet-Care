@@ -19,6 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .addpost-descirption-input-holder {
   display: flex;
@@ -60,4 +61,12 @@
   background: unset;
   border: 0.2rem solid rgba(238, 242, 243, 1);
   padding-left: 0.5rem;
+}
+
+.addpost-submit-button {
+  border: none;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  border-radius: 2rem;
+  background: rgba(14, 38, 49, 1);
+  color: white;
 }

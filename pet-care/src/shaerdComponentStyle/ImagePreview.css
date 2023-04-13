@@ -27,7 +27,7 @@
 }
 .card-image-preview-holder {
   width: 27.5rem;
-
+  min-height: 22.5rem;
   background: rgb(191, 225, 243);
   border-radius: 2rem;
 

@@ -19,6 +19,10 @@ export default function Post(props) {
   const closeAddPostBackDrop = () => {
     setShowAddPost(false);
   };
+  const reciveDataToPage = (postData, show) => {
+    console.log(postData, show);
+    setShowAddPost(false);
+  };
 
   return (
     <MainBackGround>
@@ -29,6 +33,7 @@ export default function Post(props) {
         <AddPostBackDrop
           show={showAddPost}
           CloseBackDrop={closeAddPostBackDrop}
+          sendPostDataToPage={reciveDataToPage}
         />
       </ContentHolder>
     </MainBackGround>

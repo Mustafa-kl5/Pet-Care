@@ -1,0 +1,23 @@
+.post-decription-holder-section {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.post-decription-word {
+  font-size: 1.3rem;
+}
+.post-decription-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 16rem;
+  height: 11rem;
+  background: rgba(238, 242, 243, 1);
+  border-radius: 1rem;
+}
+.post-decription-holder {
+  width: 15.5rem;
+  word-wrap: break-word;
+  border-radius: 1rem;
+}

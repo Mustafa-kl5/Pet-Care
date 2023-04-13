@@ -6,8 +6,8 @@ import AddPostForm from "./AddPostForm";
 
 export default function AddPostBackDrop(props) {
   const [show, setShow] = useState(props.show);
-  const CloseBackDrop = () => {
-    console.log("aa");
+  const recivePostData = (postData, modelShow) => {
+    props.sendPostDataToPage(postData, modelShow);
   };
   return props.show ? (
     <div className="add-post-backdrop-main">
@@ -23,7 +23,7 @@ export default function AddPostBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddPostForm />
+          <AddPostForm sendPostData={recivePostData} />
         </div>
       </div>
     </div>
