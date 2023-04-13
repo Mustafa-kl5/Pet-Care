@@ -19,8 +19,8 @@ export default function InformationandTreatmentMainPage() {
       <ContentHolder>
         <InformationAndTreatmentHeader />
 
-        <InformationandTreatmentHeaderType AnimalType={type} />
         <ScrollBar>
+          <InformationandTreatmentHeaderType AnimalType={type} />
           <InformationPageSwiper />
           <InformationText BreedText={breed} />
           <InformationLocation />

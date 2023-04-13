@@ -2,7 +2,6 @@
   display: flex;
   justify-content: stretch;
   padding-left: 1.875rem;
-  position: fixed;
 }
 .Type-Image {
   background-image: url("../Image/CatLogo.png");

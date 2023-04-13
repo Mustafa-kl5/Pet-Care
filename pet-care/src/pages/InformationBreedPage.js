@@ -18,8 +18,8 @@ export default function InformationBreedPage() {
       <ContentHolder>
         <InformationAndTreatmentHeader />
 
-        <InformationandTreatmentHeaderType AnimalType={Type} />
         <ScrollBar Height={scrollHeight}>
+          <InformationandTreatmentHeaderType AnimalType={Type} />
           <InformationCardHolder>
             <Link
               to={"/InformationandTreatmentMainPage/:Ragdoll Cat" + "/:" + Type}
