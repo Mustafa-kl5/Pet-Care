@@ -2,8 +2,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   height: calc(50rem - 15rem);
-  width: 49rem;
-
+  width: 48.3rem;
   padding-right: 2.8rem;
 }
 .Information-Scroll::-webkit-scrollbar {

@@ -1,11 +1,9 @@
 import React from "react";
 import "../../componentStyle/Information&Treatment/InformationText.css";
 export default function InformationText(props) {
-  const Breed = props.BreedText;
-  console.log(Breed);
   return (
     <div className="text-holder">
-      <div className="AnimalBreed-label">{Breed}</div>
+      <div className="AnimalBreed-label">{props.BreedText}</div>
       <div className="BreedDesc">
         The Persian cat (Persian: گربه پارسی, romanized: Gorbe'-ye Pârsi), also
         known as the Persian longhair, is a long-haired breed of cat
@@ -16,6 +14,7 @@ export default function InformationText(props) {
         breeders after World War II. Some cat fancier organizations' breed
         standards subsume the Himalayan and Exotic Shorthair as variants of this
         breed, while others generally treat them as separate breeds.
+        {props.BreedInfo}
       </div>
     </div>
   );
