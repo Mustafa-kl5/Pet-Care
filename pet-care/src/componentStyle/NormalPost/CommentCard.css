@@ -1,0 +1,35 @@
+.comment-card-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  width: 15rem;
+  min-height: 3rem;
+}
+.comment-image-username-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.comment-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 50%;
+}
+
+.comment-username {
+  font-size: 1rem;
+}
+.comment-time {
+  color: rgba(147, 147, 147, 1);
+}
+.comment-value {
+  width: 13rem;
+  padding-bottom: 0.5rem;
+}
