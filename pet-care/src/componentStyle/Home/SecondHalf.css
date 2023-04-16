@@ -1,0 +1,72 @@
+.Card-Holder {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.5rem;
+}
+.Card-Blue {
+  width: 11.25rem;
+  height: 12.551rem;
+  border: 1px solid #98f2e1;
+  border-radius: 1.563rem;
+  box-shadow: 0.313rem 0.313rem 0.313rem #8e8787;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.Card-Yellow {
+  width: 11.25rem;
+  height: 12.5rem;
+  border: 1px solid #98f2e1;
+
+  box-shadow: 0.313rem 0.313rem 0.313rem #8e8787;
+  border: 1px solid #ffee94;
+  border-radius: 1.563rem;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.Card-Text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 24px;
+
+  color: #000000;
+}
+.Card-Image {
+  background-image: url("../../Image/Ask-Other-Logo.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.Label {
+  margin: 10px;
+}
+
+.Label-Text {
+  font-family: "Pangolin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 2.188rem;
+
+  color: #000000;
+}
+.Line {
+  border: 2px solid #3a8da8;
+  color: #3a8da8;
+  border-radius: 1.875rem;
+  width: 7.5rem;
+}
+.Card-Link {
+  text-decoration: none;
+}

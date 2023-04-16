@@ -14,7 +14,7 @@ import InformationandTreatmentMainPage from "../pages/InformationandTreatmentMai
 
 const routes = [
   {
-    path: "/",
+    path: "/Home",
     element: <Home />,
   },
   {
