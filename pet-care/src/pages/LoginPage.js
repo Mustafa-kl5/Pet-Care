@@ -7,7 +7,7 @@ import ErrorBackDrop from "../components/ErrorMessages/ErrorBackDrop";
 import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 
 export default function Login(props) {
-  const [showBackdrop, setShowBackdrop] = useState(true);
+  const [showBackdrop, setShowBackdrop] = useState(false);
 
   const navigate = useNavigate();
   const reciveLoginFormData = (reciveData) => {
@@ -26,9 +26,8 @@ export default function Login(props) {
   };
   return (
     <MainBackGround>
-      <LoginForm sendLoginData={reciveLoginFormData}>
-        <ErrorBackDrop CloseBackDrop={closeErrorHandler} show={true} />
-      </LoginForm>
+      <LoginForm sendLoginData={reciveLoginFormData} />
+      <ErrorBackDrop CloseBackDrop={closeErrorHandler} show={showBackdrop} />
     </MainBackGround>
   );
 }
