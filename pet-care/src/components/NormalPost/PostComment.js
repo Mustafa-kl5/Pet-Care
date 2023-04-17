@@ -13,8 +13,8 @@ export default function PostComment() {
           <CommentCard />
           <CommentCard />
         </div>
-        <CommentForm />
       </div>
+      <CommentForm />
     </div>
   );
 }
