@@ -1,0 +1,37 @@
+.Error-Holder {
+  display: flex;
+  background: white;
+  border-radius: 50px;
+  flex-direction: column;
+  width: 500px;
+  height: 120px;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0.2rem 0.2rem 0.23rem 0.2rem #8e8787;
+  z-index: 100;
+}
+.Hr {
+  width: 500px;
+  border: 2px solid #cfcece;
+  margin: 20px;
+}
+.Error-Message {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.ok-button {
+  width: 234px;
+  height: 49px;
+  background-color: #124c5f;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+}
