@@ -1,8 +1,10 @@
+.comment-form {
+  position: relative;
+}
 .comment-input {
   width: 11.5rem;
   border-radius: 1rem;
-  background: rgba(238, 242, 243, 1);
-
+  background: rgb(255, 255, 255);
   padding-left: 2rem;
   padding-right: 2rem;
   overflow: hidden;
@@ -12,19 +14,23 @@
   height: 1.5rem;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: absolute;
   left: 0.3rem;
-  top: 1.9rem;
+  top: 0.8rem;
 }
 .send-form-icon {
   width: 1.5rem;
   height: 1.5rem;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  right: 1rem;
+  position: absolute;
+  top: 0.8rem;
+  left: 13.5rem;
   cursor: pointer;
+  border: 0;
+  background-color: white;
 }
-.comment-input::placeholder {
-  padding-top: 0.45rem;
+
+.comment-input[type="text"] {
+  padding-top: 1rem;
 }

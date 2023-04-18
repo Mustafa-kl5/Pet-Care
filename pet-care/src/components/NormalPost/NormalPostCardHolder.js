@@ -15,14 +15,14 @@ export default function NormalPostCardHolder() {
       </div>
       <div className="normal-post-card-scroll">
         <div className="normal-post-card-holder">
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
+          <NormalPostcard id="1" />
+          <NormalPostcard id="2" />
+          <NormalPostcard id="3" />
+          <NormalPostcard id="4" />
+          <NormalPostcard id="5" />
+          <NormalPostcard id="6" />
+          <NormalPostcard id="7" />
+          <NormalPostcard id="8s" />
         </div>
       </div>
     </>

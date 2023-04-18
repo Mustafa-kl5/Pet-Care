@@ -1,0 +1,10 @@
+.post-data-carousel-holder {
+  width: 32rem;
+  height: 31rem;
+}
+.SwiperSlide-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32rem;
+  height: 31rem;
+}

@@ -58,7 +58,7 @@ const routes = [
     element: <InformationandTreatmentMainPage />,
   },
   {
-    path: "/postData",
+    path: "/postData/:postID",
     element: <NormalPostData />,
   },
 ];

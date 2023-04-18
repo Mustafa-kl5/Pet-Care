@@ -1,0 +1,23 @@
+.like-comment-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.normal-post-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+.like-comment-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.comment-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.like-comment-number {
+  font-size: 1rem;
+}
