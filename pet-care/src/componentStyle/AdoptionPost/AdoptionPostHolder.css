@@ -7,7 +7,7 @@
 .post-adoption-scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(50rem - 15rem);
+  height: calc(50rem - 15.5rem);
   width: 49rem;
   padding-left: 1rem;
   padding-right: 0.5rem;

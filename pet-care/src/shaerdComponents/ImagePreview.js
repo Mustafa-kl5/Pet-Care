@@ -6,13 +6,13 @@ import cat from "../Image/cat.jpg";
 import Post from "../pages/PostPage";
 
 export default function ImagePreview(props) {
-  const images = Object.values(props.images);
+  // const images = Object.values(props.images);
 
-  images.map((item) => {
-    // const reader = new FileReader();
-    // reader.readAsDataURL(item);
-    // console.log(reader.result);
-  });
+  // images.map((item) => {
+  //   // const reader = new FileReader();
+  //   // reader.readAsDataURL(item);
+  //   // console.log(reader.result);
+  // });
 
   return (
     <div className="image-preview-holder">
