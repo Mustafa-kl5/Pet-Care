@@ -1,0 +1,8 @@
+.online-card-type {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 3.7rem;
+  height: 3.5rem;
+  background-color: rgba(217, 217, 217, 0.2);
+  cursor: pointer;
+}
