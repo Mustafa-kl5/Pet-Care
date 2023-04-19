@@ -1,0 +1,23 @@
+.product-card-holder {
+  width: 49.6rem;
+  height: 35.6rem;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 13rem);
+  gap: 1rem 3rem;
+  padding-left: 1.6rem;
+}
+.product-card-holder::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #baaaaa;
+  -webkit-border-radius: 1ex;
+}
+
+.product-card-holder::-webkit-scrollbar-thumb {
+  background: #124c5f;
+  -webkit-border-radius: 1ex;
+}

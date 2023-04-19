@@ -1,0 +1,41 @@
+.store-header-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0.8rem 1rem;
+  border-bottom: 0.2rem solid rgba(224, 212, 212, 1);
+}
+.store-header-logo {
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.store-header-product-type-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.store-header-product-type-input {
+  background-color: unset;
+  width: 10rem;
+  height: 2.45rem;
+  padding-left: 1rem;
+}
+.store-header-product-search-input {
+  background-color: unset;
+  width: 9rem;
+  padding-left: 1rem;
+  border: 0.1rem solid black;
+}
+
+.store-header-logo-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.store-header-title {
+  font-size: 1.3rem;
+}
