@@ -2,8 +2,12 @@ import React from "react";
 import CloseBackDropButton from "../../shaerdComponents/CloseBackDropButton";
 import plusIcon from "../../Image/adoptationPost.png";
 import AddAdoptionForm from "./AddAdoptionForm";
+import MapPicker from "../../shaerdComponents/MapPicker";
 
 export default function AddAdoptionBackDrop(props) {
+  const reciveAddAdoptionData = (data, modleShow) => {
+    props.SendData(data, modleShow);
+  };
   return props.show ? (
     <div className="add-post-backdrop-main">
       <div className="add-post-form-holder">
@@ -18,7 +22,8 @@ export default function AddAdoptionBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddAdoptionForm />
+          <AddAdoptionForm sendAddAdoptionData={reciveAddAdoptionData} />
+          {/* <MapPicker /> */}
         </div>
       </div>
     </div>

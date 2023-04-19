@@ -5,10 +5,10 @@ function AdoptionHolder() {
   return (
     <div className="post-adoption-scroll">
       <div className="post-adoption-holder">
-        <AdoptionPostCard />
-        <AdoptionPostCard />
-        <AdoptionPostCard />
-        <AdoptionPostCard />
+        <AdoptionPostCard postId="1" />
+        <AdoptionPostCard postId="2" />
+        <AdoptionPostCard postId="3" />
+        <AdoptionPostCard postId="4" />
         <AdoptionPostCard />
         <AdoptionPostCard />
         <AdoptionPostCard />

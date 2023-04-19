@@ -12,6 +12,7 @@ import InformationBreed from "../pages/InformationBreedPage";
 import InformationBreedPage from "../pages/InformationBreedPage";
 import InformationandTreatmentMainPage from "../pages/InformationandTreatmentMainPage";
 import NormalPostData from "../pages/NormalPostData";
+import AdoptionPostData from "../pages/AdoptionPostData";
 const routes = [
   {
     path: "/",
@@ -61,6 +62,12 @@ const routes = [
     path: "/postData/:postID",
     element: <NormalPostData />,
   },
+  {
+    path: "/adoptionPostData/:postID",
+    element: <AdoptionPostData />,
+  },
+
+  AdoptionPostData,
 ];
 
 export default routes;

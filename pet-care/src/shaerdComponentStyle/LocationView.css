@@ -1,0 +1,14 @@
+.location-view-holder {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.location-word {
+  font-size: 1.3rem;
+}
+.loaction-holder {
+  background-repeat: no-repeat;
+  background-size: cover;
+}

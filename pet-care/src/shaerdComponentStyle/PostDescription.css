@@ -21,3 +21,13 @@
   word-wrap: break-word;
   border-radius: 1rem;
 }
+.post-decription-scroll::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #baaaaa;
+  -webkit-border-radius: 1ex;
+}
+
+.post-decription-scroll::-webkit-scrollbar-thumb {
+  background: #124c5f;
+  -webkit-border-radius: 1ex;
+}
