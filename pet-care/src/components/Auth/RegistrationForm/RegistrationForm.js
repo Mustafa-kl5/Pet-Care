@@ -3,7 +3,7 @@ import "../../../componentStyle/RegistrationForm/RegistrationForm.css";
 import "../../../shaerdComponentStyle/inputFIledStyle.css";
 import LeftImage from "../LoginForm/LeftImage";
 import { Link } from "react-router-dom";
-
+import { Validation } from "../../../Validation/InputValidtion";
 export default function RegistrationForm(props) {
   const dayOption = [];
   const monthOption = [];
@@ -53,9 +53,13 @@ export default function RegistrationForm(props) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     const userData = { ...formState };
-    props.forwordRegistrationData(userData);
+
+    props.getData(userData);
+  };
+
+  const HandleRegisterForm = (event) => {
+    event.preventDefault();
   };
   return (
     <div className="registration-container">
@@ -63,7 +67,7 @@ export default function RegistrationForm(props) {
       <div className="registration-form-holder">
         <div className="logo-registration"></div>
         <div className="signup-word">Sign in</div>
-        <form onSubmit={handleSubmit} id="registrationForm">
+        <form onSubmit={HandleRegisterForm} id="registrationForm">
           <div className="inpuFeild-holder">
             <div className="left-section">
               <input
@@ -171,9 +175,10 @@ export default function RegistrationForm(props) {
           </div>
         </form>
         <button
-          type="submit"
+          type="button"
           className="form-button-registration"
           form="registrationForm"
+          onClick={handleSubmit}
         >
           Sign Up
         </button>
