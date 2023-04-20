@@ -3,7 +3,8 @@ import "../../componentStyle/NormalPost/NormalPostCardHolder.css";
 import postIcon from "../../Image/postBox.png";
 import NormalPostcard from "./NormalPostcard";
 
-export default function NormalPostCardHolder() {
+export default function NormalPostCardHolder(props) {
+  const del = props.children;
   return (
     <>
       <div className="post-struct">
@@ -15,14 +16,10 @@ export default function NormalPostCardHolder() {
       </div>
       <div className="normal-post-card-scroll">
         <div className="normal-post-card-holder">
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
+          <NormalPostcard Del={del} />
+          <NormalPostcard Del={del} />
+          <NormalPostcard Del={del} />
+          <NormalPostcard Del={del} />
         </div>
       </div>
     </>

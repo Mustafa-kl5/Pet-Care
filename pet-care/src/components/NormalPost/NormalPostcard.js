@@ -4,7 +4,7 @@ import postIcon from "../../Image/cat.jpg";
 import likeIcon from "../../Image/like.png";
 import commentIcon from "../../Image/comments.png";
 
-function NormalPostcard() {
+function NormalPostcard(props) {
   return (
     <div className="normal-post-card-body">
       <div className="normal-post-card-image"></div>
@@ -33,6 +33,7 @@ function NormalPostcard() {
             <div className="like-comment-number">158</div>
           </div>
         </div>
+        {props.Del}
       </div>
     </div>
   );
