@@ -1,4 +1,4 @@
-select {
+.Adoption-select {
   width: 122px;
   height: 36px;
   border-radius: 8px;
@@ -8,7 +8,7 @@ select {
   justify-content: space-around;
   margin-top: 20px;
 }
-input {
+.Adoption-Input {
   width: 122px;
   height: 36px;
   border-radius: 8px;

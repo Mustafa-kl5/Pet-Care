@@ -1,0 +1,24 @@
+.main-header-holder {
+  display: flex;
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #e0d4d4;
+  gap: 2rem;
+  align-items: center;
+}
+.profile-logo {
+  background-image: url("../../Image/Setting-logo.png");
+  background-position: center;
+  background-size: cover;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 8px;
+}
+.Profile-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+}

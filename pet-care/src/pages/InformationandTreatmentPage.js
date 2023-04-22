@@ -14,7 +14,7 @@ export default function InformationTreatmentPage() {
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
-        <InformationCardHolder>
+        <InformationCardHolder AnimalTypePaddingT={4} AnimalTypePaddingL={1.3}>
           <Link to="/InformationBreedPage/:Cats" className="animal-type-link">
             <TypeCard TypeName="Cats" TypeImage={CatType}></TypeCard>
           </Link>

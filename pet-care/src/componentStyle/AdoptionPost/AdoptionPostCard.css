@@ -37,7 +37,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+.state-del {
+  display: flex;
+  gap: 2rem;
 }
 .Adoption-card-link {
   text-decoration: none;

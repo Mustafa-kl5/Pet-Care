@@ -8,5 +8,15 @@ export default function InformationCardHolder(props) {
   // const HandleClick = () => {
   //   useNav("/Store");
   // };
-  return <div className="Information-Holder">{props.children}</div>;
+  return (
+    <div
+      className="Information-Holder"
+      style={{
+        paddingTop: `${props.AnimalTypePaddingT}rem `,
+        paddingLeft: `${props.AnimalTypePaddingL}rem`,
+      }}
+    >
+      {props.children}
+    </div>
+  );
 }

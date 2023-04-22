@@ -1,0 +1,39 @@
+.Error-Holder-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Error-Holder {
+  width: 35rem;
+  height: 10rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  gap: 1rem;
+}
+
+.Error-Message {
+  width: 35rem;
+  font-size: 1.5rem;
+  border-bottom: 0.2rem solid gray;
+  text-align: center;
+  padding-bottom: 1.2rem;
+}
+.ok-button {
+  width: 10rem;
+  height: 3rem;
+  background-color: #124c5f;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+}

@@ -2,7 +2,7 @@
   padding-left: 6.25rem;
   padding-top: 4.688rem;
   padding-bottom: 3.125rem;
-  margin-left: 1.875rem;
+  margin-left: 1rem;
 }
 .swiper-image {
   width: 37.5rem;
@@ -17,8 +17,9 @@
   color: #124c5f;
   margin-left: 3.125rem;
 }
-.swiper-button-next {
+.swiper-button-next:after {
   color: #124c5f;
+  margin-left: 1.2rem;
 }
 .swiper-pagination {
   margin-left: 1.875rem;

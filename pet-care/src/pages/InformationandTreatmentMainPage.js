@@ -10,9 +10,9 @@ import InformationLocation from "../components/Information&Treatment/Information
 import { useParams } from "react-router-dom";
 export default function InformationandTreatmentMainPage() {
   var { breed } = useParams();
-  breed = breed.replace(":", " ");
+  breed = breed.replace(":", "");
   var { type } = useParams();
-  type = type.replace(":", " ");
+  type = type.replace(":", "");
 
   return (
     <MainBackGround>
@@ -21,8 +21,8 @@ export default function InformationandTreatmentMainPage() {
 
         <ScrollBar>
           <InformationandTreatmentHeaderType AnimalType={type} />
-          <InformationPageSwiper />
-          <InformationText BreedText={breed} />
+          <InformationPageSwiper SwiperImage />
+          <InformationText BreedText={breed} BreedInfo={""} />
           <InformationLocation />
         </ScrollBar>
       </ContentHolder>

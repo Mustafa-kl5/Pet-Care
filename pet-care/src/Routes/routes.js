@@ -15,7 +15,7 @@ import NormalPostData from "../pages/NormalPostData";
 import AdoptionPostData from "../pages/AdoptionPostData";
 const routes = [
   {
-    path: "/",
+    path: "/Home",
     element: <Home />,
   },
   {
@@ -66,8 +66,6 @@ const routes = [
     path: "/adoptionPostData/:postID",
     element: <AdoptionPostData />,
   },
-
-  AdoptionPostData,
 ];
 
 export default routes;

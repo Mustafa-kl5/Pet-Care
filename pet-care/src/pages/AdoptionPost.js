@@ -24,6 +24,7 @@ export default function AdoptionPost(props) {
     <MainBackGround>
       <ContentHolder>
         <FilterForm />
+
         <AdoptionHolder />
         <CreatePostButton buttonClick={handleOpenBackDrop} />
         <AddAdoptionBackDrop

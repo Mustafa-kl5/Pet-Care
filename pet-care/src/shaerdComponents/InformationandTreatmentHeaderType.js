@@ -7,11 +7,11 @@ import "../shaerdComponentStyle/InformationandTreatmentHeaderType.css";
 export default function InformationandTreatmentHeaderType(props) {
   let url = CatType;
   const choice = props.AnimalType;
-  if (choice === " Dogs") {
+  if (choice === "Dogs") {
     url = DogType;
-  } else if (choice === " Birds") {
+  } else if (choice === "Birds") {
     url = BirdType;
-  } else if (choice === " Rabbits") {
+  } else if (choice === "Rabbits") {
     url = RabbitType;
   }
 
