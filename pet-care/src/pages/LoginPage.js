@@ -8,6 +8,7 @@ import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 
 export default function Login(props) {
   const [showBackdrop, setShowBackdrop] = useState(false);
+  const [ErrorMessages, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
   const reciveLoginFormData = (reciveData) => {
@@ -18,6 +19,7 @@ export default function Login(props) {
       navigate("/Home");
     } else {
       //navigate("/Login");
+      setErrorMessage("Invalid Username or Password , Please Try again");
       setShowBackdrop(true);
     }
   };
@@ -27,7 +29,11 @@ export default function Login(props) {
   return (
     <MainBackGround>
       <LoginForm sendLoginData={reciveLoginFormData} />
-      <ErrorBackDrop CloseBackDrop={closeErrorHandler} show={showBackdrop} />
+      <ErrorBackDrop
+        CloseBackDrop={closeErrorHandler}
+        show={showBackdrop}
+        HandelMessage={ErrorMessages}
+      />
     </MainBackGround>
   );
 }
