@@ -9,7 +9,8 @@ import api from "../services/api";
 
 export default function Login(props) {
   const [showBackdrop, setShowBackdrop] = useState(false);
-  const [backdropMessage, setBackdropMessage] = useState("");
+  const [ErrorMessages, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
   const reciveLoginFormData = async (reciveData) => {
     const response = await api.post("/auth/login", {
@@ -23,7 +24,8 @@ export default function Login(props) {
       setAuthToken(token);
       window.location.href = "/Home";
     } else {
-      setBackdropMessage(response.data.message);
+      //navigate("/Login");
+      setErrorMessage("Invalid Username or Password , Please Try again");
       setShowBackdrop(true);
     }
   };
@@ -36,7 +38,7 @@ export default function Login(props) {
       <ErrorBackDrop
         CloseBackDrop={closeErrorHandler}
         show={showBackdrop}
-        HandelMessage={backdropMessage}
+        HandelMessage={ErrorMessages}
       />
     </MainBackGround>
   );
