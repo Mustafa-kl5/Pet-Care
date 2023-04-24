@@ -1,19 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import "../../componentStyle/ProfilePage/EditPostComp.css";
-import AddPostBackDrop from "../NormalPost/AddPostBackDrop";
-export default function EditPostComp() {
-  const [backdrop, setbackdop] = useState(false);
+import UpdatePostBackDrop from "./UpdatePostBackDrop";
+
+export default function EditPostComp(props) {
+  const [showbackdrop, setbackdrop] = useState(false);
+
   const HandleEditPostClick = () => {
-    setbackdop(true);
+    setbackdrop(true);
+  };
+  const HandleCloseBackdrop = () => {
+    setbackdrop(false);
   };
   return (
     <>
-      <Link to={"/Profile"}>
-        <div className="edit-logo" onClick={HandleEditPostClick}></div>
-      </Link>
-
-      <AddPostBackDrop show={backdrop} />
+      <div className="edit-logo" onClick={HandleEditPostClick}></div>
+      <UpdatePostBackDrop
+        show={showbackdrop}
+        CloseBackDrop={HandleCloseBackdrop}
+      />
     </>
   );
 }

@@ -1,0 +1,72 @@
+.update-post-form-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.update-post-form-left-section {
+  width: calc(60rem / 2);
+  height: calc(39rem - 5.6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 0.2rem solid rgba(224, 212, 212, 1);
+  gap: 2.5rem;
+}
+.update-post-form-right-section {
+  width: calc(60rem / 2);
+  height: calc(39rem - 5.6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.update-post-descirption-input-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.update-post-descirption-input {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.update-post-descirption {
+  font-size: 1.3rem;
+}
+.update-post-input {
+  width: 16.5rem;
+  height: 6.5rem;
+  background: rgba(238, 242, 243, 1);
+  border: 0;
+}
+.update-post-input::placeholder {
+  color: black;
+}
+.update-post-type-select {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex-direction: column;
+  height: 9rem;
+}
+.type-word {
+  font-size: 1.3rem;
+}
+.select-post-type {
+  width: 6rem;
+  background: unset;
+  border: 0.2rem solid rgba(238, 242, 243, 1);
+  padding-left: 0.5rem;
+}
+
+.update-post-submit-button {
+  border: none;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  border-radius: 2rem;
+  background: rgba(14, 38, 49, 1);
+  color: white;
+}
