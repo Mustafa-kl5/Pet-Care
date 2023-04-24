@@ -1,10 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "../../componentStyle/ProfilePage/Delete.css";
-export default function DeletePost() {
+export default function DeletePost(props) {
+  const PostID = props.PostID;
+  const styles = props.style;
+
+  const HandleDeleteClick = (PostID) => {
+    console.log(PostID);
+  };
   return (
-    <Link to={"/Profile"}>
-      <div className="delete-logo"></div>
-    </Link>
+    <div
+      className="delete-logo"
+      onClick={HandleDeleteClick}
+      style={styles}
+    ></div>
   );
 }
