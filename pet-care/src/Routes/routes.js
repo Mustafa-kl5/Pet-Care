@@ -27,10 +27,6 @@ const routes = [
     element: <InformationTreatment />,
   },
   {
-    path: "/Login",
-    element: <Login />,
-  },
-  {
     path: "/Payment",
     element: <Payment />,
   },
@@ -45,10 +41,6 @@ const routes = [
   {
     path: "/Store",
     element: <Store />,
-  },
-  {
-    path: "/Registration",
-    element: <Registration />,
   },
   {
     path: "/InformationBreedPage/:type",

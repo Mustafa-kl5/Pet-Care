@@ -5,7 +5,6 @@
   border-radius: 2.188rem;
   border: 0.1rem solid #e0d4d4;
 }
-
 .link-item-path {
   color: black;
   text-decoration: none;
@@ -17,6 +16,7 @@
   font-size: 0.938rem;
   width: 16rem;
   padding-left: 1rem;
+  cursor: pointer;
 }
 .item-icon {
   width: 1.125rem;
