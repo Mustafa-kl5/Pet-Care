@@ -1,44 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../../componentStyle/NormalPost/AddPostForm.css";
 import ImageUploder from "../../shaerdComponents/ImageUploder";
 import ImagePreview from "../../shaerdComponents/ImagePreview";
 export default function AddPostForm(props) {
-  const [postImages, setPostImages] = useState({});
+  const [recivedImages, setRecivedImages] = useState([]);
+  const childRef = useRef();
   const [formState, setFormState] = useState({
     postDescription: "",
-    postType: "",
+    postType: "missing",
     images: [],
-    postTime: {},
   });
+
   const reciveImages = (images) => {
-    setPostImages(images);
+    setRecivedImages(images);
+    setFormState({
+      ...formState,
+      images: images,
+    });
   };
-  const deleteImage = () => {
-    console.log("del");
+  const deleteImage = (currentIndex) => {
+    childRef.current.deleteImage(currentIndex);
   };
+
   const handelPostDescription = (event) => {
     setFormState({
       ...formState,
       postDescription: event.target.value,
-      postTime: new Date(),
     });
   };
   const handelTypeDescription = (event) => {
     setFormState({
       ...formState,
       postType: event.target.value,
-      postTime: new Date(),
     });
   };
   const handelAddPostForm = (event) => {
     event.preventDefault();
-    const backDropCondition = false;
-    props.sendPostData(formState, backDropCondition);
+    props.sendPostData(formState);
     setFormState({
       postDescription: "",
       postType: "",
       images: [],
-      postTime: {},
     });
   };
   return (
@@ -70,10 +72,15 @@ export default function AddPostForm(props) {
             </select>
           </div>
         </div>
-        <ImageUploder width="25rem" height="14rem" sendImages={reciveImages} />
+        <ImageUploder
+          width="25rem"
+          height="14rem"
+          sendImages={reciveImages}
+          ref={childRef}
+        />
       </div>
       <div className="addpost-form-right-section">
-        <ImagePreview handelDeleteImage={deleteImage} images={postImages} />
+        <ImagePreview handelDeleteImage={deleteImage} images={recivedImages} />
         <button className="addpost-submit-button" type="submit">
           POST
         </button>

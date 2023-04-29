@@ -23,14 +23,14 @@
   overflow-y: scroll;
   overflow-x: hidden;
   width: 28rem;
-  height: 26rem;
+  height: 25rem;
+  margin-bottom: 1rem;
 }
 .card-image-preview-holder {
   width: 27.5rem;
-  min-height: 22.5rem;
+  min-height: 25rem;
   background: rgb(191, 225, 243);
   border-radius: 2rem;
-
   display: grid;
   grid-template-columns: repeat(2, calc(25rem / 2));
   grid-auto-rows: minmax(100px, auto);
@@ -66,4 +66,20 @@
 .preview-scrollholder::-webkit-scrollbar-thumb {
   background: #124c5f;
   -webkit-border-radius: 1ex;
+}
+.empty-image-section-holder {
+  width: 27.5rem;
+  min-height: 25rem;
+  background: rgb(191, 225, 243);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.empty-image-section {
+  background-image: url("../Image/empty.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 7rem;
+  height: 7rem;
 }

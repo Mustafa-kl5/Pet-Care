@@ -19,8 +19,8 @@ export default function Post(props) {
   const closeAddPostBackDrop = () => {
     setShowAddPost(false);
   };
-  const reciveDataToPage = (postData, show) => {
-    console.log(postData, show);
+  const reciveDataToPage = (postData) => {
+    console.log(postData);
     setShowAddPost(false);
   };
 

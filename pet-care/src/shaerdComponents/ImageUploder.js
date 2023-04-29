@@ -1,14 +1,47 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import "../shaerdComponentStyle/ImageUploder.css";
 import uploadIcon from "../Image/uploadIcon.png";
 import { FileUploader } from "react-drag-drop-files";
-const fileTypes = ["JPEG", "PNG", "GIF"];
-export default function ImageUploder(props) {
-  const [images, setImages] = useState();
+const fileTypes = ["jpge", "png", "jpg"];
+
+const ImageUploder = forwardRef((props, ref) => {
+  const [images, setImages] = useState([]);
+  const [imagesUrl, setImagesUrl] = useState([]);
   const handleChange = (file) => {
-    setImages(file);
-    props.sendImages(images);
+    const uploadedImages = Object.values(file);
+    setImages([...images, ...uploadedImages]);
   };
+  useEffect(() => {
+    const urls = [];
+    const readerPromises = images.map((element) => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          urls.push(reader.result);
+          resolve();
+        };
+        reader.readAsDataURL(element);
+      });
+    });
+
+    Promise.all(readerPromises).then(() => {
+      setImagesUrl(urls);
+      props.sendImages(urls);
+    });
+  }, [images]);
+  const deleteImage = (indexToRemove) => {
+    setImages(images.filter((item, index) => index !== indexToRemove));
+    setImagesUrl(imagesUrl.filter((item, index) => index !== indexToRemove));
+  };
+  useImperativeHandle(ref, () => ({
+    deleteImage,
+  }));
+
   const children = (
     <div
       className="drag-drop-section"
@@ -24,6 +57,7 @@ export default function ImageUploder(props) {
       <div className="support-type">Supported formates: JPEG, PNG, GIF.</div>
     </div>
   );
+
   return (
     <div className="image-upload-holder">
       <div className="upload-word">Upload</div>
@@ -37,4 +71,5 @@ export default function ImageUploder(props) {
       />
     </div>
   );
-}
+});
+export default ImageUploder;

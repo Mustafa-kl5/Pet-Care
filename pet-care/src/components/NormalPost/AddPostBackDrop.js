@@ -6,8 +6,8 @@ import AddPostForm from "./AddPostForm";
 
 export default function AddPostBackDrop(props) {
   const [show, setShow] = useState(props.show);
-  const recivePostData = (postData, modelShow) => {
-    props.sendPostDataToPage(postData, modelShow);
+  const recivePostData = (sendPostData) => {
+    props.sendPostDataToPage(sendPostData);
   };
   return props.show ? (
     <div className="add-post-backdrop-main">
