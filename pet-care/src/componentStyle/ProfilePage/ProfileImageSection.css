@@ -33,11 +33,12 @@
 
   border-bottom: 1px solid #e0d4d4;
 }
-.image-holder {
+.user-image-holder {
   background-image: url("../../Image/UserImage.JPG");
   width: 25rem;
   height: 25rem;
   border-radius: 30rem;
+  background-size: cover;
 }
 .change-image-btn {
   background-color: #124c5f;
