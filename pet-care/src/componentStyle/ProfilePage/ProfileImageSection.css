@@ -33,8 +33,10 @@
 
   border-bottom: 1px solid #e0d4d4;
 }
-.image-holder {
+.user-image-holder {
   background-image: url("../../Image/UserImage.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 25rem;
   height: 25rem;
   border-radius: 30rem;

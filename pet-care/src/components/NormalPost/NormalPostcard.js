@@ -13,7 +13,10 @@ function NormalPostcard(props) {
   return (
     <div className="normal-post-card-body">
       <Link to={`/postData/:${props.id}`}>
-        <div className="normal-post-card-image"></div>{" "}
+        <div className="normal-post-card-image">
+          {props.DeleteComp}
+          {props.EditComp}
+        </div>
       </Link>
       <div className="footer-section">
         <div className="normal-post-card-user-info">

@@ -12,7 +12,7 @@ export default function ProfileImagSection() {
         <div className="change-image-label">Profile Image</div>
       </div>
       <div className="change-image-section">
-        <div className="image-holder"></div>
+        <div className="user-image-holder"></div>
 
         <button className="change-image-btn">Change Image</button>
       </div>
