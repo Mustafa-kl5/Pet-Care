@@ -16,9 +16,9 @@ export default function AdoptionPost(props) {
   const handleCloseBackDrop = () => {
     setShowAdoptionPost(false);
   };
-  const reciveData = (data, hideModle) => {
+  const reciveData = (data) => {
     console.table(data);
-    setShowAdoptionPost(hideModle);
+    setShowAdoptionPost(false);
   };
   return (
     <MainBackGround>

@@ -35,7 +35,7 @@ export default function LoginForm(props) {
           <input
             className="input-filed-shape"
             placeholder="Email"
-            type="text"
+            type="email"
             onChange={emailHandler}
             value={email}
           />

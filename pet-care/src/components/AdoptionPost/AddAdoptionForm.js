@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../../componentStyle/AdoptionPost/AddAdoptionForm.css";
 import ImagePreview from "../../shaerdComponents/ImagePreview";
 import ImageUploder from "../../shaerdComponents/ImageUploder";
-import LocationView from "../../shaerdComponents/LocationView";
+import MapPickerr from "../../shaerdComponents/MapPicker";
 
 export default function AddAdoptionForm(props) {
   const [addAdoptionFormstate, setAddAdoptionFormstate] = useState({
@@ -19,6 +19,8 @@ export default function AddAdoptionForm(props) {
       lng: "",
     },
   });
+  const [recivedImages, setRecivedImages] = useState([]);
+  const childRef = useRef();
   const handleAnimalType = (event) => {
     setAddAdoptionFormstate({
       ...addAdoptionFormstate,
@@ -61,10 +63,20 @@ export default function AddAdoptionForm(props) {
       description: event.target.value,
     });
   };
-
+  const reciveImages = (images) => {
+    setRecivedImages(images);
+    setAddAdoptionFormstate({
+      ...addAdoptionFormstate,
+      images: images,
+    });
+  };
+  const deleteImage = (currentIndex) => {
+    childRef.current.deleteImage(currentIndex);
+  };
   const addAdoptionHandlerSubmit = (event) => {
     event.preventDefault();
-    props.sendAddAdoptionData(addAdoptionFormstate, false);
+    props.sendAddAdoptionData(addAdoptionFormstate);
+
     setAddAdoptionFormstate({
       animalType: "",
       animalBreed: "",
@@ -142,12 +154,17 @@ export default function AddAdoptionForm(props) {
           </div>
         </div>
         <div className="add-adoption-upload-location">
-          <ImageUploder height="11rem" width="12.5rem" />
-          <LocationView height="11rem" width="12.5rem" />
+          <ImageUploder
+            height="11rem"
+            width="12.5rem"
+            sendImages={reciveImages}
+            ref={childRef}
+          />
+          <MapPickerr />
         </div>
       </div>
       <div className="add-adoption-form-right-section">
-        <ImagePreview />
+        <ImagePreview handelDeleteImage={deleteImage} images={recivedImages} />
         <button className="add-adoption-submit-button" type="submit">
           POST
         </button>
