@@ -1,0 +1,53 @@
+.update-post-backdrop-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.update-post-form-holder {
+  width: 60rem;
+  height: 39rem;
+  border-radius: 2rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.update-post-header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 56rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 2.5rem;
+  border-bottom: 0.2rem solid rgba(224, 212, 212, 1);
+}
+.update-post-logo-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.update-post-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.update-post-word {
+  font-size: 1.3rem;
+}
+.update-post-form-section {
+  height: calc(39rem - 5.5rem);
+  width: 60rem;
+  border-radius: 2rem;
+}
