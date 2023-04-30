@@ -1,0 +1,13 @@
+.edit-logo {
+  width: 1.5rem;
+  min-height: 1.5rem;
+  position: relative;
+  top: 2rem;
+  left: 13.5rem;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 100;
+  cursor: pointer;
+  background-image: url("../../Image/edit-logo.png");
+}

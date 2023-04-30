@@ -1,11 +1,12 @@
 .delete-logo {
-  width: 10rem;
-  height: 3rem;
-  background-image: url("../../Image/Deletelogo.png");
-  background-position: center;
+  width: 1.5rem;
+  min-height: 1.5rem;
+  position: relative;
+  top: 3.7rem;
+  left: 11.7rem;
+  background-image: url("../../Image/deleteTest.png");
   background-size: cover;
-  width: 2rem;
-  height: 2rem;
-  color: transparent;
   background-repeat: no-repeat;
+  z-index: 100;
+  cursor: pointer;
 }

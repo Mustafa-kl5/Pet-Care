@@ -21,4 +21,5 @@
 .post-adoption-scroll::-webkit-scrollbar-thumb {
   background: #124c5f;
   -webkit-border-radius: 1ex;
+  height: 1px;
 }

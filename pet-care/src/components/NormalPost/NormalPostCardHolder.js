@@ -4,7 +4,6 @@ import postIcon from "../../Image/postBox.png";
 import NormalPostcard from "./NormalPostcard";
 
 export default function NormalPostCardHolder(props) {
-  const del = props.children;
   return (
     <>
       <div className="post-struct">
@@ -23,11 +22,11 @@ export default function NormalPostCardHolder(props) {
           <NormalPostcard id="5" />
           <NormalPostcard id="6" />
           <NormalPostcard id="7" />
-          <NormalPostcard id="8s" />
-          <NormalPostcard Del={del} />
-          <NormalPostcard Del={del} />
-          <NormalPostcard Del={del} />
-          <NormalPostcard Del={del} />
+          <NormalPostcard id="8" />
+          <NormalPostcard />
+          <NormalPostcard />
+          <NormalPostcard />
+          <NormalPostcard />
         </div>
       </div>
     </>
