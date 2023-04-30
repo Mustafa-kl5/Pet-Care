@@ -15,6 +15,7 @@ import EditBio from "../components/Profile/EditBio";
 
 import AdoptionPostState from "../components/Profile/AdoptionPostState";
 import DeletePost from "../components/Profile/DeletePost";
+import EditPostComp from "../components/Profile/EditPostComp";
 export default function Profile(props) {
   return (
     <MainBackGround>
@@ -29,28 +30,26 @@ export default function Profile(props) {
             <div>
               <AdoptionPostSection />
 
-              <AdoptionHolder>
-                <AdoptionPostState text={"Active"} />
-                <DeletePost />
-              </AdoptionHolder>
+              <AdoptionHolder
+                State={<AdoptionPostState />}
+                Delete={<DeletePost />}
+              ></AdoptionHolder>
             </div>
           </ScrollBar>
           <div className="border"></div>
           <ScrollBar>
             <div>
-              <NormalPostCardHolder>
-                <DeletePost />
-              </NormalPostCardHolder>
+              <NormalPostCardHolder
+                Delete={<DeletePost />}
+                Edit={<EditPostComp />}
+              ></NormalPostCardHolder>
             </div>
           </ScrollBar>
           <div className="border"></div>
           <div>
             <AdoptionPostSection text={"Favourite"} />
 
-            <AdoptionHolder>
-              <AdoptionPostState text={"Remove Fav"} />
-              <DeletePost />
-            </AdoptionHolder>
+            <AdoptionHolder Delete={<DeletePost />}></AdoptionHolder>
           </div>
           <EditBio />
         </ScrollBar>
