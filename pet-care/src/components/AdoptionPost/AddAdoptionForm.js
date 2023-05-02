@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "../../componentStyle/AdoptionPost/AddAdoptionForm.css";
 import ImagePreview from "../../shaerdComponents/ImagePreview";
 import ImageUploder from "../../shaerdComponents/ImageUploder";
-import MapPickerr from "../../shaerdComponents/MapPicker";
+import LocationPicker from "../../shaerdComponents/MapPicker";
 
 export default function AddAdoptionForm(props) {
   const [addAdoptionFormstate, setAddAdoptionFormstate] = useState({
@@ -72,6 +72,12 @@ export default function AddAdoptionForm(props) {
   };
   const deleteImage = (currentIndex) => {
     childRef.current.deleteImage(currentIndex);
+  };
+  const reciveLocation = (recivelocation) => {
+    setAddAdoptionFormstate({
+      ...addAdoptionFormstate,
+      location: recivelocation,
+    });
   };
   const addAdoptionHandlerSubmit = (event) => {
     event.preventDefault();
@@ -160,7 +166,7 @@ export default function AddAdoptionForm(props) {
             sendImages={reciveImages}
             ref={childRef}
           />
-          <MapPickerr />
+          <LocationPicker sendLocation={reciveLocation} />
         </div>
       </div>
       <div className="add-adoption-form-right-section">
