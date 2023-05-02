@@ -9,7 +9,7 @@
 }
 .breed-image {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-end;
 
   background-image: url("../../Image/Cat-Breed1.png");

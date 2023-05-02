@@ -10,8 +10,8 @@
   height: 37rem;
   border-radius: 1.2rem;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   padding: 1rem 1rem 1rem 1rem;
   gap: 1rem;
@@ -41,8 +41,8 @@
 }
 .payment-card-input-title {
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -75,7 +75,7 @@
 }
 .payment-total-submitButton {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 5rem;

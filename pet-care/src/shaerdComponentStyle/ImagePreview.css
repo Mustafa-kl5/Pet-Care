@@ -1,8 +1,8 @@
 .image-preview-holder {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .preview-logo-word {
   display: flex;

@@ -30,7 +30,7 @@
 .addpost-descirption-input {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
 }
@@ -49,7 +49,7 @@
 .addpost-type-select {
   display: flex;
   justify-content: space-evenly;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   height: 9rem;
 }

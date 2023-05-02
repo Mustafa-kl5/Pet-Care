@@ -8,7 +8,7 @@
   height: calc(39rem - 5.6rem);
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   border-right: 0.2rem solid rgba(224, 212, 212, 1);
   gap: 0.5rem;
@@ -24,8 +24,8 @@
 }
 .add-adoption-animal-information {
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -46,12 +46,12 @@
 .add-adoption-description-social-media {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
 }
 .add-adoption-description {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   gap: 0.5rem;
@@ -66,7 +66,7 @@
 .add-adoption-social-media {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }

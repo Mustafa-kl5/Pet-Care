@@ -4,7 +4,7 @@
   background: rgba(241, 250, 255, 1);
   border-radius: 2rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
 }
 .content-header-holder {
@@ -13,7 +13,7 @@
 .left-riht-section {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 .left-section {
   display: flex;
