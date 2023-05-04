@@ -3,9 +3,11 @@ import "../../../componentStyle/LoginForm/LoginForm.css";
 import LeftImage from "./LeftImage";
 
 import { Link } from "react-router-dom";
+import ResetPasswordBackdrop from "./ResetPasswordBackdrop";
 
 export default function LoginForm(props) {
   const [email, setEmail] = useState("");
+  const [backdrop, setbackdrop] = useState(false);
   const [password, setPassword] = useState("");
 
   const emailHandler = (event) => {
@@ -24,6 +26,12 @@ export default function LoginForm(props) {
     setEmail("");
     setPassword("");
     props.sendLoginData(userData);
+  };
+  const handleForgetPassword = () => {
+    setbackdrop(true);
+  };
+  const closebackdrop = () => {
+    setbackdrop(false);
   };
   return (
     <div className="Login-form-container">
@@ -46,13 +54,15 @@ export default function LoginForm(props) {
             onChange={passwordHandler}
             value={password}
           />
-          <a href="linkto:google.com" className="forget-password">
-            ForgetYouPassword?
-          </a>
+
           <button type="submit" className="form-button">
             Login
           </button>
         </form>
+        <div className="forget-password" onClick={handleForgetPassword}>
+          ForgetYouPassword?
+        </div>
+        <ResetPasswordBackdrop show={backdrop} closebackdrop={closebackdrop} />
         <Link to="/Registration" className="account-sign-up">
           Don t have An Account? sign up
         </Link>
