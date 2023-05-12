@@ -32,4 +32,5 @@
 .comment-value {
   width: 13rem;
   padding-bottom: 0.5rem;
+  word-wrap: break-word;
 }

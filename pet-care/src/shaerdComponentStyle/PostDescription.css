@@ -14,20 +14,20 @@
   width: 16rem;
   height: 11rem;
   background: rgba(238, 242, 243, 1);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .post-decription-holder {
   width: 15.5rem;
   word-wrap: break-word;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .post-decription-scroll::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #baaaaa;
+  width: 0.2rem;
+  background: #0000001b;
   -webkit-border-radius: 1ex;
 }
 
 .post-decription-scroll::-webkit-scrollbar-thumb {
-  background: #124c5f;
+  background: #01010184;
   -webkit-border-radius: 1ex;
 }

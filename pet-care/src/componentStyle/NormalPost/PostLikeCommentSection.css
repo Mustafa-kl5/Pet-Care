@@ -13,6 +13,7 @@
 .like-comment-icon {
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 .comment-icon {
   background-repeat: no-repeat;

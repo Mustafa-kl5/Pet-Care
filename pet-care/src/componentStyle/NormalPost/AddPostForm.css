@@ -39,9 +39,11 @@
 }
 .addpost-input {
   width: 16.5rem;
-  height: 6.5rem;
+  height: 7rem;
   background: rgba(238, 242, 243, 1);
   border: 0;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
 }
 .addpost-input::placeholder {
   color: black;
@@ -69,4 +71,14 @@
   border-radius: 2rem;
   background: rgba(14, 38, 49, 1);
   color: white;
+}
+.addpost-input::-webkit-scrollbar {
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
+}
+
+.addpost-input::-webkit-scrollbar-thumb {
+  background: #00000088;
+  -webkit-border-radius: 1ex;
 }

@@ -1,13 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import likeIcon from "../../Image/like.png";
+import emptyLikeIcon from "../../Image/empty-heart.png";
 import commentIcon from "../../Image/comments.png";
 import "../../componentStyle/NormalPost/PostLikeCommentSection.css";
+import { useParams } from "react-router-dom";
+import api from "../../services/api";
+import { getUserId } from "../../hooks/auth/getUserId";
 
 export default function PostLikeCommentSection(props) {
-  const [numberOfLikes, setNumberOfLikes] = useState(100);
-  const [numberOfComments, setNumberOfComments] = useState("140");
-  const handleLike = () => {
-    setNumberOfLikes(numberOfLikes + 1);
+  const { postID } = useParams();
+  const id = props.postID || postID.replace(/:/g, "");
+  const [likesCount, setLikesCount] = useState(0);
+  const [commentCount, setCommentCount] = useState(0);
+  const [liked, setLiked] = useState(false);
+  useEffect(() => {
+    getPostLikes(getUserId());
+  }, [liked, likesCount, props.postID, commentCount]);
+
+  const getPostLikes = async (userId) => {
+    const response = await api.get(`/getLikeNumber/:${id}`);
+    setLikesCount(response.data.likeNumber);
+    setLiked(response.data.likeList.some((item) => item.likeOwner === userId));
+    setCommentCount(response.data.commentNumber);
+  };
+  const handleLike = async () => {
+    const response = await api.post(`/addLike/:${id}`);
+    setLikesCount(response.data.likeNumber);
+    setLiked(!liked);
   };
 
   return (
@@ -17,13 +36,13 @@ export default function PostLikeCommentSection(props) {
           <div
             className="like-comment-icon"
             style={{
-              backgroundImage: `url("${likeIcon}")`,
+              backgroundImage: `url("${liked ? likeIcon : emptyLikeIcon}")`,
               width: `${props.width}`,
               height: `${props.height}`,
             }}
             onClick={handleLike}
           ></div>
-          <div className="like-comment-number">{numberOfLikes}</div>
+          <div className="like-comment-number">{likesCount}</div>
         </div>
         <div className="normal-post-item">
           <div
@@ -35,7 +54,7 @@ export default function PostLikeCommentSection(props) {
             }}
             onClick={props.commentFunction}
           ></div>
-          <div className="like-comment-number">{numberOfComments}</div>
+          <div className="like-comment-number">{commentCount}</div>
         </div>
       </div>
     </form>

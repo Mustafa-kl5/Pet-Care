@@ -6,6 +6,11 @@
   padding-top: 1rem;
   border-bottom: 0.2rem solid #e0d4d4;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .normal-post-card-holder {
   display: grid;
   grid-template-columns: repeat(3, 15.2rem);
@@ -32,12 +37,30 @@
   font-size: 1.5rem;
 }
 .normal-post-card-scroll::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #baaaaa;
+  width: 0.2rem;
+  background: #00000017;
   border-radius: 1rem;
 }
 
 .normal-post-card-scroll::-webkit-scrollbar-thumb {
-  background: #124c5f;
+  background: #000000c0;
   -webkit-border-radius: 1ex;
+}
+.empty-post-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.empty-post-icon {
+  width: 10rem;
+  height: 10rem;
+  background-repeat: no-repeat;
+  background-image: url("../../Image/sadPet.png");
+  background-size: cover;
+}
+.empty-post-word {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

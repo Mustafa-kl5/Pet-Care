@@ -43,7 +43,12 @@ export default function ImagePreview(props) {
               );
             })
           ) : (
-            <div className="empty-image-section"></div>
+            <div className="empty-image">
+              <div className="empty-image-section"></div>
+              <div className="empty-image-hint">
+                At least you must add one photo{" "}
+              </div>
+            </div>
           )}
         </div>
       </div>

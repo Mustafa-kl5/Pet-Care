@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import catImage from "../Image/cat.jpg";
-export default function PostDataCarousel() {
+export default function PostDataCarousel(props) {
   return (
     <>
       <Swiper
@@ -15,30 +15,17 @@ export default function PostDataCarousel() {
         modules={[Pagination]}
         className="post-data-carousel-holder"
       >
-        <SwiperSlide>
-          <div
-            className="SwiperSlide-image"
-            style={{ backgroundImage: `url("${catImage}")` }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="SwiperSlide-image"
-            style={{ backgroundImage: `url("${catImage}")` }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="SwiperSlide-image"
-            style={{ backgroundImage: `url("${catImage}")` }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="SwiperSlide-image"
-            style={{ backgroundImage: `url("${catImage}")` }}
-          />
-        </SwiperSlide>
+        {props.postImage.map((image, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <img
+                className="SwiperSlide-image"
+                alt="post image"
+                src={image.fileName}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );

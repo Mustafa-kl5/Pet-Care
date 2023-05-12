@@ -3,15 +3,16 @@ import "../../componentStyle/NormalPost/CommentInput.css";
 import commentIcon from "../../Image/comments.png";
 import sendIcon from "../../Image/send.png";
 import { useState } from "react";
+import api from "../../services/api";
 export default function CommentForm(props) {
   const [commentValue, setCommentValue] = useState("");
   const commentHandler = (event) => {
     setCommentValue(event.target.value);
   };
-  const handlSubmit = (event) => {
+  const handlSubmit = async (event) => {
     event.preventDefault();
+    await api.post(`/addComment/:${props.postId}`, { comment: commentValue });
     setCommentValue("");
-    console.log(commentValue);
   };
   return (
     <form className="comment-form" onSubmit={handlSubmit}>

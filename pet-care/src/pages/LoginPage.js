@@ -20,9 +20,9 @@ export default function Login(props) {
     if (response.data.auth) {
       const token = response.data.token;
       localStorage.setItem("token", token);
-      console.log(localStorage.getItem("token"));
       setAuthToken(token);
-      window.location.href = "/Home";
+      // window.location.href = "/Home";
+      navigate("/Home");
     } else {
       //navigate("/Login");
       setErrorMessage("Invalid Username or Password , Please Try again");

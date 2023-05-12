@@ -1,0 +1,24 @@
+.warning-holder {
+  width: 60rem;
+  height: 5rem;
+  background-color: aqua;
+  position: absolute;
+  top: 2rem;
+  left: calc((100% - 60rem) / 2);
+  background: rgb(241, 213, 5);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.warning-icon {
+  width: 3rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../Image//warning.png");
+}
+.warning-massage {
+  font-size: 1.3rem;
+}

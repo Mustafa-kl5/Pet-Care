@@ -7,15 +7,28 @@ import React, {
 import "../shaerdComponentStyle/ImageUploder.css";
 import uploadIcon from "../Image/uploadIcon.png";
 import { FileUploader } from "react-drag-drop-files";
+import WarningBar from "./WarningBar";
 const fileTypes = ["jpge", "png", "jpg"];
 
 const ImageUploder = forwardRef((props, ref) => {
   const [images, setImages] = useState([]);
   const [imagesUrl, setImagesUrl] = useState([]);
+  const [warning, setWarning] = useState(false);
+  const [warningMassage, setWarningMassage] = useState(
+    "You try to upload wrong Supported formates,Try one of these extensions:JPEG, PNG, GIF."
+  );
   const handleChange = (file) => {
     const uploadedImages = Object.values(file);
     setImages([...images, ...uploadedImages]);
   };
+  useEffect(() => {
+    if (warning) {
+      const timer = setTimeout(() => {
+        setWarning(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [warning]);
   useEffect(() => {
     const urls = [];
     const readerPromises = images.map((element) => {
@@ -33,6 +46,7 @@ const ImageUploder = forwardRef((props, ref) => {
       setImagesUrl(urls);
       props.sendImages(urls);
     });
+    props.sendImagesPath(images);
   }, [images]);
   const deleteImage = (indexToRemove) => {
     setImages(images.filter((item, index) => index !== indexToRemove));
@@ -41,6 +55,16 @@ const ImageUploder = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     deleteImage,
   }));
+
+  const handleTypeError = () => {
+    setWarning(true);
+  };
+  const handleSizeError = () => {
+    setWarning(true);
+    setWarningMassage(
+      "The size of photos is to large try to choose another photo"
+    );
+  };
 
   const children = (
     <div
@@ -68,7 +92,10 @@ const ImageUploder = forwardRef((props, ref) => {
         children={children}
         maxSize={20}
         multiple={true}
+        onTypeError={handleTypeError}
+        onSizeError={handleSizeError}
       />
+      <WarningBar showWarning={warning} massage={warningMassage} />
     </div>
   );
 });

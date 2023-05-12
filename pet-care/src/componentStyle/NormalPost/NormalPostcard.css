@@ -10,12 +10,6 @@
   width: 16rem;
   height: 11rem;
   border-radius: 2rem;
-  background-image: url("../../Image/cat.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: end;
 }
 .footer-section {
   display: flex;

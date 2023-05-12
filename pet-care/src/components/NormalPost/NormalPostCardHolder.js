@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/NormalPost/NormalPostCardHolder.css";
 import postIcon from "../../Image/postBox.png";
 import NormalPostcard from "./NormalPostcard";
+import api from "../../services/api";
+import LoadingBar from "../../shaerdComponents/LoadingBar";
 
 export default function NormalPostCardHolder(props) {
+  const [posts, setPosts] = useState([]);
+  const [missingPosts, setMissingPosts] = useState([]);
+  const [askingPosts, setAskingPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const response = await api.get("/getAllPosts");
+      setPosts(response.data);
+      setLoading(false);
+    };
+    getPosts();
+  }, []);
+  useEffect(() => {
+    setAskingPosts(posts.filter((post) => post.postType === "asking"));
+    setMissingPosts(posts.filter((post) => post.postType === "missing"));
+  }, [posts, props.activeTab]);
   return (
     <>
       <div className="post-struct">
@@ -13,21 +32,35 @@ export default function NormalPostCardHolder(props) {
         ></div>
         <div className="post-word">Post :</div>
       </div>
-      <div className="normal-post-card-scroll">
-        <div className="normal-post-card-holder">
-          <NormalPostcard id="1" />
-          <NormalPostcard id="2" />
-          <NormalPostcard id="3" />
-          <NormalPostcard id="4" />
-          <NormalPostcard id="5" />
-          <NormalPostcard id="6" />
-          <NormalPostcard id="7" />
-          <NormalPostcard id="8" />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-          <NormalPostcard />
-        </div>
+      <div
+        className={
+          loading || (missingPosts.length === 0 && askingPosts.length === 0)
+            ? "normal-post-card-scroll center"
+            : "normal-post-card-scroll"
+        }
+      >
+        {loading ? (
+          <LoadingBar />
+        ) : missingPosts.length === 0 && askingPosts.length === 0 ? (
+          <div className="empty-post-section">
+            <div className="empty-post-icon"></div>
+            <div className="empty-post-word">No posts found</div>
+          </div>
+        ) : (
+          <div className="normal-post-card-holder">
+            {props.activeTab === "missing"
+              ? missingPosts.map((post, index) => {
+                  return (
+                    <NormalPostcard id={post.postID} key={index} data={post} />
+                  );
+                })
+              : askingPosts.map((post, index) => {
+                  return (
+                    <NormalPostcard id={post.postID} key={index} data={post} />
+                  );
+                })}
+          </div>
+        )}
       </div>
     </>
   );

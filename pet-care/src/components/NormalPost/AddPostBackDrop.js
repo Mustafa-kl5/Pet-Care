@@ -5,10 +5,10 @@ import plusIcon from "../../Image/postBox.png";
 import AddPostForm from "./AddPostForm";
 
 export default function AddPostBackDrop(props) {
-  const [show, setShow] = useState(props.show);
-  const recivePostData = (sendPostData) => {
-    props.sendPostDataToPage(sendPostData);
+  const handelCloseBackDrop = (backdrop) => {
+    props.sendCloseBackDrop(backdrop);
   };
+
   return props.show ? (
     <div className="add-post-backdrop-main">
       <div className="add-post-form-holder">
@@ -23,7 +23,7 @@ export default function AddPostBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddPostForm sendPostData={recivePostData} />
+          <AddPostForm closeBackDrop={handelCloseBackDrop} />
         </div>
       </div>
     </div>
