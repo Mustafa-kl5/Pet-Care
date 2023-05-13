@@ -9,7 +9,6 @@ export default function PostComment(props) {
   const getComments = async () => {
     const response = await api.get(`/getComments/:${postId}`);
     setComments(response.data);
-    console.log(comments);
   };
   useEffect(() => {
     getComments();

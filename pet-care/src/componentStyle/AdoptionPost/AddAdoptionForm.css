@@ -42,6 +42,8 @@
   padding-left: 1rem;
   border: 0;
   background: rgba(238, 242, 243, 1);
+  height: 1.8rem;
+  border-radius: 0.5rem;
 }
 .add-adoption-description-social-media {
   display: flex;

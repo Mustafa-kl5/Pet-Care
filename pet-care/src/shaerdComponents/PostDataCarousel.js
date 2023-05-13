@@ -15,7 +15,7 @@ export default function PostDataCarousel(props) {
         modules={[Pagination]}
         className="post-data-carousel-holder"
       >
-        {props.postImage.map((image, index) => {
+        {props.postImage?.map((image, index) => {
           return (
             <SwiperSlide key={index}>
               <img

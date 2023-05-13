@@ -1,25 +1,66 @@
-.post-adoption-holder {
+.adoption-post-card-scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 51rem;
+  height: 31.5rem;
+  padding-top: 1rem;
+  border-bottom: 0.2rem solid #e0d4d4;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adoption-post-card-holder {
   display: grid;
   grid-template-columns: repeat(3, 15.2rem);
   grid-auto-rows: minmax(100px, auto);
-  grid-gap: 1rem;
+  grid-gap: 2rem 1.5rem;
+  padding-left: 0.5rem;
 }
-.post-adoption-scroll {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: calc(50rem - 15.5rem);
-  width: 49rem;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
-}
-.post-adoption-scroll::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #baaaaa;
-  -webkit-border-radius: 1ex;
+.adoption-post-struct {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  gap: 0.5rem;
 }
 
-.post-adoption-scroll::-webkit-scrollbar-thumb {
-  background: #124c5f;
-  -webkit-border-radius: 1ex;
-  height: 1px;
+.adoption-post-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+.adoption-post-word {
+  font-size: 1.5rem;
+}
+.adoption-post-card-scroll::-webkit-scrollbar {
+  width: 0.2rem;
+  background: #00000017;
+  border-radius: 1rem;
+}
+
+.adoption-post-card-scroll::-webkit-scrollbar-thumb {
+  background: #000000c0;
+  -webkit-border-radius: 1ex;
+}
+/* .empty-post-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.empty-post-icon {
+  width: 10rem;
+  height: 10rem;
+  background-repeat: no-repeat;
+  background-image: url("../../Image/sadPet.png");
+  background-size: cover;
+}
+.empty-post-word {
+  font-size: 1.5rem;
+  font-weight: bold;
+} */

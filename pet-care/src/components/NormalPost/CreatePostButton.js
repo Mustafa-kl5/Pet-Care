@@ -9,7 +9,7 @@ export default function CreatePostButton(props) {
         className="create-normal-post-button"
         onClick={props.buttonClick}
       >
-        Add Post
+        {props.buttonContent}
       </button>
     </div>
   );

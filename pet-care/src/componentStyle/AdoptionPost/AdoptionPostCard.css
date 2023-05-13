@@ -1,47 +1,43 @@
-.Adoption-card {
+.adoption-post-card-body {
+  width: 16rem;
+  height: 11rem;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
-
-.post-image {
-  width: 15.2rem;
+.adoption-post-card-image {
+  width: 16rem;
   height: 11rem;
   border-radius: 2rem;
-  background-image: url("../../Image/images.jpg");
-  background-size: cover;
+}
+.adoption-footer-section {
   display: flex;
-  justify-content: end;
-  background-repeat: no-repeat;
+  justify-content: start;
+  align-items: center;
 }
-
-.user-image {
-  background-image: url("../../Image/cat.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  width: 2rem;
-  height: 2rem;
-}
-
-.FavIcon {
-  width: 29px;
-  height: 28px;
-  background-image: url("../../Image/—Pngtree—vector\ favorite\ icon_4275783.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-}
-.post-info {
+.adoption-post-card-user-info {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-
-.Adoption-card-link {
+.adoption-post-card-user-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.adoption-post-card-user-name {
+  font-size: 1.2rem;
+}
+.adoption-post-link {
+  width: 16rem;
+  height: 11rem;
+  border-radius: 2rem;
+}
+.adoption-post-link {
   text-decoration: none;
   color: black;
 }

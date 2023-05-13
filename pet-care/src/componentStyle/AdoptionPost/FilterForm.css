@@ -1,24 +1,19 @@
-.Adoption-select {
-  width: 122px;
-  height: 36px;
-  border-radius: 8px;
-}
-.form {
+.filter-holder {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-bottom: 0.2rem solid #e0d4d4;
+  height: 3.5rem;
+  gap: 3rem;
 }
-.Adoption-Input {
-  width: 122px;
-  height: 36px;
-  border-radius: 8px;
+
+.filter-word {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
-.Text {
-  margin-top: 10px;
-  font-size: larger;
-}
-hr {
-  background-color: #e0d4d4;
-  height: 2px;
-  border: none;
+.filter-adoption {
+  width: 8rem;
+  height: 2rem;
 }

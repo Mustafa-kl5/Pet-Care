@@ -1,0 +1,14 @@
+.contact-holder {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 1rem;
+}
+
+.contact-item {
+  background-image: url("../../Image/facebook.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+}

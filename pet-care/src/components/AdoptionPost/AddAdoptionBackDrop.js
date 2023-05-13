@@ -4,8 +4,8 @@ import plusIcon from "../../Image/adoptationPost.png";
 import AddAdoptionForm from "./AddAdoptionForm";
 
 export default function AddAdoptionBackDrop(props) {
-  const reciveAddAdoptionData = (data) => {
-    props.SendData(data);
+  const CloseBackDrop = () => {
+    props.CloseBackDropAfterAdd();
   };
   return props.show ? (
     <div className="add-post-backdrop-main">
@@ -21,7 +21,7 @@ export default function AddAdoptionBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddAdoptionForm sendAddAdoptionData={reciveAddAdoptionData} />
+          <AddAdoptionForm CloseBackDrop={CloseBackDrop} />
         </div>
       </div>
     </div>

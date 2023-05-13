@@ -1,37 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/AdoptionPost/AdoptionPostCard.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import AdoptionPostState from "../Profile/AdoptionPostState";
-import DeletePost from "../Profile/DeletePost";
+import userIcon from "../../Image/Cat-Breed1.png";
 function AdoptionPostCard(props) {
+  const [postData, setPostData] = useState(props.data);
   const location = useLocation();
 
-  const s = {
-    top: 36.8,
-    left: 208,
-  };
+  useEffect(() => {
+    setPostData(props.data);
+  }, [props.data]);
+
   return (
-    <div className="Adoption-card">
-      {location.pathname === "/Profile" ? (
-        <DeletePost PostID={props.postId} style={s} />
-      ) : null}
-      <Link
-        className="Adoption-card-link"
-        to={`/adoptionPostData/:${props.postId}`}
-      >
-        <div className="post-image"></div>
-      </Link>
-      <div className="post-info">
-        <div className="user-image"></div>
-        <div className="user-name">Ahmad zuiod</div>
-        <div className="post-state">
-          {location.pathname === "/Profile" ? (
-            <AdoptionPostState PostID={props.postId} />
-          ) : null}
+    <Link to={`/adoptionPostData/:${props.id}`} className="adoption-post-link">
+      <div className="adoption-post-card-body">
+        <div>
+          <img
+            className="adoption-post-card-image"
+            src={postData.postImage?.fileName}
+            alt="post image"
+          />
+        </div>
+
+        <div className="adoption-footer-section">
+          <div className="adoption-post-card-user-info">
+            <div
+              className="adoption-post-card-user-image"
+              style={{ backgroundImage: `url(${postData.postOwnerImage})` }}
+            ></div>
+            <div className="adoption-post-card-user-name">
+              {postData.postOwner}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 export default AdoptionPostCard;

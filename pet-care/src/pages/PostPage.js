@@ -28,7 +28,10 @@ export default function Post(props) {
       <ContentHolder>
         <TabsSection activStateus={handleActiveTabChange} />
         <NormalPostCardHolder activeTab={activeTab} />
-        <CreatePostButton buttonClick={showAddPostBackDrop} />
+        <CreatePostButton
+          buttonClick={showAddPostBackDrop}
+          buttonContent="Add Post"
+        />
         <AddPostBackDrop
           show={showAddPost}
           CloseBackDrop={closeAddPostBackDrop}

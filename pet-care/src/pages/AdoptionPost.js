@@ -10,27 +10,32 @@ import AddAdoptionBackDrop from "../components/AdoptionPost/AddAdoptionBackDrop"
 
 export default function AdoptionPost(props) {
   const [showAdoptionPost, setShowAdoptionPost] = useState(false);
+  const [filterData, setFilterData] = useState({});
   const handleOpenBackDrop = () => {
     setShowAdoptionPost(true);
   };
   const handleCloseBackDrop = () => {
     setShowAdoptionPost(false);
   };
-  const reciveData = (data) => {
-    console.table(data);
+  const CloseBackDrop = () => {
     setShowAdoptionPost(false);
+  };
+  const handleReciveFilterPost = (filterData) => {
+    setFilterData(filterData);
   };
   return (
     <MainBackGround>
       <ContentHolder>
-        <FilterForm />
-
-        <AdoptionHolder />
-        <CreatePostButton buttonClick={handleOpenBackDrop} />
+        <FilterForm sendFilterAdoption={handleReciveFilterPost} />
+        <AdoptionHolder filterData={filterData} />
+        <CreatePostButton
+          buttonClick={handleOpenBackDrop}
+          buttonContent="Add offer"
+        />
         <AddAdoptionBackDrop
           show={showAdoptionPost}
           CloseBackDrop={handleCloseBackDrop}
-          SendData={reciveData}
+          CloseBackDropAfterAdd={CloseBackDrop}
         />
       </ContentHolder>
     </MainBackGround>

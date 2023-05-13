@@ -54,7 +54,6 @@ function NormalPostcard(props) {
       </div>
     </div>
   );
-  <input h></input>;
 }
 
 export default NormalPostcard;
