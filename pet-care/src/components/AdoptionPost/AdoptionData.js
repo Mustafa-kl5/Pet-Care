@@ -1,28 +1,46 @@
 import React, { useState } from "react";
 import "../../componentStyle/AdoptionPost/AdoptionPostData.css";
-import PostUserInformation from "../../shaerdComponents/PostUserInformation";
 import PostDataCarousel from "../../shaerdComponents/PostDataCarousel";
 import PostDescription from "../../shaerdComponents/PostDescription";
 import LocationView from "../../shaerdComponents/LocationView";
 import UserContact from "./UserContact";
 import api from "../../services/api";
 import { useParams } from "react-router-dom";
+import PetInformation from "./PetInformation";
+import AdoptionPostUserInformation from "./AdoptionPostUserInformation";
+import AddAdoptionPostToFavourite from "./AddAdoptionPostToFavourite";
 
 export default function AdoptionData(props) {
   const [post, setPost] = useState(props.postData);
   return (
     <div className="adoption-post-data-holder">
-      <PostUserInformation name={post.postOwner} postTime={post.postTime} />
+      <div className="user-information-pet-information">
+        <AdoptionPostUserInformation
+          name={post.postOwner}
+          postTime={post.postTime}
+          userImage={post.author.userImage}
+        />
+        <AddAdoptionPostToFavourite postId={post._id} />
+        <PetInformation
+          animalName={post.animalName}
+          animalType={post.animalType}
+          animalBrees={post.animalBreed}
+        />
+      </div>
       <div className="adoption-post-data-description-comment-carosil-holder">
         <div className="adoption-post-data-description-comment">
           <PostDescription postDescription={post.description} />
           <LocationView
             width="16rem"
             height="15.5rem"
-            lat={35.99211444729038}
-            lng={31.959542451417164}
+            lat={post.ownerLocation.latitude}
+            lng={post.ownerLocation.longitude}
           />
-          <UserContact />
+          <UserContact
+            facebookLink={post.ownerSocialMedia.facebookLink}
+            whatsappNumber={post.ownerSocialMedia.whatsappLink}
+            phoneNumber={post.ownerSocialMedia.phoneNumber}
+          />
         </div>
         <div className="adoption-post-data-carosil">
           <PostDataCarousel postImage={post.Images} />

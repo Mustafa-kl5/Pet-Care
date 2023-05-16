@@ -14,7 +14,11 @@ export default function PostData(props) {
   };
   return (
     <div className="post-data-holder">
-      <PostUserInformation name={post.postOwner} postTime={post.postTime} />
+      <PostUserInformation
+        name={post.postOwner}
+        postTime={post.postTime}
+        userImage={post.author.userImage}
+      />
       <div className="post-data-description-comment-carosil-holder">
         <div className="post-data-description-comment">
           <PostDescription postDescription={post.description} />

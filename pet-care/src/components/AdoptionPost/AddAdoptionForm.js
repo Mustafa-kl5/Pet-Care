@@ -23,8 +23,8 @@ export default function AddAdoptionForm(props) {
     description: "",
     images: [],
     location: {
-      lan: "",
-      lng: "",
+      lat: 32,
+      lng: 35,
     },
   });
   const [recivedImages, setRecivedImages] = useState([]);
@@ -90,23 +90,25 @@ export default function AddAdoptionForm(props) {
   const deleteImage = (currentIndex) => {
     childRef.current.deleteImage(currentIndex);
   };
-  const reciveLocation = (recivelocation) => {
-    setAddAdoptionFormstate({
-      ...addAdoptionFormstate,
-      location: recivelocation,
-    });
-    console.log(addAdoptionFormstate.location);
+
+  const reciveLocation = (selectedLocation) => {
+    setAddAdoptionFormstate((prevState) => ({
+      ...prevState,
+      location: selectedLocation,
+    }));
   };
+
   const addAdoptionHandlerSubmit = async (event) => {
     event.preventDefault();
     if (addAdoptionFormstate.images.length === 0) {
       setWarning(true);
       return;
     }
-    console.log(addAdoptionFormstate);
+
     setIsLoading(true);
     await api.post("/addAdoptionPost", addAdoptionFormstate);
     setIsLoading(false);
+
     props.CloseBackDrop();
     setAddAdoptionFormstate({
       animalType: "",

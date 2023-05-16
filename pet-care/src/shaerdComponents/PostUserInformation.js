@@ -1,6 +1,5 @@
 import React from "react";
 import "../shaerdComponentStyle/PostUserInformation.css";
-import userImage from "../Image/cat.jpg";
 import timeIcon from "../Image/time.png";
 
 export default function PostUserInformation(props) {
@@ -13,7 +12,7 @@ export default function PostUserInformation(props) {
     <div className="post-username-user-image-time">
       <div
         className="post-user-mage"
-        style={{ backgroundImage: `url("${userImage}")` }}
+        style={{ backgroundImage: `url("${props.userImage}")` }}
       ></div>
       <div className="post-username-time">
         <div className="post-username">{props.name}</div>

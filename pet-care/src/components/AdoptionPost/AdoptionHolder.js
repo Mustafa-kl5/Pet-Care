@@ -67,7 +67,11 @@ function AdoptionHolder(props) {
         {loading ? (
           <LoadingBar />
         ) : (
-          <div className="adoption-post-card-holder">
+          <div
+            className={
+              adoptionPosts.length ? "adoption-post-card-holder" : "center"
+            }
+          >
             {adoptionPosts.length > 0 ? (
               adoptionPosts.map((post) => (
                 <AdoptionPostCard
@@ -77,7 +81,10 @@ function AdoptionHolder(props) {
                 />
               ))
             ) : (
-              <div>No offers available.</div>
+              <div className="empty-post-section">
+                <div className="empty-post-icon"></div>
+                <div className="empty-post-word">No posts found</div>
+              </div>
             )}
           </div>
         )}
