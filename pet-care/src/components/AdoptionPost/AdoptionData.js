@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import PetInformation from "./PetInformation";
 import AdoptionPostUserInformation from "./AdoptionPostUserInformation";
 import AddAdoptionPostToFavourite from "./AddAdoptionPostToFavourite";
+import AdoptionPostStatus from "./AdoptionPostStatus";
 
 export default function AdoptionData(props) {
   const [post, setPost] = useState(props.postData);
@@ -36,11 +37,15 @@ export default function AdoptionData(props) {
             lat={post.ownerLocation.latitude}
             lng={post.ownerLocation.longitude}
           />
-          <UserContact
-            facebookLink={post.ownerSocialMedia.facebookLink}
-            whatsappNumber={post.ownerSocialMedia.whatsappLink}
-            phoneNumber={post.ownerSocialMedia.phoneNumber}
-          />
+
+          <div className="user-contact-post-status">
+            <UserContact
+              facebookLink={post.ownerSocialMedia.facebookLink}
+              whatsappNumber={post.ownerSocialMedia.whatsappLink}
+              phoneNumber={post.ownerSocialMedia.phoneNumber}
+            />
+            <AdoptionPostStatus status={post.status} />
+          </div>
         </div>
         <div className="adoption-post-data-carosil">
           <PostDataCarousel postImage={post.Images} />

@@ -108,8 +108,8 @@ export default function AddAdoptionForm(props) {
     setIsLoading(true);
     await api.post("/addAdoptionPost", addAdoptionFormstate);
     setIsLoading(false);
-
     props.CloseBackDrop();
+    props.reloadPosts();
     setAddAdoptionFormstate({
       animalType: "",
       animalBreed: "",

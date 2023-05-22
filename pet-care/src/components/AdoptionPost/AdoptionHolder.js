@@ -11,11 +11,10 @@ function AdoptionHolder(props) {
 
   useEffect(() => {
     filterData(props.filterData);
-  }, [props.filterData]);
+  }, [props.filterData, props.reloadPost]);
 
   const filterData = async (data) => {
     setLoading(true);
-
     if (data.city === "City" || data.animalType === "AnimalType") {
       const response = await api.get("/getAllAdoptionPosts");
       let filteredPosts = response.data;
@@ -34,12 +33,10 @@ function AdoptionHolder(props) {
             item.animalType.toLowerCase() === data.animalType.toLowerCase()
         );
       }
-
       setAdoptionPosts(filteredPosts);
     } else {
       getPosts();
     }
-
     setLoading(false);
   };
 

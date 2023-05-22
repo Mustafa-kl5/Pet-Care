@@ -20,6 +20,8 @@
   width: 15.5rem;
   word-wrap: break-word;
   border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 .post-decription-scroll::-webkit-scrollbar {
   width: 0.2rem;

@@ -7,6 +7,9 @@ export default function AddAdoptionBackDrop(props) {
   const CloseBackDrop = () => {
     props.CloseBackDropAfterAdd();
   };
+  const reloadPosts = () => {
+    props.reloadPosts();
+  };
   return props.show ? (
     <div className="add-post-backdrop-main">
       <div className="add-post-form-holder">
@@ -21,7 +24,10 @@ export default function AddAdoptionBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddAdoptionForm CloseBackDrop={CloseBackDrop} />
+          <AddAdoptionForm
+            CloseBackDrop={CloseBackDrop}
+            reloadPosts={reloadPosts}
+          />
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import AddPostBackDrop from "../components/NormalPost/AddPostBackDrop";
 export default function Post(props) {
   const [showAddPost, setShowAddPost] = useState(false);
   const [activeTab, setActiveTab] = useState("asking");
+  const [newPost, SetNewPost] = useState(false);
   const handleActiveTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -22,12 +23,18 @@ export default function Post(props) {
   const CloseBackDropAfterAdd = (value) => {
     setShowAddPost(value);
   };
-  useEffect(() => {}, [activeTab]);
+
+  const handleAddPost = (newPost) => {
+    SetNewPost(newPost);
+  };
+  useEffect(() => {
+    SetNewPost(false);
+  }, [activeTab, newPost]);
   return (
     <MainBackGround>
       <ContentHolder>
         <TabsSection activStateus={handleActiveTabChange} />
-        <NormalPostCardHolder activeTab={activeTab} />
+        <NormalPostCardHolder activeTab={activeTab} newPost={newPost} />
         <CreatePostButton
           buttonClick={showAddPostBackDrop}
           buttonContent="Add Post"
@@ -36,6 +43,7 @@ export default function Post(props) {
           show={showAddPost}
           CloseBackDrop={closeAddPostBackDrop}
           sendCloseBackDrop={CloseBackDropAfterAdd}
+          handleAddPost={handleAddPost}
         />
       </ContentHolder>
     </MainBackGround>

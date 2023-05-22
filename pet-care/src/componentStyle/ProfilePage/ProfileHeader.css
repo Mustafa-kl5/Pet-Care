@@ -1,24 +1,19 @@
-.main-header-holder {
+.profile-header-holder {
   display: flex;
-  padding: 1rem 1rem;
-  border-bottom: 2px solid #e0d4d4;
-  gap: 2rem;
+  justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0.8rem 1rem;
+  border-bottom: 0.2rem solid rgba(224, 212, 212, 1);
 }
-.profile-logo {
-  background-image: url("../../Image/Setting-logo.png");
-  background-position: center;
-  background-size: cover;
+.gear-icon {
   width: 2rem;
   height: 2rem;
-  margin-top: 8px;
+  background-image: url("../../Image/Setting-logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.Profile-title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.7rem;
-  line-height: 1rem;
-  display: flex;
-  align-items: center;
+.profile-management-word {
+  font-size: 1.3rem;
+  font-weight: bold;
 }

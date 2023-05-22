@@ -8,6 +8,9 @@ export default function AddPostBackDrop(props) {
   const handelCloseBackDrop = (backdrop) => {
     props.sendCloseBackDrop(backdrop);
   };
+  const handleAddPost = (newPost) => {
+    props.handleAddPost(newPost);
+  };
 
   return props.show ? (
     <div className="add-post-backdrop-main">
@@ -23,7 +26,10 @@ export default function AddPostBackDrop(props) {
           <CloseBackDropButton handelClose={props.CloseBackDrop} />
         </div>
         <div className="add-post-form-section">
-          <AddPostForm closeBackDrop={handelCloseBackDrop} />
+          <AddPostForm
+            closeBackDrop={handelCloseBackDrop}
+            handleAddPost={handleAddPost}
+          />
         </div>
       </div>
     </div>

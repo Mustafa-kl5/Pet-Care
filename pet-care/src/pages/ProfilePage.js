@@ -1,49 +1,74 @@
-import React from "react";
-import ProfileHeader from "../components/Profile/Header";
+import React, { useState } from "react";
 import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 import "../componentStyle/ProfilePage/ProfileHeader.css";
-import ProfileImagSection from "../components/Profile/ProfileImagSection";
-import ScrollBar from "../shaerdComponents/ScrollBar";
-
-import AdoptionHolder from "../components/AdoptionPost/AdoptionHolder";
-import ResetPasswordSection from "../components/Profile/ResetPasswordSection";
-import AdoptionPostSection from "../components/Profile/AdoptionPostSection";
-import NormalPostCardHolder from "../components/NormalPost/NormalPostCardHolder";
-import "../PagesStyle/Profile.css";
-import EditBio from "../components/Profile/EditBio";
+import ProfileHeader from "../components/Profile/ProfileHeader";
+import ProfileOption from "../components/Profile/ProfileOption";
+import OptionBackDrop from "../components/Profile/OptionBackDrop";
+import DeleteAdoptationPostChangeStatus from "../components/Profile/DeleteAdoptationPostChangeStatus";
+import UpdateProfilePicture from "../components/Profile/UpdateProfilePicture";
+import ResetPassword from "../components/Profile/ResetPassword";
+import FavouriteAdoptionPost from "../components/Profile/FavouriteAdoptionPost";
+import EditeBio from "../components/Profile/EditeBio";
+import EditDeleteNormalPost from "../components/Profile/EditDeleteNormalPost";
 
 export default function Profile(props) {
+  const [showBackDrop, setShowBackDrop] = useState(false);
+  const [title, setTitle] = useState("Update Profile Image");
+  const [icon, setIcon] = useState();
+  const [selectedComponent, setSelectedComponent] = useState(null);
+
+  const handleOpenBackDrop = (option, icon) => {
+    if (showBackDrop) {
+      setShowBackDrop(false);
+    } else {
+      setShowBackDrop(true);
+      setTitle(option);
+      setIcon(icon);
+      switch (option) {
+        case "Delete adoption post or Update post status":
+          setSelectedComponent(<DeleteAdoptationPostChangeStatus />);
+          break;
+        case "Update Profile Image":
+          setSelectedComponent(<UpdateProfilePicture />);
+          break;
+        case "Password reset":
+          setSelectedComponent(<ResetPassword />);
+          break;
+        case "Favourite Adoption Post":
+          setSelectedComponent(<FavouriteAdoptionPost />);
+          break;
+        case "Edite bio":
+          setSelectedComponent(<EditeBio />);
+          break;
+        case "Edite post or delete":
+          setSelectedComponent(<EditDeleteNormalPost />);
+          break;
+        default:
+          setSelectedComponent(null);
+          break;
+      }
+    }
+  };
+
+  const handleCloseBackDrop = () => {
+    setShowBackDrop(false);
+    setSelectedComponent(null);
+  };
+
   return (
     <MainBackGround>
       <ContentHolder>
         <ProfileHeader />
-        <ScrollBar>
-          <ProfileImagSection />
-
-          <ResetPasswordSection />
-
-          <ScrollBar>
-            <div>
-              <AdoptionPostSection />
-
-              <AdoptionHolder />
-            </div>
-          </ScrollBar>
-          <div className="border"></div>
-          <ScrollBar>
-            <div>
-              <NormalPostCardHolder />
-            </div>
-          </ScrollBar>
-          <div className="border"></div>
-          <div>
-            <AdoptionPostSection text={"Favourite"} />
-
-            <AdoptionHolder />
-          </div>
-          <EditBio />
-        </ScrollBar>
+        <ProfileOption handleCilck={handleOpenBackDrop} />
+        <OptionBackDrop
+          title={title}
+          CloseBackDrop={handleOpenBackDrop}
+          show={showBackDrop}
+          icon={icon}
+        >
+          {selectedComponent}
+        </OptionBackDrop>
       </ContentHolder>
     </MainBackGround>
   );

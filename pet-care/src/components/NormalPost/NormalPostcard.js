@@ -4,12 +4,10 @@ import postIcon from "../../Image/cat.jpg";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PostLikeCommentSection from "./PostLikeCommentSection";
-import EditPostComp from "../Profile/EditPostComp";
-import DeletePost from "../Profile/DeletePost";
 
 function NormalPostcard(props) {
   const [postData, setPostData] = useState(props.data);
-  const location = useLocation();
+
   const navigate = useNavigate();
   const handleComment = () => {
     navigate(`/postData/:${props.id}`);
@@ -19,12 +17,6 @@ function NormalPostcard(props) {
   }, [props.data]);
   return (
     <div className="normal-post-card-body">
-      {location.pathname === "/Profile" ? (
-        <DeletePost PostID={props.id} />
-      ) : null}
-      {location.pathname === "/Profile" ? (
-        <EditPostComp PostID={props.id} />
-      ) : null}
       <Link to={`/postData/:${props.id}`}>
         <div>
           <img

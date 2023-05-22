@@ -45,3 +45,14 @@
   background: #01010184;
   -webkit-border-radius: 1ex;
 }
+.center-empty-comment {
+  width: 16rem;
+  height: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noComment-massage {
+  text-align: center;
+  font-weight: bold;
+}

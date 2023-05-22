@@ -18,7 +18,7 @@ export default function NormalPostCardHolder(props) {
       setLoading(false);
     };
     getPosts();
-  }, []);
+  }, [props.newPost]);
   useEffect(() => {
     setAskingPosts(posts.filter((post) => post.postType === "asking"));
     setMissingPosts(posts.filter((post) => post.postType === "missing"));

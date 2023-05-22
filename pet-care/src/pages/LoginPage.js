@@ -20,7 +20,7 @@ export default function Login(props) {
     if (response.data.auth) {
       const token = response.data.token;
       localStorage.setItem("token", token);
-      setAuthToken(token);
+      setAuthToken();
       // window.location.href = "/Home";
       navigate("/Home");
     } else {

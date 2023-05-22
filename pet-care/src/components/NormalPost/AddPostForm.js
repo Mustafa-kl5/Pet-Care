@@ -63,6 +63,7 @@ export default function AddPostForm(props) {
       setIsLoading(true);
       await api.post("/addPost", formState);
       setIsLoading(false);
+      props.handleAddPost(true);
       props.closeBackDrop(false);
       setFormState({
         postDescription: "",
