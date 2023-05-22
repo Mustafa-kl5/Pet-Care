@@ -11,7 +11,7 @@ export default function ShopingCart() {
           className="shoping-cart-logo"
           style={{ backgroundImage: `url("${cartIcon}")` }}
         ></div>
-        <div className="shoping-cart-word">Shopping Continue</div>
+        <div className="shoping-cart-word">Your Order</div>
       </div>
       <div className="shoping-cart-word-scroll">
         <div className="shoping-cart-word">
@@ -21,12 +21,6 @@ export default function ShopingCart() {
           </span>
         </div>
         <div className="shoping-cart-scroll">
-          <CartCard />
-          <CartCard />
-          <CartCard />
-          <CartCard />
-          <CartCard />
-          <CartCard />
           <CartCard />
           <CartCard />
           <CartCard />
