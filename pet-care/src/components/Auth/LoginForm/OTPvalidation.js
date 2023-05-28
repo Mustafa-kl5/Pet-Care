@@ -4,14 +4,12 @@ import api from "../../../services/api";
 import ErrorBackDrop from "../../ErrorMessages/ErrorBackDrop";
 import ResetPasswordSection from "./ResetPasswordSection";
 export default function OTPvalidation(props) {
-  const [OTP, setOTP] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
   const [showBackdrop, setBackdrop] = useState(false);
+  const [OTP, setOTP] = useState("");
   const [userID, setUserID] = useState("");
-
   const [showResetPassword, setResetPassword] = useState(false);
-
-  const combine = async () => {
+  const combine = () => {
     const otpInput = document.getElementsByClassName("otp-input");
     let otp = "";
     for (var i = 0; i < otpInput.length; i++) {
@@ -23,43 +21,29 @@ export default function OTPvalidation(props) {
     event.preventDefault();
     const userId = props.OTPInfo.data["userID"];
     setUserID(userId);
-    const response = await fetch("http://localhost:4111/auth/verifyOTP", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userID: userId, otpCode: OTP }),
+    const response = await api.post("auth/verifyOTP", {
+      userID: userId,
+      otpCode: OTP,
     });
+    const json = await response.data;
 
-    if (response.ok) {
-      const jsonObjects = await response.json();
-      if (jsonObjects.state === "Verified") {
-        setErrorMessage(jsonObjects.message);
-        setBackdrop(true);
-        setResetPassword(true);
-      }
-    } else if (response.status === 400) {
-      const errorResponse = await response.json();
-      console.log(errorResponse.message);
-      setErrorMessage(errorResponse.message);
+    if (json.message === "User email Verified Successfully") {
+      setErrorMessage(json.message);
       setBackdrop(true);
+      setResetPassword(true);
     } else {
-      // console.log("an error Occures");
+      setErrorMessage(json.message);
+      setBackdrop(true);
     }
   };
   const handleResendOTP = async () => {
-    console.log(props.OTPInfo.data["email"]);
-
-    const response = await fetch("http://localhost:4111/auth/ResendOTP", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: props.OTPInfo.data["userID"],
-        email: props.OTPInfo.data["email"],
-      }),
+    const response = await api.post("auth/ResendOTP", {
+      userID: props.OTPInfo.data["userID"],
+      email: props.OTPInfo.data["email"],
     });
+    const json = await response.data;
+    setErrorMessage(json.message);
+    setBackdrop(true);
   };
   const closeErrorHandler = () => {
     setBackdrop(false);

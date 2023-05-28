@@ -8,11 +8,7 @@ export default function VerfiyEmailSection(props) {
   };
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    const data = {
-      checkEmail: email,
-    };
-
-    props.Checkemail(data);
+    props.Checkemail(email);
   };
   return (
     <div className="enter-email-holder">
