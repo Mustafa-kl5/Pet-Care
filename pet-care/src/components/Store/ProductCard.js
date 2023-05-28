@@ -4,7 +4,10 @@ import image from "../../Image/cat.jpg";
 import minusIcon from "../../Image/minus.png";
 import plusIcon from "../../Image/plus.png";
 import api from "../../services/api";
+import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
 export default function ProductCard(props) {
+  const [Message, setMessage] = useState("");
+  const [BackDrop, setBackDrop] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const handlePlusProduct = () => {
     setQuantity(quantity + 1);
@@ -27,8 +30,12 @@ export default function ProductCard(props) {
     );
 
     const data = await response.data;
+    setMessage(data.message);
+    setBackDrop(true);
   };
-
+  const handleCloseBackDrop = () => {
+    setBackDrop(false);
+  };
   return (
     <div className="product-card-item">
       <div
@@ -59,6 +66,12 @@ export default function ProductCard(props) {
       >
         ADD TO CART
       </button>
+
+      <ErrorBackDrop
+        show={BackDrop}
+        CloseBackDrop={handleCloseBackDrop}
+        HandelMessage={Message}
+      />
     </div>
   );
 }

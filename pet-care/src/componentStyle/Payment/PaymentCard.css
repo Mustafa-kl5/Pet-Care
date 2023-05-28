@@ -51,7 +51,7 @@
   width: 16.8rem;
   height: 2.5rem;
   background: rgba(255, 255, 255, 0.387);
-  color: rgba(196, 196, 196, 1);
+  color: white;
   border: 0;
 }
 .payment-card-expiration-cvv {
@@ -70,7 +70,7 @@
   width: 7.59rem;
   height: 2.5rem;
   background: rgba(255, 255, 255, 0.387);
-  color: rgba(196, 196, 196, 1);
+  color: white;
   border: 0;
 }
 .payment-total-submitButton {
