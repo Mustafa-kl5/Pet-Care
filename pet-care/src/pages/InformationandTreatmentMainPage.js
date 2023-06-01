@@ -11,30 +11,26 @@ import { useParams } from "react-router-dom";
 import api from "../services/api";
 export default function InformationandTreatmentMainPage() {
   const [data, setdata] = useState([]);
+  const [typeImage, setTypeImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  var { breed } = useParams();
-  var { type } = useParams();
-  breed = breed.replace(":", "");
-  type = type.replace(":", "");
+  let { breed, type, src } = useParams();
+  let breedName = breed.replace(":", "");
+  let typeName = type.replace(":", "");
+  let TypeID = src.replace(":", "");
+  console.log(breedName);
+  console.log(TypeID);
   useEffect(() => {
     getAnimalData();
   }, []);
   const getAnimalData = async () => {
-    const response = await fetch(
-      "http://localhost:4111/InformationPage/getAnimalInformation",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          type: type,
-          breed: breed,
-        }),
-      }
-    );
-    const data = await response.json();
-    setdata(data);
+    const response = await api.post("/InformationPage/getAnimalInformation", {
+      type: typeName,
+      breed: breedName,
+      typeID: TypeID,
+    });
+    const json = await response.data;
+    setdata(json.animalData);
+    setTypeImage(json.animalType.TypeImage[0].fileName);
     setIsLoading(false);
   };
   console.log(data);
@@ -46,10 +42,16 @@ export default function InformationandTreatmentMainPage() {
           <p>loading</p>
         ) : (
           <ScrollBar>
-            <InformationandTreatmentHeaderType AnimalType={type} />
+            <InformationandTreatmentHeaderType
+              AnimalType={typeName}
+              AnimalTypeImage={typeImage}
+            />
             <InformationPageSwiper Swiper={data[0].images} />
 
-            <InformationText Breed={breed} Information={data[0].information} />
+            <InformationText
+              Breed={breedName}
+              Information={data[0].information}
+            />
             <InformationLocation location={data[0].clinicLocation} />
           </ScrollBar>
         )}

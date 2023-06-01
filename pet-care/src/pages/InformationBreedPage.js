@@ -12,58 +12,61 @@ import InformationandTreatmentHeaderType from "../shaerdComponents/Informationan
 import { Link } from "react-router-dom";
 export default function InformationBreedPage() {
   const [InformationData, setInformationData] = useState([]);
-  const { type } = useParams();
-  var AnimalType = type.replace(":", "");
+  const [typeImagePath, setImagePath] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const { type, src } = useParams();
+  const scrollHeight = 47;
+  let animalType = type.replace(":", "");
+  let typeID = src.replace(":", "");
+
   useEffect(() => {
     fetchData();
   }, []);
-
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:4111/InformationPage/getBreed",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify({
-            type: AnimalType,
-          }),
-        }
-      );
+      const response = await api.post("/InformationPage/getBreed", {
+        type: animalType,
+        typeID: typeID,
+      });
 
-      const data = await response.json();
-      setInformationData(data);
+      const json = await response.data;
+      setImagePath(json.animalType.TypeImage[0].fileName);
+
+      setInformationData(json.informationBlog);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
   };
-
-  const scrollHeight = 47;
-
   return (
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
-
-        <ScrollBar Height={scrollHeight}>
-          <InformationandTreatmentHeaderType AnimalType={AnimalType} />
-          <InformationCardHolder>
-            {InformationData.map((data) => (
-              <Link
-                key={data._id}
-                to={`/InformationandTreatmentMainPage/${data.animalBreed}/${AnimalType}`}
-                className="Animal-Breed-Link"
-              >
-                <BreedCard
-                  BreedName={data.animalBreed}
-                  BreedImage={data.images[0]}
-                />
-              </Link>
-            ))}
-          </InformationCardHolder>
+        <ScrollBar>
+          {isLoading ? (
+            <div>Loading</div>
+          ) : (
+            <>
+              <InformationandTreatmentHeaderType
+                AnimalTypeImage={typeImagePath}
+                AnimalType={animalType}
+              />
+              <InformationCardHolder>
+                {InformationData.map((data) => (
+                  <Link
+                    key={data._id}
+                    to={`/InformationandTreatmentMainPage/:${data.animalBreed}/:${data.animalType}/:${typeID}`}
+                    className="Animal-Breed-Link"
+                  >
+                    <BreedCard
+                      BreedName={data.animalBreed}
+                      BreedImage={data.images[0]}
+                    />
+                  </Link>
+                ))}
+              </InformationCardHolder>
+            </>
+          )}
         </ScrollBar>
       </ContentHolder>
     </MainBackGround>

@@ -1,33 +1,41 @@
 import React, { useEffect, useState } from "react";
 import "../../componentStyle/Store/StoreHeader.css";
 import storeIcon from "../../Image/store.png";
+import api from "../../services/api";
 
 export default function StoreHeader(props) {
   const [Type, setType] = useState("Food");
-  const [animalType, setanimalType] = useState("Cats");
+  const [animalType, setanimalType] = useState([]);
+  const [SelectedType, setSelectedType] = useState("Cats");
 
   useEffect(() => {
     sendType();
   }, [Type]);
   useEffect(() => {
     sendType();
-  }, [animalType]);
+  }, [SelectedType]);
+  useEffect(() => {
+    getAnimalTypes();
+  }, []);
+  const getAnimalTypes = async () => {
+    const response = await api.get("/StorePage/getTypes", {});
+    const json = await response.data;
+    setanimalType(json.allModelsData[0]);
+  };
   const sendType = () => {
-    props.handleProductType(Type, animalType);
+    props.handleProductType(Type, SelectedType);
   };
   const handlefoodtype = () => {
     const selectedType = "Food";
     setType(selectedType);
   };
-
   const handleAccessoriestype = () => {
     const selectedType = "Accessories";
     setType(selectedType);
   };
   const handleTypeSelect = (e) => {
-    setanimalType(e.target.value);
+    setSelectedType(e.target.value);
   };
-
   return (
     <div className="store-header-holder">
       <div className="store-header-logo-title">
@@ -61,10 +69,9 @@ export default function StoreHeader(props) {
             className="store-header-product-animal-type-select"
             onChange={handleTypeSelect}
           >
-            <option>Cats</option>
-            <option>Dogs</option>
-            <option>Birds</option>
-            <option>Rabbits</option>
+            {animalType.map((ele) => (
+              <option>{ele.TypeName}</option>
+            ))}
           </select>
         </div>
       </div>
