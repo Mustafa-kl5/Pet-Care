@@ -4,6 +4,7 @@ import api from "../../services/api";
 import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
 import CardCartType from "./CardCartType";
 export default function PaymentCard(props) {
+  const update = props.update;
   const userID = props.ID;
   const order = props.OrderData;
   const UpdatedProducts = order.products;
@@ -49,24 +50,22 @@ export default function PaymentCard(props) {
     setCardInformation({ ...CardInformation, cardExpiry: formattedValue });
     e.target.value = formattedValue;
   };
-
   const handleCVV = (e) => {
     setCardInformation({ ...CardInformation, cardCvc: e.target.value });
   };
   const CalculateTotal = () => {
     let calculatedTotal = 0;
-    for (let i = 0; i < UpdatedProducts.length; i++) {
-      calculatedTotal +=
-        UpdatedProducts[i].productPrice * UpdatedProducts[i].productQuntity;
-    }
+
+    UpdatedProducts.forEach((element) => {
+      calculatedTotal += element.productPrice * element.productQuntity;
+    });
     setCardInformation({ ...CardInformation, totalPrice: calculatedTotal });
   };
   useEffect(() => {
-    if (UpdatedProducts.length > 0) CalculateTotal();
-    else {
+    CalculateTotal();
+    if (UpdatedProducts.length < 1)
       setCardInformation({ ...CardInformation, totalPrice: 0 });
-    }
-  }, [UpdatedProducts]);
+  }, [UpdatedProducts, update]);
   return (
     <div className="payment-card-holder">
       <div className="payment-card-section">

@@ -24,7 +24,7 @@ export default function InformationTreatmentPage() {
   useEffect(() => {
     getType();
   }, []);
-  console.log(TypeData);
+
   return (
     <MainBackGround>
       <ContentHolder>

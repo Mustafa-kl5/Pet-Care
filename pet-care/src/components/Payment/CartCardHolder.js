@@ -4,7 +4,7 @@ import ShopingCart from "./ShopingCart";
 import PaymentCard from "./PaymentCard";
 import api from "../../services/api";
 export default function CartCardHolder(props) {
-  const [update, setUpdate] = useState(0);
+  const [update, setUpdate] = useState(false);
   const [Order, setOrder] = useState([]);
   const [userId, setUserId] = useState();
   const [Loading, setLoading] = useState(true);
@@ -22,12 +22,8 @@ export default function CartCardHolder(props) {
   };
 
   const handleUpdate = () => {
-    setUpdate(update + 1);
+    setUpdate(!update);
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
   useEffect(() => {
     getData();
   }, [update]);
@@ -42,7 +38,7 @@ export default function CartCardHolder(props) {
             ID={userId}
             handleUpdate={handleUpdate}
           />
-          <PaymentCard OrderData={Order} ID={userId} />
+          <PaymentCard OrderData={Order} ID={userId} update={update} />
         </>
       )}
     </div>

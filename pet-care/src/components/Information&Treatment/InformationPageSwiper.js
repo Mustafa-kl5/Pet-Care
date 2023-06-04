@@ -7,8 +7,6 @@ import "../../componentStyle/Information&Treatment/InfomrmationSwiperPage.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 export default function InformationPageSwiper(props) {
   const swiper = props.Swiper;
-  console.log(swiper[0]);
-
   return (
     <>
       <Swiper
@@ -21,7 +19,6 @@ export default function InformationPageSwiper(props) {
         className="mySwiper"
       >
         {swiper.map((ele, index) => {
-          console.log(ele.fileName);
           return (
             <SwiperSlide>
               <div

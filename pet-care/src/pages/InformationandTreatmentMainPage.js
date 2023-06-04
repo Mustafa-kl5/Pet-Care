@@ -17,8 +17,6 @@ export default function InformationandTreatmentMainPage() {
   let breedName = breed.replace(":", "");
   let typeName = type.replace(":", "");
   let TypeID = src.replace(":", "");
-  console.log(breedName);
-  console.log(TypeID);
   useEffect(() => {
     getAnimalData();
   }, []);
@@ -33,7 +31,6 @@ export default function InformationandTreatmentMainPage() {
     setTypeImage(json.animalType.TypeImage[0].fileName);
     setIsLoading(false);
   };
-  console.log(data);
   return (
     <MainBackGround>
       <ContentHolder>

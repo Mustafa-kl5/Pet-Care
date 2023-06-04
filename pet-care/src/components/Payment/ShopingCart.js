@@ -3,13 +3,13 @@ import "../../componentStyle/Payment/ShopingCart.css";
 import cartIcon from "../../Image/backet.png";
 import CartCard from "./CartCard";
 import api from "../../services/api";
+import ProductCard from "../Store/ProductCard";
 export default function ShopingCart(props) {
   const Order = props.OrderData;
   const products = Order.products;
   const userId = props.ID;
   const { handleUpdate } = props;
-  const [productId, setProductId] = useState();
-  const [product, setProduct] = useState(products);
+  const [UpdatedProducts, setUpdatedProduct] = useState(products);
   const DeleteProducts = async (id) => {
     const response = await api.delete("/OrderPage/deleteProductsFromPasket", {
       data: { OrderId: Order._id, ProductId: id, userID: userId },
@@ -17,17 +17,10 @@ export default function ShopingCart(props) {
     const json = await response.data;
     handleUpdate();
   };
-
-  useEffect(() => {
-    if (productId) {
-      DeleteProducts(productId);
-    }
-    setProductId(null);
-  }, [productId]);
-  const handleDeletProduct = (id) => {
-    const updatedProduct = product.filter((item) => item._id !== id);
-    setProduct(updatedProduct);
-    setProductId(id);
+  const handleDeletProduct = async (id) => {
+    await DeleteProducts(id);
+    const updatedData = UpdatedProducts.filter((ele) => ele._id !== id);
+    setUpdatedProduct(updatedData);
   };
   return (
     <div className="shoping-cart-holder">
@@ -42,13 +35,15 @@ export default function ShopingCart(props) {
         <div className="shoping-cart-word">
           Shopping cart <br />
           <span className="shoping-cart-word-span">
-            {`You have ${product.length} item in your cart`}
+            {`You have ${UpdatedProducts.length} item in your cart`}
           </span>
         </div>
         <div className="shoping-cart-scroll">
-          {product.map((ele, index) => (
+          {UpdatedProducts.map((ele, index) => (
             <CartCard
+              key={index}
               productData={ele}
+              id={ele._id}
               index={index}
               handleDeletProduct={handleDeletProduct}
             />
