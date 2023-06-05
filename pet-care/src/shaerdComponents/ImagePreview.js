@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "../shaerdComponentStyle/ImagePreview.css";
 import imageIcon from "../Image/imageIcon.png";
 import deleteIcon from "../Image/delete.png";
-import cat from "../Image/cat.jpg";
-import Post from "../pages/PostPage";
 
 export default function ImagePreview(props) {
   const deleteImage = (index) => {

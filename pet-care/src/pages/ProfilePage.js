@@ -9,7 +9,6 @@ import DeleteAdoptationPostChangeStatus from "../components/Profile/DeleteAdopta
 import UpdateProfilePicture from "../components/Profile/UpdateProfilePicture";
 import ResetPassword from "../components/Profile/ResetPassword";
 import FavouriteAdoptionPost from "../components/Profile/FavouriteAdoptionPost";
-import EditeBio from "../components/Profile/EditeBio";
 import EditDeleteNormalPost from "../components/Profile/EditDeleteNormalPost";
 
 export default function Profile(props) {
@@ -38,9 +37,7 @@ export default function Profile(props) {
         case "Favourite Adoption Post":
           setSelectedComponent(<FavouriteAdoptionPost />);
           break;
-        case "Edite bio":
-          setSelectedComponent(<EditeBio />);
-          break;
+
         case "Edite post or delete":
           setSelectedComponent(<EditDeleteNormalPost />);
           break;

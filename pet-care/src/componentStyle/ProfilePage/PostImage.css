@@ -1,0 +1,73 @@
+.edit-delete-icon-hidden {
+  display: none;
+}
+.edit-image-preview-holder {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.edit-preview-logo-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.edit-preview-logo {
+  width: 3rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.edit-preview-word {
+  font-size: 1.3rem;
+}
+.edit-preview-scrollholder {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 28rem;
+  height: 11.25rem;
+  margin-bottom: 1rem;
+}
+.edit-card-image-preview-holder {
+  width: 27.5rem;
+  min-height: 11.25rem;
+  background: rgb(191, 225, 243);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, calc(25rem / 2));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.edit-post-image-card {
+  width: calc(25rem / 2);
+  height: calc(25rem / 2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: end;
+}
+.edit-delete-icon {
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.edit-preview-scrollholder::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #00000017;
+  border-radius: 2rem;
+}
+
+.edit-preview-scrollholder::-webkit-scrollbar-thumb {
+  background: #000000af;
+  -webkit-border-radius: 1ex;
+  height: 1rem;
+}

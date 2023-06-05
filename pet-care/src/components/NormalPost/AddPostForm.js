@@ -4,30 +4,19 @@ import ImageUploder from "../../shaerdComponents/ImageUploder";
 import ImagePreview from "../../shaerdComponents/ImagePreview";
 import { async } from "q";
 import api from "../../services/api";
-import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import LoadingProgress from "../../shaerdComponents/LoadingProgress";
-import WarningBar from "../../shaerdComponents/WarningBar";
 export default function AddPostForm(props) {
   const [recivedImages, setRecivedImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [warning, setWarning] = useState(false);
-  const [warningMassage, setWarningMassage] = useState(
-    "You must add at least one photo"
-  );
   const childRef = useRef();
   const [formState, setFormState] = useState({
     postDescription: "",
     postType: "missing",
     images: [],
   });
-  useEffect(() => {
-    if (warning) {
-      const timer = setTimeout(() => {
-        setWarning(false);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [warning]);
+
   const reciveImages = (images) => {
     setRecivedImages(images);
     setFormState({
@@ -57,14 +46,17 @@ export default function AddPostForm(props) {
     event.preventDefault();
 
     if (formState.images.length === 0) {
-      setWarning(true);
+      notify("You Forget To Add At least One Image ");
       return;
     } else {
       setIsLoading(true);
       await api.post("/addPost", formState);
       setIsLoading(false);
-      props.handleAddPost(true);
-      props.closeBackDrop(false);
+      notifySuccess();
+      setTimeout(() => {
+        props.handleAddPost(true);
+        props.closeBackDrop(false);
+      }, 2000);
       setFormState({
         postDescription: "",
         postType: "",
@@ -72,6 +64,28 @@ export default function AddPostForm(props) {
       });
     }
   };
+  const notify = (massage) =>
+    toast.warn(massage, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const notifySuccess = () =>
+    toast.success("Your Post Added Successfully", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   return (
     <>
       <form
@@ -120,9 +134,9 @@ export default function AddPostForm(props) {
             POST
           </button>
         </div>
+        <ToastContainer />
       </form>
       <LoadingProgress show={isLoading} />
-      <WarningBar showWarning={warning} massage={warningMassage} />
     </>
   );
 }

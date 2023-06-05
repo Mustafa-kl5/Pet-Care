@@ -1,0 +1,28 @@
+.edit-decription-holder {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 27rem;
+}
+.edit-decription-word {
+  font-size: 1.6rem;
+}
+.edit-decription-input {
+  background: rgba(238, 242, 243, 1);
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  border: 0;
+  width: 26.7rem;
+  height: 10rem;
+}
+.edit-decription-input::-webkit-scrollbar {
+  width: 0.2rem;
+  background: #0000001b;
+  -webkit-border-radius: 1ex;
+}
+.edit-decription-input::-webkit-scrollbar-thumb {
+  background: #01010184;
+  -webkit-border-radius: 1ex;
+}

@@ -85,3 +85,12 @@
   background: rgba(14, 38, 49, 1);
   color: white;
 }
+.add-adoption-select-input {
+  width: 13.1rem;
+  padding-left: 1rem;
+  border: 0;
+
+  background: rgba(238, 242, 243, 1);
+  height: 1.9rem;
+  border-radius: 0.5rem;
+}

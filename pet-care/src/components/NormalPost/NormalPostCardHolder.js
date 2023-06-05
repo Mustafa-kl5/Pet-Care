@@ -4,6 +4,7 @@ import postIcon from "../../Image/postBox.png";
 import NormalPostcard from "./NormalPostcard";
 import api from "../../services/api";
 import LoadingBar from "../../shaerdComponents/LoadingBar";
+import NoPostFound from "../Profile/NoPostFound";
 
 export default function NormalPostCardHolder(props) {
   const [posts, setPosts] = useState([]);
@@ -43,8 +44,7 @@ export default function NormalPostCardHolder(props) {
           <LoadingBar />
         ) : missingPosts.length === 0 && askingPosts.length === 0 ? (
           <div className="empty-post-section">
-            <div className="empty-post-icon"></div>
-            <div className="empty-post-word">No posts found</div>
+            <NoPostFound massage="No Post Found" />
           </div>
         ) : (
           <div className="normal-post-card-holder">

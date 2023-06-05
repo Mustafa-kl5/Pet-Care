@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../componentStyle/AdoptionPost/FilterForm.css";
+import { citySelector } from "../../Constant/CitySelector";
+import { animalTypeSelector } from "../../Constant/AnimalTypeSelector";
 function FilterForm(props) {
   const [filterAdoption, setFilterAdoption] = useState({
     city: "City",
@@ -17,31 +19,22 @@ function FilterForm(props) {
   return (
     <div className="filter-holder">
       <div className="filter-word">Filter</div>
-      <select className="filter-adoption" onChange={handleSelectChangeCity}>
-        <option>City</option>
-        <option value={"irbid"}>Irbid</option>
-        <option value={"amman"}>Amman</option>
-        <option value={"zarqa"}>Zarqa</option>
-        <option value={"jerash"}>Jerash</option>
+      <select
+        className="filter-adoption"
+        onChange={handleSelectChangeCity}
+        value={filterAdoption.city}
+      >
+        <option value={"City"}>City</option>
+        {citySelector()}
       </select>
       <select
         className="filter-adoption"
         onChange={handleSelectChangeAnimalType}
+        value={filterAdoption.animalType}
       >
-        <option>Animal Type</option>
-        <option value={"cat"}>Cat</option>
-        <option value={"dog"}>Dog</option>
-        <option value={"hamster"}>Hamster</option>
-        <option value={"bird"}>Bird</option>
+        <option value={"AnimalType"}>Animal Type</option>
+        {animalTypeSelector()}
       </select>
-      {/* <select className="filter-adoption">
-        <option>Animal Breed</option>
-        <option>Animal Type</option>
-        <option>Cat</option>
-        <option>Dog</option>
-        <option>Hamster</option>
-        <option>Bird</option>
-      </select> */}
     </div>
   );
 }

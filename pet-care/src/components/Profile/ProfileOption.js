@@ -68,16 +68,6 @@ export default function ProfileOption(props) {
           ></div>
           Favourite Adoption Post
         </div>
-        <div
-          className="option-item"
-          onClick={() => handleButtonClick("Edite bio", bioIcon)}
-        >
-          <div
-            className="option-icon"
-            style={{ backgroundImage: `url("${bioIcon}")` }}
-          ></div>
-          Edite bio
-        </div>
       </div>
     </div>
   );

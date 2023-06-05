@@ -4,15 +4,14 @@ import ImagePreview from "../../shaerdComponents/ImagePreview";
 import ImageUploder from "../../shaerdComponents/ImageUploder";
 import LocationPicker from "../../shaerdComponents/MapPicker";
 import LoadingProgress from "../../shaerdComponents/LoadingProgress";
-import WarningBar from "../../shaerdComponents/WarningBar";
 import api from "../../services/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { animalTypeSelector } from "../../Constant/AnimalTypeSelector";
 
 export default function AddAdoptionForm(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [warning, setWarning] = useState(false);
-  const [warningMassage, setWarningMassage] = useState(
-    "You must add at least one photo"
-  );
+
   const [addAdoptionFormstate, setAddAdoptionFormstate] = useState({
     animalType: "",
     animalBreed: "",
@@ -29,14 +28,7 @@ export default function AddAdoptionForm(props) {
   });
   const [recivedImages, setRecivedImages] = useState([]);
   const childRef = useRef();
-  useEffect(() => {
-    if (warning) {
-      const timer = setTimeout(() => {
-        setWarning(false);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [warning]);
+
   const handleAnimalType = (event) => {
     setAddAdoptionFormstate({
       ...addAdoptionFormstate,
@@ -101,15 +93,19 @@ export default function AddAdoptionForm(props) {
   const addAdoptionHandlerSubmit = async (event) => {
     event.preventDefault();
     if (addAdoptionFormstate.images.length === 0) {
-      setWarning(true);
+      notify("You Forget To Add At least One Image ");
       return;
     }
 
     setIsLoading(true);
     await api.post("/addAdoptionPost", addAdoptionFormstate);
     setIsLoading(false);
-    props.CloseBackDrop();
-    props.reloadPosts();
+    notifySuccess();
+    setTimeout(() => {
+      props.CloseBackDrop();
+      props.reloadPosts();
+    }, 2000);
+
     setAddAdoptionFormstate({
       animalType: "",
       animalBreed: "",
@@ -125,6 +121,30 @@ export default function AddAdoptionForm(props) {
       },
     });
   };
+
+  const notify = (massage) =>
+    toast.warn(massage, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const notifySuccess = () =>
+    toast.success("Your Offer Added Successfully", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   return (
     <>
       <form
@@ -135,13 +155,16 @@ export default function AddAdoptionForm(props) {
           <div className="add-adoption-animal-information">
             <div className="header-word">Animal Information</div>
             <div className="add-adoption-animal-type-name-breed">
-              <input
+              <select
                 placeholder="Animal Type"
-                className="add-adoption-input"
+                className="add-adoption-select-input"
                 onChange={handleAnimalType}
                 value={addAdoptionFormstate.animalType}
                 required={true}
-              />
+              >
+                <option>Animal Types</option>
+                {animalTypeSelector()}
+              </select>
               <input
                 placeholder="Animal Breed"
                 className="add-adoption-input"
@@ -212,9 +235,9 @@ export default function AddAdoptionForm(props) {
             POST
           </button>
         </div>
+        <ToastContainer />
       </form>
       <LoadingProgress show={isLoading} />
-      <WarningBar showWarning={warning} massage={warningMassage} />
     </>
   );
 }

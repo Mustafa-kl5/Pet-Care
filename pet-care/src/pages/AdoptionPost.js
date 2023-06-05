@@ -34,7 +34,7 @@ export default function AdoptionPost(props) {
     <MainBackGround>
       <ContentHolder>
         <FilterForm sendFilterAdoption={handleReciveFilterPost} />
-        <AdoptionHolder filterData={filterData} reloadPost={reloadPost} />
+        <AdoptionHolder filterData={filterData} reloadPosts={reloadPost} />
         <CreatePostButton
           buttonClick={handleOpenBackDrop}
           buttonContent="Add offer"

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../componentStyle/ProfilePage/UpdateProfilePicture.css";
-import defaultUserImage from "../../Image/cat.jpg";
 import { getUserId } from "../../hooks/auth/getUserId";
 import api from "../../services/api";
-import { id } from "date-fns/locale";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function UpdateProfilePicture() {
   const [userImage, setUserImage] = useState(
     "https://drive.google.com/uc?export=view&id=1E3BnucRlTp-NGO-Za4HjUc8HktclTb-f"
@@ -20,7 +20,7 @@ export default function UpdateProfilePicture() {
       const response = await api.post(`/changeUserImage/:${getUserId()}`, {
         userImageToUpload: base64String,
       });
-      console.log(response.data);
+      notifySuccess();
     };
 
     if (file) {
@@ -40,9 +40,22 @@ export default function UpdateProfilePicture() {
     setUserImage(response.data.userImage);
   };
 
+  const notifySuccess = () =>
+    toast.success("Your Profile Picture Changed Successfully", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   return (
     <div className="update-image-holder">
-      <img src={userImage} className="update-user-image" />
+      <img src={userImage} className="update-user-image" alt="userImage" />
+      <ToastContainer />
       <button
         className="uploade-user-image-button"
         onClick={handleChooseButtonClick}

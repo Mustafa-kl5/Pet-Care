@@ -1,66 +1,83 @@
-export function Validation(UserInputs) {
-  var ErrorMessage = "";
-  var passwordformat = new RegExp(
-    /^(?=.*[0-9])(?=.*[!@#$%^&?*])[a-zA-Z0-9!@#$%^&?*]{7,15}$/
-  );
-  var Password = UserInputs.password;
-  var passwordvalidation = passwordformat.test(Password);
-  var output;
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  var mailvalidation = mailformat.test(UserInputs.email);
-  var CheckInput = true;
-  if (UserInputs.firstName.length > 15 && UserInputs.firstName.length < 5) {
-    CheckInput = false;
-    ErrorMessage = "FirstName should between 5-15 keys";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (
-    UserInputs.lastName.length > 15 &&
-    UserInputs.lastName.length < 5
-  ) {
-    CheckInput = false;
-    ErrorMessage = "LastName should be between  5-15 keys";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (mailvalidation === false) {
-    CheckInput = false;
-    ErrorMessage =
-      "Email should contain Upper-lower-Case ,Digits, and Characters like @ ";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (
-    !isNaN(UserInputs.phoneNumber) === false &&
-    UserInputs.phoneNumber > 10 &&
-    UserInputs.phoneNumber <= 15
-  ) {
-    CheckInput = false;
-    ErrorMessage =
-      "PhoneNumber should not contain Characters,Please enter a number should be between 10-15 keys Max";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (passwordvalidation === false) {
-    CheckInput = false;
-    ErrorMessage =
-      "Passwords Should be between 7 to 15 characters which contain at least one numeric digit and a special character!";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (UserInputs.retypePassword !== Password) {
-    CheckInput = false;
-    ErrorMessage = "Doesnt match the Password";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (UserInputs.city.length < 1) {
-    CheckInput = false;
-    ErrorMessage = "Please Enter Your City";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else if (UserInputs.address.length < 1) {
-    CheckInput = false;
-    ErrorMessage = "Please Enter Your address";
-    output = [CheckInput, ErrorMessage];
-    return output;
-  } else {
-    output = [CheckInput, ""];
-    return output;
+import { toast } from "react-toastify";
+
+export const isValidEmail = (email) => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+};
+
+export const isValidPassword = (password) => {
+  if (password.length < 6 || password.length > 20) {
+    return false;
   }
-}
+  if (!/\d/.test(password)) {
+    return false;
+  }
+  if (!/[!@#$%^&*]/.test(password)) {
+    return false;
+  }
+  return true;
+};
+
+export const checkStringVariables = (obj) => {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      if (typeof value === "string" && value.length <= 0) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+export const birthDayValidation = (obj) => {
+  if (
+    obj.dayOfBirth != null &&
+    obj.monthOfBirth != null &&
+    obj.yearOfBirth != null &&
+    obj.dayOfBirth != "DD" &&
+    obj.monthOfBirth != "MM" &&
+    obj.yearOfBirth != "YYYY"
+  ) {
+    return true;
+  }
+
+  return false;
+};
+export const notifyError = (message) => {
+  toast.error(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
+
+export const nameValidation = (input) => {
+  const minLength = 2;
+  const maxLength = 12;
+  const length = input.trim().length;
+  return length >= minLength && length <= maxLength;
+};
+export const cityValidation = (input) => {
+  if (input === "City") {
+    return true;
+  }
+  return false;
+};
+
+export const validationPhoneNumber = (number) => {
+  if (
+    (number.startsWith("078") ||
+      number.startsWith("077") ||
+      number.startsWith("079")) &&
+    number.length === 10
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};

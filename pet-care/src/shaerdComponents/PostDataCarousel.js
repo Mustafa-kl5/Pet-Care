@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import catImage from "../Image/cat.jpg";
 export default function PostDataCarousel(props) {
   return (
     <>

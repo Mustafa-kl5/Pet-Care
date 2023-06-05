@@ -1,7 +1,6 @@
 import React from "react";
 import "../../componentStyle/ProfilePage/OptionBackDrop.css";
 import CloseBackDropButton from "../../shaerdComponents/CloseBackDropButton";
-import plusIcon from "../../Image/postBox.png";
 export default function OptionBackDrop(props) {
   return props.show ? (
     <div className="profile-backdrop-main">

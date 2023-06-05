@@ -4,45 +4,43 @@ import "../../componentStyle/AdoptionPost/AdoptionPostHolder.css";
 import postIcon from "../../Image/postBox.png";
 import LoadingBar from "../../shaerdComponents/LoadingBar";
 import api from "../../services/api";
+import NoPostFound from "../Profile/NoPostFound";
 
 function AdoptionHolder(props) {
   const [adoptionPosts, setAdoptionPosts] = useState([]);
+  const [filterdAdoptionPosts, setFilterdAdoptionPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     filterData(props.filterData);
-  }, [props.filterData, props.reloadPost]);
+  }, [props.filterData]);
 
-  const filterData = async (data) => {
-    setLoading(true);
-    if (data.city === "City" || data.animalType === "AnimalType") {
-      const response = await api.get("/getAllAdoptionPosts");
-      let filteredPosts = response.data;
+  useEffect(() => {
+    getPosts();
+  }, [props.reloadPosts]);
 
-      if (data.city !== "City") {
-        filteredPosts = filteredPosts.filter(
-          (item) =>
-            item.city && item.city.toLowerCase() === data.city.toLowerCase()
-        );
-      }
+  const filterData = (data) => {
+    let filteredData = filterdAdoptionPosts;
 
-      if (data.animalType !== "AnimalType") {
-        filteredPosts = filteredPosts.filter(
-          (item) =>
-            item.animalType &&
-            item.animalType.toLowerCase() === data.animalType.toLowerCase()
-        );
-      }
-      setAdoptionPosts(filteredPosts);
-    } else {
-      getPosts();
+    if (data.city !== "City") {
+      filteredData = filteredData.filter((post) => post.city === data.city);
     }
-    setLoading(false);
+
+    if (data.animalType !== "AnimalType") {
+      filteredData = filteredData.filter(
+        (post) => post.animalType === data.animalType
+      );
+    }
+
+    setAdoptionPosts(filteredData);
   };
 
   const getPosts = async () => {
+    setLoading(true);
     const response = await api.get("/getAllAdoptionPosts");
+    setFilterdAdoptionPosts(response.data);
     setAdoptionPosts(response.data);
+    setLoading(false);
   };
 
   return (
@@ -79,8 +77,7 @@ function AdoptionHolder(props) {
               ))
             ) : (
               <div className="empty-post-section">
-                <div className="empty-post-icon"></div>
-                <div className="empty-post-word">No posts found</div>
+                <NoPostFound massage="No Post Found" />
               </div>
             )}
           </div>

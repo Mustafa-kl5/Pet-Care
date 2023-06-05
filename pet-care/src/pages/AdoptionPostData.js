@@ -16,7 +16,6 @@ export default function AdoptionPostData() {
     const response = await api.get(`/getAdoptionPostById/:${id}`);
     setPost(response.data);
     setLoading(false);
-    console.log(post);
   };
   useEffect(() => {
     getPost();

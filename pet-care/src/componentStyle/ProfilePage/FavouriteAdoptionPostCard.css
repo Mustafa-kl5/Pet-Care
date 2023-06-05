@@ -1,0 +1,36 @@
+.favourite-adoption-post-card {
+  width: 18.8rem;
+  height: 13rem;
+  background-color: black;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+.favourite-adoption-post-card-image {
+  width: 18.8rem;
+  height: 13rem;
+  border-radius: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.favourite-adoption-post-owner-image-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 0.5rem;
+  padding-top: 0.3rem;
+}
+
+.favourite-adoption-post-owner-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+.favourite-adoption-post-owner-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
