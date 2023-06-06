@@ -10,6 +10,8 @@ export default function Post(props) {
   const [showAddPost, setShowAddPost] = useState(false);
   const [activeTab, setActiveTab] = useState("asking");
   const [newPost, SetNewPost] = useState(false);
+  const [showExitAnimation, setShowExitAnimation] = useState(false);
+
   const handleActiveTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -17,19 +19,32 @@ export default function Post(props) {
   const showAddPostBackDrop = () => {
     setShowAddPost(true);
   };
+
   const closeAddPostBackDrop = () => {
-    setShowAddPost(false);
+    setShowExitAnimation(true);
+
+    setTimeout(() => {
+      setShowAddPost(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
+
   const CloseBackDropAfterAdd = (value) => {
-    setShowAddPost(value);
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setShowAddPost(value);
+      setShowExitAnimation(false);
+    }, 1100);
   };
 
   const handleAddPost = (newPost) => {
     SetNewPost(newPost);
   };
+
   useEffect(() => {
     SetNewPost(false);
   }, [activeTab, newPost]);
+
   return (
     <MainBackGround>
       <ContentHolder>
@@ -41,6 +56,7 @@ export default function Post(props) {
         />
         <AddPostBackDrop
           show={showAddPost}
+          showExitAnimation={showExitAnimation}
           CloseBackDrop={closeAddPostBackDrop}
           sendCloseBackDrop={CloseBackDropAfterAdd}
           handleAddPost={handleAddPost}

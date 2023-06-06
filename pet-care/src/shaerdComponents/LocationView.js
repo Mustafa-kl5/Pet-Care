@@ -18,19 +18,25 @@ export default function LocationView(props) {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8`;
-    script.onerror = () => {
-      console.error("Failed to load Google Maps script.");
-    };
-    script.onload = () => {
-      setMapLoaded(true);
-    };
-    document.head.appendChild(script);
+    // Check if the Google Maps API script is already loaded
+    if (!window.google) {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY`;
+      script.onerror = () => {
+        console.error("Failed to load Google Maps script.");
+      };
+      script.onload = () => {
+        setMapLoaded(true);
+      };
+      document.head.appendChild(script);
 
-    return () => {
-      document.head.removeChild(script);
-    };
+      return () => {
+        document.head.removeChild(script);
+      };
+    } else {
+      // If the script is already loaded, mark it as loaded
+      setMapLoaded(true);
+    }
   }, []);
 
   return (

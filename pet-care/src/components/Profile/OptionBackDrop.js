@@ -3,7 +3,13 @@ import "../../componentStyle/ProfilePage/OptionBackDrop.css";
 import CloseBackDropButton from "../../shaerdComponents/CloseBackDropButton";
 export default function OptionBackDrop(props) {
   return props.show ? (
-    <div className="profile-backdrop-main">
+    <div
+      className={`profile-backdrop-main animate__animated ${
+        props.showExitAnimation
+          ? "animate__slideOutRight"
+          : "animate__slideInRight"
+      }`}
+    >
       <div className="profile-form-holder">
         <div className="profile-header-section">
           <div className="profile-logo-word">

@@ -12,14 +12,23 @@ export default function AdoptionPost(props) {
   const [showAdoptionPost, setShowAdoptionPost] = useState(false);
   const [filterData, setFilterData] = useState({});
   const [reloadPost, setReloadPost] = useState(false);
+  const [showExitAnimation, setShowExitAnimation] = useState(false);
   const handleOpenBackDrop = () => {
     setShowAdoptionPost(true);
   };
   const handleCloseBackDrop = () => {
-    setShowAdoptionPost(false);
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setShowAdoptionPost(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
   const CloseBackDrop = () => {
-    setShowAdoptionPost(false);
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setShowAdoptionPost(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
   const handleReciveFilterPost = (filterData) => {
     setFilterData(filterData);
@@ -40,6 +49,7 @@ export default function AdoptionPost(props) {
           buttonContent="Add offer"
         />
         <AddAdoptionBackDrop
+          showExitAnimation={showExitAnimation}
           show={showAdoptionPost}
           CloseBackDrop={handleCloseBackDrop}
           CloseBackDropAfterAdd={CloseBackDrop}

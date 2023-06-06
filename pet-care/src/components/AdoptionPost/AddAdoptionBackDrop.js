@@ -11,7 +11,13 @@ export default function AddAdoptionBackDrop(props) {
     props.reloadPosts();
   };
   return props.show ? (
-    <div className="add-post-backdrop-main">
+    <div
+      className={`add-post-backdrop-main animate__animated ${
+        props.showExitAnimation
+          ? "animate__slideOutRight"
+          : "animate__slideInRight"
+      }`}
+    >
       <div className="add-post-form-holder">
         <div className="add-post-header-section">
           <div className="add-post-logo-word">

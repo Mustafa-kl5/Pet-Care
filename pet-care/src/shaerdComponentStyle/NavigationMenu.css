@@ -4,7 +4,9 @@
   background: white;
   border-radius: 2.188rem;
   border: 0.1rem solid #e0d4d4;
+  overflow: hidden; /* Ensure the animation does not overflow */
 }
+
 .link-item-path {
   color: black;
   text-decoration: none;
@@ -17,7 +19,21 @@
   width: 16rem;
   padding-left: 1rem;
   cursor: pointer;
+  transition: background-color 1s ease; /* Add transition for smooth animation */
 }
+
+.link-item-path:hover {
+  background-image: linear-gradient(
+    to right,
+    white 0%,
+    #e0d4d4 50%,
+    #e0d4d4 50%
+  );
+  background-size: 200% 100%;
+  transition: background-position 1s ease;
+  background-position: -100% 0;
+}
+
 .item-icon {
   width: 1.125rem;
   height: 1.125rem;
@@ -31,6 +47,8 @@
   align-items: center;
   border-bottom: 0.1rem solid #e0d4d4;
 }
+
 .link-item:last-child {
   border: none;
+  height: 4.1rem;
 }

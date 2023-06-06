@@ -184,7 +184,7 @@ export default function AddAdoptionForm(props) {
           <div className="add-adoption-description-social-media">
             <div className="add-adoption-description">
               <div className="header-word">Description</div>
-              <input
+              <textarea
                 placeholder="what are you thinking about"
                 className="add-adoption-input-description"
                 onChange={handleDescription}

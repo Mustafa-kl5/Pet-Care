@@ -16,10 +16,15 @@ export default function Profile(props) {
   const [title, setTitle] = useState("Update Profile Image");
   const [icon, setIcon] = useState();
   const [selectedComponent, setSelectedComponent] = useState(null);
+  const [showExitAnimation, setShowExitAnimation] = useState(false);
 
   const handleOpenBackDrop = (option, icon) => {
     if (showBackDrop) {
-      setShowBackDrop(false);
+      setShowExitAnimation(true);
+      setTimeout(() => {
+        setShowBackDrop(false);
+        setShowExitAnimation(false);
+      }, 1100);
     } else {
       setShowBackDrop(true);
       setTitle(option);
@@ -59,6 +64,7 @@ export default function Profile(props) {
         <ProfileHeader />
         <ProfileOption handleCilck={handleOpenBackDrop} />
         <OptionBackDrop
+          showExitAnimation={showExitAnimation}
           title={title}
           CloseBackDrop={handleOpenBackDrop}
           show={showBackDrop}

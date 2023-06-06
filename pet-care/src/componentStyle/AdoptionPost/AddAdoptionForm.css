@@ -94,3 +94,13 @@
   height: 1.9rem;
   border-radius: 0.5rem;
 }
+.add-adoption-input-description::-webkit-scrollbar {
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
+}
+
+.add-adoption-input-description::-webkit-scrollbar-thumb {
+  background: #00000088;
+  -webkit-border-radius: 1ex;
+}
