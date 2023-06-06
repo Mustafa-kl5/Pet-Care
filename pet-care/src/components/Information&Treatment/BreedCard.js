@@ -1,12 +1,15 @@
 import React from "react";
 import "../../componentStyle/Information&Treatment/BreedCard.css";
+import { useState } from "react";
 
 export default function BreedCard(props) {
+  const [Breed, setBreed] = useState("");
+
   return (
     <div className="breed-card">
       <div
         className="breed-image"
-        style={{ backgroundImage: `url("${props.BreedImage}")` }}
+        style={{ backgroundImage: `url("${props.BreedImage.fileName}")` }}
       >
         <div className="breed-name">{props.BreedName}</div>
       </div>

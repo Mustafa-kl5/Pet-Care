@@ -43,11 +43,11 @@ const routes = [
     element: <Store />,
   },
   {
-    path: "/InformationBreedPage/:type",
+    path: "/InformationBreedPage/:type/:src",
     element: <InformationBreedPage />,
   },
   {
-    path: "/InformationandTreatmentMainPage/:breed/:type",
+    path: "/InformationandTreatmentMainPage/:breed/:type/:src",
     element: <InformationandTreatmentMainPage />,
   },
   {

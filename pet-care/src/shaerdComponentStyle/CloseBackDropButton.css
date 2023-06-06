@@ -4,4 +4,6 @@
   background: unset;
   border: 0;
   cursor: pointer;
+  background-image: url("../Image/close.png");
+  background-repeat: no-repeat;
 }

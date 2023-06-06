@@ -1,27 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/Store/ProductCard.css";
 import image from "../../Image/cat.jpg";
 import minusIcon from "../../Image/minus.png";
 import plusIcon from "../../Image/plus.png";
-export default function ProductCard() {
-  const [quantity, setQuantity] = useState(0);
+import api from "../../services/api";
+import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
+export default function ProductCard(props) {
+  const [Message, setMessage] = useState("");
+  const [BackDrop, setBackDrop] = useState(false);
+  const [quantity, setQuantity] = useState(1);
   const handlePlusProduct = () => {
     setQuantity(quantity + 1);
   };
   const handleMinusProduct = () => {
-    setQuantity(quantity - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   };
+  const handleAddToCart = async () => {
+    const response = await api.post(
+      "/StorePage/sendSelectedProducts",
+      {
+        ProductID: props.id,
+        ProductQuintity: quantity,
+      },
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }
+    );
 
+    const data = await response.data;
+    setMessage(data.message);
+    setBackDrop(true);
+  };
+  const handleCloseBackDrop = () => {
+    setBackDrop(false);
+  };
   return (
     <div className="product-card-item">
       <div
         className="product-card-item-image"
-        style={{ backgroundImage: `url("${image}")` }}
+        style={{ backgroundImage: `url("${props.image}")` }}
       ></div>
-      <div className="product-card-item-produt-name">
-        Royal Canin British Shorthair
-      </div>
-      <div className="product-card-item-produt-name">Price : $120</div>
+      <div className="product-card-item-produt-name">{props.name}</div>
+      <div className="product-card-item-produt-name">{props.price}$</div>
       <div className="quantity-holder">
         <button
           type="button"
@@ -37,9 +59,19 @@ export default function ProductCard() {
           style={{ backgroundImage: `url("${plusIcon}")` }}
         />
       </div>
-      <button className="product-card-item-add-button" type="button">
+      <button
+        className="product-card-item-add-button"
+        type="button"
+        onClick={handleAddToCart}
+      >
         ADD TO CART
       </button>
+
+      <ErrorBackDrop
+        show={BackDrop}
+        CloseBackDrop={handleCloseBackDrop}
+        HandelMessage={Message}
+      />
     </div>
   );
 }

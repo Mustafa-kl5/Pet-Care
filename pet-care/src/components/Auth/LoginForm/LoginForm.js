@@ -5,9 +5,11 @@ import LoadingBar from "../../../shaerdComponents/LoadingBar";
 import { Link } from "react-router-dom";
 import { isValidEmail, notifyError } from "../../../Validation/InputValidtion";
 import { ToastContainer } from "react-toastify";
+import ResetPasswordBackdrop from "./ResetPasswordBackdrop";
 
 export default function LoginForm(props) {
   const [email, setEmail] = useState("");
+  const [backdrop, setbackdrop] = useState(false);
   const [password, setPassword] = useState("");
   const [isValidInput, setIsValidInput] = useState(false);
 
@@ -45,6 +47,12 @@ export default function LoginForm(props) {
     }
     props.sendLoginData(userData);
   };
+  const handleForgetPassword = () => {
+    setbackdrop(true);
+  };
+  const closebackdrop = () => {
+    setbackdrop(false);
+  };
   return (
     <div className="Login-form-container">
       <LeftImage width="calc(73rem / 2)" />
@@ -81,6 +89,10 @@ export default function LoginForm(props) {
             )}
           </button>
         </form>
+        <div className="forget-password" onClick={handleForgetPassword}>
+          ForgetYouPassword?
+        </div>
+        <ResetPasswordBackdrop show={backdrop} closebackdrop={closebackdrop} />
         <Link to="/Registration" className="account-sign-up">
           Don t have An Account? sign up
         </Link>
