@@ -3,68 +3,46 @@ import "../../componentStyle/Payment/PaymentCard.css";
 import api from "../../services/api";
 import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
 import CardCartType from "./CardCartType";
+import VisaImage from "../../Image/Visa.png";
+import MasterCard from "../../Image/mastercard.png";
 export default function PaymentCard(props) {
   const update = props.update;
   const userID = props.ID;
-  const order = props.OrderData;
-  const UpdatedProducts = order.products;
+  const order = props.OrderData || {};
+  const UpdatedProducts = order.products || [];
   const [BackDrop, setBackDrop] = useState(false);
   const [Message, setMessage] = useState("");
-  const [CardInformation, setCardInformation] = useState({
-    cardName: "",
-    cardNumber: "",
-    cardExpiry: "",
-    cardCvc: "",
-    totalPrice: "",
+  const [total, setTotal] = useState(0);
+  const [checkoutInput, setCheckoutInput] = useState({
+    email: "",
+    phoneNumber: "",
   });
-  const handleCloseBackDrop = () => {
-    setBackDrop(false);
-  };
-
-  const handleCardInformation = async () => {
+  const handleCheckout = async () => {
     const response = await api.post("/OrderPage/getCardInformation", {
       userID: userID,
       OrderID: order._id,
-      CardInfo: CardInformation,
+      email: checkoutInput.email,
     });
     const json = await response.data;
-    setMessage(json.message);
-    setBackDrop(true);
+    window.location = json.url;
   };
-  const handleCardName = (e) => {
-    setCardInformation({ ...CardInformation, cardName: e.target.value });
+  const handleEmailChange = (e) => {
+    setCheckoutInput({ ...checkoutInput, email: e.target.value });
   };
-  const handleCardNumber = (e) => {
-    const inputValue = e.target.value;
-    const formattedValue = inputValue
-      .replace(/\s/g, "")
-      .replace(/(.{4})/g, "$1 ");
-    e.target.value = formattedValue;
-    setCardInformation({ ...CardInformation, cardNumber: inputValue });
+  const handlePhoneChange = (e) => {
+    setCheckoutInput({ ...checkoutInput, phoneNumber: e.target.value });
   };
-  const handleExpirationdate = (e) => {
-    const inputValue = e.target.value;
-    const formattedValue = inputValue
-      .replace(/\D/g, "")
-      .replace(/(\d{2})(\d{1,2})/, "$1/$2");
-    setCardInformation({ ...CardInformation, cardExpiry: formattedValue });
-    e.target.value = formattedValue;
-  };
-  const handleCVV = (e) => {
-    setCardInformation({ ...CardInformation, cardCvc: e.target.value });
-  };
+  console.log(checkoutInput);
   const CalculateTotal = () => {
     let calculatedTotal = 0;
-
     UpdatedProducts.forEach((element) => {
       calculatedTotal += element.productPrice * element.productQuntity;
     });
-    setCardInformation({ ...CardInformation, totalPrice: calculatedTotal });
+    setTotal(calculatedTotal);
   };
   useEffect(() => {
     CalculateTotal();
-    if (UpdatedProducts.length < 1)
-      setCardInformation({ ...CardInformation, totalPrice: 0 });
+    if (UpdatedProducts.length < 1) setTotal(0);
   }, [UpdatedProducts, update]);
   return (
     <div className="payment-card-holder">
@@ -72,74 +50,41 @@ export default function PaymentCard(props) {
         <div className="payment-card-title">Card Details</div>
         <div className="payment-card-title-section">Card type</div>
         <div className="payment-card-type-holder">
-          <CardCartType />
-          <CardCartType />
-          <CardCartType />
-          <CardCartType />
+          <CardCartType imageSrc={MasterCard} />
+          <CardCartType imageSrc={VisaImage} />
         </div>
         <form className="payment-form">
           <div className="payment-card-input-title">
-            <div className="payment-card-title-section">Name on card</div>
+            <div className="payment-card-title-section">Email</div>
             <input
-              placeholder="Name"
+              placeholder="Enter Your Email"
               className="payment-card-input"
-              onChange={handleCardName}
+              onChange={handleEmailChange}
+              required
             />
           </div>
           <div className="payment-card-input-title">
-            <div className="payment-card-title-section">Card Number</div>
-            <input
-              placeholder="1111 2222 3333 4444"
-              className="payment-card-input"
-              onChange={handleCardNumber}
-              maxLength={20}
-            />
-          </div>
-          <div className="payment-card-expiration-cvv">
-            <div className="payment-card-ec">
-              <div className="payment-card-title-section">Expiration date</div>
-              <input
-                placeholder="mm/yy"
-                className="payment-card-input-ec"
-                onChange={handleExpirationdate}
-                maxLength={5}
-              />
-            </div>
-            <div className="payment-card-ec">
-              <div className="payment-card-title-section">CVV</div>
-              <input
-                placeholder="123"
-                className="payment-card-input-ec"
-                onChange={handleCVV}
-                maxLength={3}
-              />
-            </div>
+            <br></br>
+            You will be redirected to the Stripe payment page to complete your
+            payment.
           </div>
         </form>
         <div className="payment-total-submitButton">
           <div className="payment-total-holder">
             <div className="payment-total-word">Total</div>
-            <div className="payment-total-word">
-              {CardInformation.totalPrice} $
-            </div>
+            <div className="payment-total-word">{total} $</div>
           </div>
           <button
             className="payment-submitButton"
             type="submit"
-            onClick={handleCardInformation}
+            onClick={handleCheckout}
           >
-            <span className="payment-total-word">
-              {CardInformation.totalPrice} $
-            </span>
+            <span className="payment-total-word">{total} $</span>
             <span className="payment-total-word">Checkout</span>
           </button>
         </div>
       </div>
-      <ErrorBackDrop
-        show={BackDrop}
-        HandelMessage={Message}
-        CloseBackDrop={handleCloseBackDrop}
-      />
+      <ErrorBackDrop show={BackDrop} HandelMessage={Message} />
     </div>
   );
 }

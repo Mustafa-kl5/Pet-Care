@@ -1,0 +1,8 @@
+.user-orders-holder {
+  margin-top: 1rem;
+  width: 105%;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #e0d4d4;
+}

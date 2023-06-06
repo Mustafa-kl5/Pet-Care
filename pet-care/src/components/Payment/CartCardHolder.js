@@ -5,8 +5,8 @@ import PaymentCard from "./PaymentCard";
 import api from "../../services/api";
 export default function CartCardHolder(props) {
   const [update, setUpdate] = useState(false);
-  const [Order, setOrder] = useState([]);
-  const [userId, setUserId] = useState();
+  const [Order, setOrder] = useState({});
+  const [userId, setUserId] = useState("");
   const [Loading, setLoading] = useState(true);
   const getData = async () => {
     const response = await api.get("/OrderPage/fetchProdcutsToPasket", {
@@ -14,13 +14,11 @@ export default function CartCardHolder(props) {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
-
     const json = await response.data;
     setOrder(json.Order);
     setUserId(json.userID);
     setLoading(false);
   };
-
   const handleUpdate = () => {
     setUpdate(!update);
   };
@@ -34,11 +32,13 @@ export default function CartCardHolder(props) {
       ) : (
         <>
           <ShopingCart
-            OrderData={Order}
+            OrderData={Order || {}}
             ID={userId}
             handleUpdate={handleUpdate}
           />
-          <PaymentCard OrderData={Order} ID={userId} update={update} />
+          {Order && Order.products.length !== 0 && (
+            <PaymentCard OrderData={Order} ID={userId} update={update} />
+          )}
         </>
       )}
     </div>

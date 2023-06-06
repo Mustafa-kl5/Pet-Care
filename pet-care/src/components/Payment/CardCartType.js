@@ -1,11 +1,11 @@
 import React from "react";
-import image from "../../Image/mastercard.png";
+
 import "../../componentStyle/Payment/CardCartType.css";
-export default function CardCartType() {
+export default function CardCartType(props) {
   return (
     <div
       className="online-card-type"
-      style={{ backgroundImage: `url("${image}")` }}
+      style={{ backgroundImage: `url("${props.imageSrc}")` }}
     ></div>
   );
 }
