@@ -10,12 +10,14 @@ import BirdType from "../Image/BirdLogo.png";
 import { Link } from "react-router-dom";
 import api from "../services/api";
 import { useEffect, useState } from "react";
-import ScrollBar from "../shaerdComponents/ScrollBar";
+import LoadingBar from "../shaerdComponents/LoadingBar";
 export default function InformationTreatmentPage() {
   const [TypeData, setTypeData] = useState();
-  const [IsLoading, setIsLoading] = useState(true);
+  const [IsLoading, setIsLoading] = useState(false);
+
   const getType = async () => {
-    const response = await api.get("/InformationPage/getType", {});
+    setIsLoading(true);
+    const response = await api.get("/InformationPage/getType");
     const json = await response.data;
     setTypeData(json.allModelsData[0]);
     setIsLoading(false);
@@ -29,31 +31,26 @@ export default function InformationTreatmentPage() {
     <MainBackGround>
       <ContentHolder>
         <InformationAndTreatmentHeader />
-        <ScrollBar>
-          <InformationCardHolder
-            AnimalTypePaddingT={4}
-            AnimalTypePaddingL={1.3}
-          >
-            {IsLoading ? (
-              <div> isLoading</div>
-            ) : (
-              <>
-                {TypeData.map((ele) => (
-                  <Link
-                    className="animal-type-link"
-                    to={`/InformationBreedPage/:${ele.TypeName}/:${ele._id}`}
-                    key={ele._id}
-                  >
-                    <TypeCard
-                      TypeName={ele.TypeName}
-                      TypeImage={ele.TypeImage[0].fileName}
-                    ></TypeCard>
-                  </Link>
-                ))}
-              </>
-            )}
+        {IsLoading ? (
+          <div className="center-loading-information">
+            <LoadingBar />
+          </div>
+        ) : (
+          <InformationCardHolder>
+            {TypeData?.map((ele) => (
+              <Link
+                className="animal-type-link"
+                to={`/InformationBreedPage/:${ele.TypeName}/:${ele._id}`}
+                key={ele._id}
+              >
+                <TypeCard
+                  TypeName={ele.TypeName}
+                  TypeImage={ele.TypeImage[0].fileName}
+                ></TypeCard>
+              </Link>
+            ))}
           </InformationCardHolder>
-        </ScrollBar>
+        )}
       </ContentHolder>
     </MainBackGround>
   );

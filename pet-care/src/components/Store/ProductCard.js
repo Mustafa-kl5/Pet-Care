@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../componentStyle/Store/ProductCard.css";
-import image from "../../Image/cat.jpg";
 import minusIcon from "../../Image/minus.png";
 import plusIcon from "../../Image/plus.png";
 import api from "../../services/api";
-import ErrorBackDrop from "../ErrorMessages/ErrorBackDrop";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function ProductCard(props) {
-  const [Message, setMessage] = useState("");
-  const [BackDrop, setBackDrop] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
   const handlePlusProduct = () => {
     setQuantity(quantity + 1);
   };
@@ -18,6 +18,7 @@ export default function ProductCard(props) {
     }
   };
   const handleAddToCart = async () => {
+    setIsLoading(true);
     const response = await api.post(
       "/StorePage/sendSelectedProducts",
       {
@@ -30,12 +31,20 @@ export default function ProductCard(props) {
     );
 
     const data = await response.data;
-    setMessage(data.message);
-    setBackDrop(true);
+    setIsLoading(false);
+    notifySuccess(data.message);
   };
-  const handleCloseBackDrop = () => {
-    setBackDrop(false);
-  };
+  const notifySuccess = (massage) =>
+    toast.success(massage, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   return (
     <div className="product-card-item">
       <div
@@ -64,14 +73,9 @@ export default function ProductCard(props) {
         type="button"
         onClick={handleAddToCart}
       >
-        ADD TO CART
+        {isLoading ? <span className="button-loader"></span> : "ADD TO CART"}
       </button>
-
-      <ErrorBackDrop
-        show={BackDrop}
-        CloseBackDrop={handleCloseBackDrop}
-        HandelMessage={Message}
-      />
+      <ToastContainer />
     </div>
   );
 }

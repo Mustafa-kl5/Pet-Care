@@ -1,10 +1,17 @@
+.Information-Holder-scroll {
+  width: 100%;
+  padding-top: 1rem;
+  height: 34.2rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 1rem;
+}
+
 .Information-Holder {
   display: grid;
-  grid-template-columns: repeat(2, 25.2rem);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 1rem;
-  padding-top: 2rem;
-  padding-left: 0.7rem;
+  grid-template-columns: repeat(2, 24rem);
+  gap: 1rem 1rem;
+  padding-left: 1.37rem;
 }
 .animal-type-link {
   text-decoration: none;
@@ -13,4 +20,21 @@
 .Animal-Breed-Link {
   text-decoration: none;
   color: black;
+}
+.Information-Holder-scroll::-webkit-scrollbar {
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
+}
+
+.Information-Holder-scroll::-webkit-scrollbar-thumb {
+  background: #00000088;
+  -webkit-border-radius: 1ex;
+}
+.center-loading-information {
+  width: 100%;
+  height: 37rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

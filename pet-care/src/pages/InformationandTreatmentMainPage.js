@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import InformationAndTreatmentHeader from "../shaerdComponents/Information&TreatmentHeader";
 import InformationandTreatmentHeaderType from "../shaerdComponents/InformationandTreatmentHeaderType";
 import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
-import ScrollBar from "../shaerdComponents/ScrollBar";
+import LocationView from "../shaerdComponents/LocationView";
 import InformationPageSwiper from "../components/Information&Treatment/InformationPageSwiper";
 import InformationText from "../components/Information&Treatment/InformationText";
-import InformationLocation from "../components/Information&Treatment/InformationLocation";
 import { useParams } from "react-router-dom";
+import "../componentStyle/Information&Treatment/InformationandTreatmentMainPage.css";
 import api from "../services/api";
+import LoadingBar from "../shaerdComponents/LoadingBar";
 export default function InformationandTreatmentMainPage() {
   const [data, setdata] = useState([]);
   const [typeImage, setTypeImage] = useState("");
@@ -34,23 +34,33 @@ export default function InformationandTreatmentMainPage() {
   return (
     <MainBackGround>
       <ContentHolder>
-        <InformationAndTreatmentHeader />
-        {isLoading ? (
-          <p>loading</p>
-        ) : (
-          <ScrollBar>
-            <InformationandTreatmentHeaderType
-              AnimalType={typeName}
-              AnimalTypeImage={typeImage}
-            />
-            <InformationPageSwiper Swiper={data[0].images} />
+        <InformationandTreatmentHeaderType
+          AnimalType={typeName}
+          AnimalTypeImage={typeImage}
+        />
 
-            <InformationText
-              Breed={breedName}
-              Information={data[0].information}
-            />
-            <InformationLocation location={data[0].clinicLocation} />
-          </ScrollBar>
+        {isLoading ? (
+          <div className="center-loading-information">
+            <LoadingBar />
+          </div>
+        ) : (
+          <div className="information-and-treatment-scroll">
+            <div className="information-and-treatment-scroll-holder">
+              <InformationPageSwiper Swiper={data[0].images} />
+              <InformationText
+                Breed={breedName}
+                Information={data[0].information}
+              />
+
+              <LocationView
+                width="48rem"
+                height="30rem"
+                lat={data[0].clinicLocation.latitude}
+                lng={data[0].clinicLocation.longitude}
+                textCondition={false}
+              />
+            </div>
+          </div>
         )}
       </ContentHolder>
     </MainBackGround>

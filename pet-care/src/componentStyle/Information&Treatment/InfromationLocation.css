@@ -2,20 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
 }
 .Location-Label {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 59px;
-}
-.Location {
-  width: 759px;
-  height: 500px;
-  background-image: url("../../Image/LocationImage.png");
-  background-position: center;
-  background-size: contain;
-  margin-top: 30px;
+  font-size: 3rem;
+
+  padding-bottom: 2rem;
 }

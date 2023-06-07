@@ -1,0 +1,26 @@
+.information-and-treatment-scroll {
+  width: 100%;
+  padding-top: 1rem;
+  height: 34.2rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 1rem;
+}
+.information-and-treatment-scroll-holder {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  gap: 1rem;
+}
+.information-and-treatment-scroll::-webkit-scrollbar {
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
+}
+
+.information-and-treatment-scroll::-webkit-scrollbar-thumb {
+  background: #00000088;
+  -webkit-border-radius: 1ex;
+}

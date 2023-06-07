@@ -69,8 +69,8 @@ export default function StoreHeader(props) {
             className="store-header-product-animal-type-select"
             onChange={handleTypeSelect}
           >
-            {animalType.map((ele) => (
-              <option>{ele.TypeName}</option>
+            {animalType.map((ele, index) => (
+              <option key={index}>{ele.TypeName}</option>
             ))}
           </select>
         </div>

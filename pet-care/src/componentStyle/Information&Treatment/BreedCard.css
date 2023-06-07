@@ -1,11 +1,13 @@
 .breed-card {
   display: flex;
-  align-items: flex-end;
-  width: 22.875rem;
-  height: 13.125rem;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  width: 23rem;
+  height: 13rem;
+  background: #fdfcfc;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
-  border-radius: 30px;
+  border-radius: 2rem;
 }
 .breed-image {
   display: flex;

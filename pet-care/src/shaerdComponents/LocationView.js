@@ -41,7 +41,11 @@ export default function LocationView(props) {
 
   return (
     <div className="location-view-holder">
-      <div className="location-word">Location</div>
+      {props.textCondition ? (
+        <div className="location-word">Location</div>
+      ) : (
+        <div className="clinic-location-word">Clinic Location</div>
+      )}
       <div
         className="location-holder"
         style={{

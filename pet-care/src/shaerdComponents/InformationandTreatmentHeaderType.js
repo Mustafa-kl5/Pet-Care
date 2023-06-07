@@ -6,12 +6,14 @@ import BirdType from "../Image/BirdLogo.png";
 import "../shaerdComponentStyle/InformationandTreatmentHeaderType.css";
 export default function InformationandTreatmentHeaderType(props) {
   return (
-    <div className="Header-Holder">
-      <div
-        className="Type-Image"
-        style={{ backgroundImage: `url("${props.AnimalTypeImage}")` }}
-      ></div>
-      <div className="Type-Text">{props.AnimalType}</div>
-    </div>
+    <>
+      <div className="info-Header">
+        <div
+          className="info-Logo"
+          style={{ backgroundImage: `url("${props.AnimalTypeImage}")` }}
+        />
+        <div className="Info-Text">{props.AnimalType}</div>
+      </div>
+    </>
   );
 }

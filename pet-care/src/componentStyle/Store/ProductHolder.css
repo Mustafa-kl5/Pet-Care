@@ -1,23 +1,30 @@
 .product-card-holder {
-  width: 49.6rem;
-  height: 35.6rem;
-
+  width: 49.41rem;
+  height: 35rem;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 13rem);
+  grid-template-columns: repeat(3, 13.5rem);
   gap: 1rem 3rem;
   padding-left: 1.6rem;
 }
+
+.product-card-holder-loading {
+  width: 100%;
+  height: 37.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .product-card-holder::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #baaaaa;
-  -webkit-border-radius: 1ex;
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
 }
 
 .product-card-holder::-webkit-scrollbar-thumb {
-  background: #124c5f;
+  background: #00000088;
   -webkit-border-radius: 1ex;
 }

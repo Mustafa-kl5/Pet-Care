@@ -36,6 +36,7 @@ export default function AdoptionData(props) {
             height="15.5rem"
             lat={post.ownerLocation.latitude}
             lng={post.ownerLocation.longitude}
+            textCondition={true}
           />
 
           <div className="user-contact-post-status">

@@ -6,7 +6,7 @@ import api from "../../services/api";
 export default function CartCard(props) {
   const productData = props.productData;
   const handleDeletProduct = () => {
-    props.handleDeletProduct(props.id);
+    props.handleDeleteProduct(props.id);
   };
   return (
     <div className="cart-card-item-holder">
