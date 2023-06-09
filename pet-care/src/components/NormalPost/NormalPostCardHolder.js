@@ -7,23 +7,26 @@ import LoadingBar from "../../shaerdComponents/LoadingBar";
 import NoPostFound from "../Profile/NoPostFound";
 
 export default function NormalPostCardHolder(props) {
+  const [filterPosts, setFilterPosts] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [missingPosts, setMissingPosts] = useState([]);
-  const [askingPosts, setAskingPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getPosts = async () => {
-      const response = await api.get("/getAllPosts");
-      setPosts(response.data);
-      setLoading(false);
-    };
     getPosts();
   }, [props.newPost]);
   useEffect(() => {
-    setAskingPosts(posts.filter((post) => post.postType === "asking"));
-    setMissingPosts(posts.filter((post) => post.postType === "missing"));
-  }, [posts, props.activeTab]);
+    if (posts.length === 0) {
+      setFilterPosts(posts);
+    } else {
+      setFilterPosts(posts.filter((post) => post.postType === props.activeTab));
+    }
+  }, [props.activeTab, posts]);
+
+  const getPosts = async () => {
+    const response = await api.get("/getAllPosts");
+    setPosts(response.data);
+    setLoading(false);
+  };
   return (
     <>
       <div className="post-struct">
@@ -35,30 +38,22 @@ export default function NormalPostCardHolder(props) {
       </div>
       <div
         className={
-          loading || (missingPosts.length === 0 && askingPosts.length === 0)
-            ? "normal-post-card-scroll center"
-            : "normal-post-card-scroll"
+          loading ? "normal-post-card-scroll center" : "normal-post-card-scroll"
         }
       >
         {loading ? (
           <LoadingBar />
-        ) : missingPosts.length === 0 && askingPosts.length === 0 ? (
+        ) : filterPosts.length === 0 ? (
           <div className="empty-post-section">
             <NoPostFound massage="No Post Found" />
           </div>
         ) : (
           <div className="normal-post-card-holder">
-            {props.activeTab === "missing"
-              ? missingPosts.map((post, index) => {
-                  return (
-                    <NormalPostcard id={post.postID} key={index} data={post} />
-                  );
-                })
-              : askingPosts.map((post, index) => {
-                  return (
-                    <NormalPostcard id={post.postID} key={index} data={post} />
-                  );
-                })}
+            {filterPosts.map((post, index) => {
+              return (
+                <NormalPostcard id={post.postID} key={index} data={post} />
+              );
+            })}
           </div>
         )}
       </div>

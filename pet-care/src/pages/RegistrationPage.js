@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RegistrationForm from "../components/Auth/RegistrationForm/RegistrationForm";
-import { Validation } from "../Validation/InputValidtion";
 import MainBackGround from "../UI/MainBackGround";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ErrorBackDrop from "../components/ErrorMessages/ErrorBackDrop";
 import api from "../services/api";
 

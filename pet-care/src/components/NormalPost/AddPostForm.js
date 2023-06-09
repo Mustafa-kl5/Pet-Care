@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "../../componentStyle/NormalPost/AddPostForm.css";
 import ImageUploder from "../../shaerdComponents/ImageUploder";
 import ImagePreview from "../../shaerdComponents/ImagePreview";
-import { async } from "q";
 import api from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

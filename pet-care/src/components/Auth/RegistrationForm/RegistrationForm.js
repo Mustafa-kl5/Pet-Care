@@ -16,7 +16,6 @@ import {
 import { ToastContainer } from "react-toastify";
 import { Selector } from "../../../Constant/DaysSelector";
 import { citySelector } from "../../../Constant/CitySelector";
-import LoadingBar from "../../../shaerdComponents/LoadingBar";
 export default function RegistrationForm(props) {
   const dayOption = [];
   const monthOption = [];

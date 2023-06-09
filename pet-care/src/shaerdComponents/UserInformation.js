@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../shaerdComponentStyle/UserInformation.css";
-import userImage from "../Image/cat.jpg";
 import { getUserId } from "../hooks/auth/getUserId";
 import api from "../services/api";
 export default function UserInformation() {

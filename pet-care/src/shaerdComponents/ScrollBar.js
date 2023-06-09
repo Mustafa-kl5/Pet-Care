@@ -6,7 +6,6 @@ export default function ScrollBar(props) {
       className={
         props.isLoading ? "product-card-holder-loading" : "Information-Scroll"
       }
-      /*style={{ height: `calc( ${props.Height}rem - 15rem)` }}*/
     >
       {props.children}
     </div>

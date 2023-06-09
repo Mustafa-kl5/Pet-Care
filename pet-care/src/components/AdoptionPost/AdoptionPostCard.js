@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../../componentStyle/AdoptionPost/AdoptionPostCard.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import userIcon from "../../Image/Cat-Breed1.png";
 function AdoptionPostCard(props) {
   const [postData, setPostData] = useState(props.data);
   const location = useLocation();

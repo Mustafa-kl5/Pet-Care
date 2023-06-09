@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../componentStyle/NormalPost/NormalPostcard.css";
-import postIcon from "../../Image/cat.jpg";
-
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PostLikeCommentSection from "./PostLikeCommentSection";
 
 function NormalPostcard(props) {

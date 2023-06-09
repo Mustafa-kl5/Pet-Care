@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../componentStyle/NormalPost/AddPostBackDrop.css";
 import CloseBackDropButton from "../../shaerdComponents/CloseBackDropButton";
 import plusIcon from "../../Image/postBox.png";

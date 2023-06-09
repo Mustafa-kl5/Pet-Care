@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "react-toastify/dist/ReactToastify.css";
 import MainBackGround from "../UI/MainBackGround";
 import LoginForm from "../components/Auth/LoginForm/LoginForm";

@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../../componentStyle/Payment/CardCartType.css";
 export default function CardCartType(props) {
   return (

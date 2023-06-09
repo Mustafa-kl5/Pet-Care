@@ -19,7 +19,7 @@ export default function PostDataCarousel(props) {
             <SwiperSlide key={index}>
               <img
                 className="SwiperSlide-image"
-                alt="post image"
+                alt={image.fileName}
                 src={image.fileName}
               />
             </SwiperSlide>

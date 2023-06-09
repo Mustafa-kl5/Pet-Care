@@ -114,7 +114,7 @@ export default function VerfiyOtp(props) {
               )}
             </button>
             <div className="reset-password-resend" onClick={handleResendOtp}>
-              ReSend OTP Agine
+              ReSend OTP Again
             </div>
           </form>
         </div>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../componentStyle/ProfilePage/OrderHistory.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import api from "../../services/api";
 import LoadingBar from "../../shaerdComponents/LoadingBar";
+import NoPostFound from "./NoPostFound";
 
 export default function OrderHistory() {
   const [isLoading, setIsLoading] = useState(false);
-  const [order, setOrder] = useState(null);
+  const [order, setOrder] = useState([]);
 
   useEffect(() => {
     getOrders();
@@ -14,7 +14,7 @@ export default function OrderHistory() {
   const getOrders = async () => {
     setIsLoading(true);
     const response = await api.post("/ProfilePage/getOrderDetails");
-    setOrder(response);
+    setOrder(response.data.userOrder);
     console.log(response.data);
     setIsLoading(false);
   };
@@ -22,6 +22,10 @@ export default function OrderHistory() {
   return isLoading ? (
     <div className="order-history-loading-center">
       <LoadingBar />
+    </div>
+  ) : order.length === 0 ? (
+    <div className="order-history-loading-center">
+      <NoPostFound massage="No Orders Yet" />
     </div>
   ) : (
     <div className="order-history-holder">

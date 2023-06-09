@@ -46,7 +46,7 @@
   background-size: cover;
   border-radius: 1rem;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .delete-icon {
   width: 2rem;

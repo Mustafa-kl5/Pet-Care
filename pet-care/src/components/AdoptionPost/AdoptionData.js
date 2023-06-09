@@ -4,8 +4,6 @@ import PostDataCarousel from "../../shaerdComponents/PostDataCarousel";
 import PostDescription from "../../shaerdComponents/PostDescription";
 import LocationView from "../../shaerdComponents/LocationView";
 import UserContact from "./UserContact";
-import api from "../../services/api";
-import { useParams } from "react-router-dom";
 import PetInformation from "./PetInformation";
 import AdoptionPostUserInformation from "./AdoptionPostUserInformation";
 import AddAdoptionPostToFavourite from "./AddAdoptionPostToFavourite";

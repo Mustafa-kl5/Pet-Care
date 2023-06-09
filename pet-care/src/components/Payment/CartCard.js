@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../componentStyle/Payment/CartCard.css";
-import image from "../../Image/cat.jpg";
 import removeIcon from "../../Image/delete.png";
-import api from "../../services/api";
+
 export default function CartCard(props) {
   const productData = props.productData;
   const handleDeletProduct = () => {

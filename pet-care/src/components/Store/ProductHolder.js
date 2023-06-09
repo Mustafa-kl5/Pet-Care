@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../componentStyle/Store/ProductHolder.css";
 import ProductCard from "./ProductCard";
-import api from "../../services/api";
 import LoadingBar from "../../shaerdComponents/LoadingBar";
 import NoPostFound from "../Profile/NoPostFound";
 

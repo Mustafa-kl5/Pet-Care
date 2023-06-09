@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../componentStyle/ProfilePage/ResetPassword.css";
 import resetPassImage from "../../Image/Forgot password.gif";
 import ResetPasswordForm from "./ResetPasswordForm";

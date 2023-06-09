@@ -4,7 +4,6 @@ import ImageIcon from "../../Image/Change-Image.png";
 import resetPassword from "../../Image/password-reset.png";
 import postIcon from "../../Image/AdoptionCard-logo.png";
 import pasketIcon from "../../Image/backet.png";
-import bioIcon from "../../Image/UpdateBio.jpg";
 export default function ProfileOption(props) {
   const handleButtonClick = (option, icon) => {
     props.handleCilck(option, icon);

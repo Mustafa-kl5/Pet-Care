@@ -1,5 +1,4 @@
 import React from "react";
-
 import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 

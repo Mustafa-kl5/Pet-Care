@@ -1,10 +1,7 @@
 import React from "react";
 import "../../componentStyle/Information&Treatment/BreedCard.css";
-import { useState } from "react";
 
 export default function BreedCard(props) {
-  const [Breed, setBreed] = useState("");
-
   return (
     <div className="breed-card">
       <div

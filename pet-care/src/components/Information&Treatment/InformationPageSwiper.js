@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "../../componentStyle/Information&Treatment/InfomrmationSwiperPage.css";
 import "swiper/css";
 import "swiper/css/pagination";

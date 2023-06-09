@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { isValidEmail, isValidPassword } from "../../Validation/InputValidtion";
+import { isValidPassword } from "../../Validation/InputValidtion";
 
 export default function ResetPasswordComponent(props) {
   const [isLoading, setIsLoading] = useState(false);

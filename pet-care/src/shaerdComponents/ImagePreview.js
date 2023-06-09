@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../shaerdComponentStyle/ImagePreview.css";
 import imageIcon from "../Image/imageIcon.png";
 import deleteIcon from "../Image/delete.png";

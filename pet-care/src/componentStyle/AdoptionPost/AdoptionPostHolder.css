@@ -47,21 +47,3 @@
   background: #000000c0;
   -webkit-border-radius: 1ex;
 }
-/* .empty-post-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.empty-post-icon {
-  width: 10rem;
-  height: 10rem;
-  background-repeat: no-repeat;
-  background-image: url("../../Image/sadPet.png");
-  background-size: cover;
-}
-.empty-post-word {
-  font-size: 1.5rem;
-  font-weight: bold;
-} */

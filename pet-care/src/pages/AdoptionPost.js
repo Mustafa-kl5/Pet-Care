@@ -3,8 +3,6 @@ import ContentHolder from "../UI/ContentHolder";
 import MainBackGround from "../UI/MainBackGround";
 import AdoptionHolder from "../components/AdoptionPost/AdoptionHolder";
 import FilterForm from "../components/AdoptionPost/FilterForm";
-
-import Header from "../shaerdComponents/Header";
 import CreatePostButton from "../components/NormalPost/CreatePostButton";
 import AddAdoptionBackDrop from "../components/AdoptionPost/AddAdoptionBackDrop";
 

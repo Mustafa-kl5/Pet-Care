@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import tabIcon from "../../Image/tabsicon.png";
 import "../../componentStyle/NormalPost/TabsSection.css";
 
