@@ -1,13 +1,13 @@
 .product-card-holder {
-  width: 49.41rem;
-  height: 35rem;
+  width: 50.9rem;
+  height: 36rem;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 13.5rem);
-  gap: 1rem 3rem;
+  grid-template-columns: repeat(3, 15rem);
+  gap: 1rem 1.1rem;
   padding-left: 1.6rem;
 }
 

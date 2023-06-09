@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../../../componentStyle/LoginForm/LoginForm.css";
 import LeftImage from "./LeftImage";
-import LoadingBar from "../../../shaerdComponents/LoadingBar";
 import { Link } from "react-router-dom";
 import { isValidEmail, notifyError } from "../../../Validation/InputValidtion";
 import { ToastContainer } from "react-toastify";
 import ResetPasswordBackdrop from "./ResetPasswordBackdrop";
+import resetIcon from "../../../Image/reset.png";
+import ResetPassword from "../../Profile/ResetPassword";
 
 export default function LoginForm(props) {
   const [email, setEmail] = useState("");
-  const [backdrop, setbackdrop] = useState(false);
   const [password, setPassword] = useState("");
   const [isValidInput, setIsValidInput] = useState(false);
+  const [forgetPasswordModle, setForgetPasswordModle] = useState(false);
+  const [showExitAnimation, setShowExitAnimation] = useState(false);
 
   const emailHandler = (event) => {
     setEmail(event.target.value);
@@ -48,10 +50,14 @@ export default function LoginForm(props) {
     props.sendLoginData(userData);
   };
   const handleForgetPassword = () => {
-    setbackdrop(true);
+    setForgetPasswordModle(true);
   };
   const closebackdrop = () => {
-    setbackdrop(false);
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setForgetPasswordModle(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
   return (
     <div className="Login-form-container">
@@ -74,9 +80,9 @@ export default function LoginForm(props) {
             onChange={passwordHandler}
             value={password}
           />
-          <a href="linkto:google.com" className="forget-password">
+          <div className="forget-password" onClick={handleForgetPassword}>
             ForgetYouPassword?
-          </a>
+          </div>
           <button
             disabled={!isValidInput}
             type="submit"
@@ -89,10 +95,16 @@ export default function LoginForm(props) {
             )}
           </button>
         </form>
-        <div className="forget-password" onClick={handleForgetPassword}>
-          ForgetYouPassword?
-        </div>
-        <ResetPasswordBackdrop show={backdrop} closebackdrop={closebackdrop} />
+
+        <ResetPasswordBackdrop
+          show={forgetPasswordModle}
+          closebackdrop={closebackdrop}
+          showExitAnimation={showExitAnimation}
+          title="Password Reset"
+          icon={resetIcon}
+        >
+          <ResetPassword closeBackDrop={closebackdrop} />
+        </ResetPasswordBackdrop>
         <Link to="/Registration" className="account-sign-up">
           Don t have An Account? sign up
         </Link>

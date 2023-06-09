@@ -55,7 +55,7 @@ function AdoptionHolder(props) {
       <div
         className={
           loading
-            ? "normal-post-card-scroll center"
+            ? "normal-post-card-scroll center-adoption"
             : "adoption-post-card-scroll"
         }
       >
@@ -64,7 +64,9 @@ function AdoptionHolder(props) {
         ) : (
           <div
             className={
-              adoptionPosts.length ? "adoption-post-card-holder" : "center"
+              adoptionPosts.length
+                ? "adoption-post-card-holder"
+                : "center-adoption"
             }
           >
             {adoptionPosts.length > 0 ? (

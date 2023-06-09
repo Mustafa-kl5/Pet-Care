@@ -107,7 +107,7 @@ export default function RegistrationForm(props) {
         <div className="signup-word">Sign in</div>
         <form onSubmit={HandleRegisterForm} id="registrationForm">
           <div className="inpuFeild-holder">
-            <div className="left-section">
+            <div className="registration-left-section">
               <input
                 className="input-filed-shape"
                 placeholder="First Name"

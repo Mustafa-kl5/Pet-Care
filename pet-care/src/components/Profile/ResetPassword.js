@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/ProfilePage/ResetPassword.css";
 import resetPassImage from "../../Image/Forgot password.gif";
+import ResetPasswordForm from "./ResetPasswordForm";
+import VerfiyOtp from "./VerfiyOtp";
+import ResetPasswordComponent from "./ResetPasswordComponent";
 
-export default function ResetPassword() {
+export default function ResetPassword(props) {
+  const [otpId, setOtpId] = useState("");
+  const [email, setEmail] = useState("");
+  const [showVerfiyModel, setShowVerfiyModel] = useState(false);
+  const [showPasswordForm, setShowPasswordForm] = useState(false);
+
+  const otpReceive = (otpId) => {
+    setOtpId(otpId);
+    setShowVerfiyModel(true);
+  };
+
+  const emailReceive = (email) => {
+    setEmail(email);
+  };
+  const showModelReceive = () => {
+    setShowPasswordForm(true);
+  };
+  const closeBackDrop = () => {
+    props.closeBackDrop();
+  };
   return (
     <div className="reset-password-holder">
       <div className="reset-password-holder-leftsection">
@@ -12,21 +34,18 @@ export default function ResetPassword() {
         />
       </div>
       <div className="reset-password-holder-rightsection">
-        <div className="reset-password-word">Please Enter Your Email:</div>
-        <div className="reset-password-word-hint">
-          Hint: You must enter the email address you provided when you created
-          your account
-        </div>
-        <form className="reset-password-email-form">
-          <input
-            type="text"
-            className="input-filed-shape"
-            placeholder="Email"
-          />
-          <button type="submit" className="reset-password-button-form">
-            Send OTP
-          </button>
-        </form>
+        <ResetPasswordForm sendOtpId={otpReceive} sendEmail={emailReceive} />
+        <VerfiyOtp
+          showModle={showVerfiyModel}
+          otpId={otpId}
+          email={email}
+          sendShowModel={showModelReceive}
+        />
+        <ResetPasswordComponent
+          showModle={showPasswordForm}
+          email={email}
+          closeBackDrop={closeBackDrop}
+        />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import "../../componentStyle/ProfilePage/ProfileOption.css";
 import ImageIcon from "../../Image/Change-Image.png";
 import resetPassword from "../../Image/password-reset.png";
 import postIcon from "../../Image/AdoptionCard-logo.png";
+import pasketIcon from "../../Image/backet.png";
 import bioIcon from "../../Image/UpdateBio.jpg";
 export default function ProfileOption(props) {
   const handleButtonClick = (option, icon) => {
@@ -67,6 +68,16 @@ export default function ProfileOption(props) {
             style={{ backgroundImage: `url("${postIcon}")` }}
           ></div>
           Favourite Adoption Post
+        </div>
+        <div
+          className="option-item"
+          onClick={() => handleButtonClick("Order History", pasketIcon)}
+        >
+          <div
+            className="option-icon"
+            style={{ backgroundImage: `url("${pasketIcon}")` }}
+          ></div>
+          Order History
         </div>
       </div>
     </div>

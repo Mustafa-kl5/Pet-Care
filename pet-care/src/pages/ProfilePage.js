@@ -10,6 +10,7 @@ import UpdateProfilePicture from "../components/Profile/UpdateProfilePicture";
 import ResetPassword from "../components/Profile/ResetPassword";
 import FavouriteAdoptionPost from "../components/Profile/FavouriteAdoptionPost";
 import EditDeleteNormalPost from "../components/Profile/EditDeleteNormalPost";
+import OrderHistory from "../components/Profile/OrderHistory";
 
 export default function Profile(props) {
   const [showBackDrop, setShowBackDrop] = useState(false);
@@ -37,7 +38,7 @@ export default function Profile(props) {
           setSelectedComponent(<UpdateProfilePicture />);
           break;
         case "Password reset":
-          setSelectedComponent(<ResetPassword />);
+          setSelectedComponent(<ResetPassword closeBackDrop={closebackdrop} />);
           break;
         case "Favourite Adoption Post":
           setSelectedComponent(<FavouriteAdoptionPost />);
@@ -46,6 +47,10 @@ export default function Profile(props) {
         case "Edite post or delete":
           setSelectedComponent(<EditDeleteNormalPost />);
           break;
+        case "Order History":
+          setSelectedComponent(<OrderHistory />);
+          break;
+
         default:
           setSelectedComponent(null);
           break;
@@ -53,9 +58,12 @@ export default function Profile(props) {
     }
   };
 
-  const handleCloseBackDrop = () => {
-    setShowBackDrop(false);
-    setSelectedComponent(null);
+  const closebackdrop = () => {
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setShowBackDrop(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
 
   return (

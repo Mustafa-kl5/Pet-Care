@@ -28,6 +28,8 @@
   height: 4rem;
   box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.25);
   border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  background-color: rgb(237, 233, 233);
 }
 .option-icon {
   width: 2rem;
@@ -36,4 +38,8 @@
   background-size: cover;
   margin-right: 1rem;
   margin-left: 3rem;
+}
+.option-item:hover {
+  /* Add desired background animation */
+  background-color: rgb(220, 220, 220);
 }

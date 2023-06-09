@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .content-header-holder {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .left-riht-section {
   display: flex;
@@ -21,7 +21,7 @@
   align-items: center;
   flex-direction: column;
   width: 19rem;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 .right-section {
   width: 51rem;
