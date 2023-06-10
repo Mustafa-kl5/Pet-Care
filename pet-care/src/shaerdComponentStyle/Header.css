@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 70rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
 }
 .logo-section {
   display: flex;
@@ -19,8 +19,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
 .header-text {
   font-size: 3.125rem;
+  font-family: "Marck Script", cursive;
 }
 .backet {
   width: 3rem;
