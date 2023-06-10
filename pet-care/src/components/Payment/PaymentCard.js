@@ -32,7 +32,6 @@ export default function PaymentCard(props) {
   const handlePhoneChange = (e) => {
     setCheckoutInput({ ...checkoutInput, phoneNumber: e.target.value });
   };
-  console.log(checkoutInput);
   const CalculateTotal = () => {
     let calculatedTotal = 0;
     UpdatedProducts.forEach((element) => {
@@ -77,8 +76,7 @@ export default function PaymentCard(props) {
           <button
             className="payment-submitButton"
             type="submit"
-            onClick={handleCheckout}
-          >
+            onClick={handleCheckout}>
             <span className="payment-total-word">{total} $</span>
             <span className="payment-total-word">Checkout</span>
           </button>
