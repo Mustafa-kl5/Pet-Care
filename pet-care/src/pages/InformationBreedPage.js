@@ -28,7 +28,7 @@ export default function InformationBreedPage() {
       });
 
       const json = await response.data;
-      setImagePath(json.animalType.TypeImage[0].fileName);
+      setImagePath(json.animalType.TypeImage[0]?.fileName);
       setInformationData(json.informationBlog);
       setIsLoading(false);
     } catch (error) {
@@ -52,8 +52,7 @@ export default function InformationBreedPage() {
               <Link
                 key={data._id}
                 to={`/InformationandTreatmentMainPage/:${data.animalBreed}/:${data.animalType}/:${typeID}`}
-                className="Animal-Breed-Link"
-              >
+                className="Animal-Breed-Link">
                 <BreedCard
                   BreedName={data.animalBreed}
                   BreedImage={data.images[0]}

@@ -1,7 +1,7 @@
 .order-history-holder {
   width: 60rem;
   height: calc(100% - 1rem);
-  padding-top: 1rem;
+
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -50,10 +50,16 @@
   background-color: #f9f9f9;
 }
 .order-history-products-qunaitity-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   max-width: 20rem;
   max-height: 20rem;
   font-size: 1.1rem;
   display: flex;
   border-bottom: 1px solid rgb(3, 3, 3);
+}
+.order-history-body-details {
+  width: 25%;
 }

@@ -76,8 +76,7 @@ export default function Profile(props) {
           title={title}
           CloseBackDrop={handleOpenBackDrop}
           show={showBackDrop}
-          icon={icon}
-        >
+          icon={icon}>
           {selectedComponent}
         </OptionBackDrop>
       </ContentHolder>

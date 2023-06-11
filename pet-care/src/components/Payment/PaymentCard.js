@@ -6,43 +6,42 @@ import CardCartType from "./CardCartType";
 import VisaImage from "../../Image/Visa.png";
 import MasterCard from "../../Image/mastercard.png";
 export default function PaymentCard(props) {
-  const update = props.update;
-  const userID = props.ID;
-  const order = props.OrderData || {};
-  const UpdatedProducts = order.products || [];
+  const { update, ID, OrderData } = props;
+  const [UpdatedProducts, setUpdatedProducts] = useState(
+    !OrderData.products ? [] : OrderData.products
+  );
   const [BackDrop, setBackDrop] = useState(false);
   const [Message, setMessage] = useState("");
   const [total, setTotal] = useState(0);
-  const [checkoutInput, setCheckoutInput] = useState({
-    email: "",
-    phoneNumber: "",
-  });
+  const [email, setEmail] = useState("");
   const handleCheckout = async () => {
     const response = await api.post("/OrderPage/getCardInformation", {
-      userID: userID,
-      OrderID: order._id,
-      email: checkoutInput.email,
+      userID: ID,
+      OrderID: OrderData._id,
+      email: email,
     });
     const json = await response.data;
     window.location = json.url;
   };
   const handleEmailChange = (e) => {
-    setCheckoutInput({ ...checkoutInput, email: e.target.value });
-  };
-  const handlePhoneChange = (e) => {
-    setCheckoutInput({ ...checkoutInput, phoneNumber: e.target.value });
+    setEmail(e.target.value);
   };
   const CalculateTotal = () => {
     let calculatedTotal = 0;
-    UpdatedProducts.forEach((element) => {
-      calculatedTotal += element.productPrice * element.productQuntity;
-    });
-    setTotal(calculatedTotal);
+    if (!UpdatedProducts) setTotal(0);
+    else {
+      UpdatedProducts.forEach((element) => {
+        calculatedTotal +=
+          element.Product.productPrice * element.ProductQuantity;
+      });
+
+      setTotal(calculatedTotal);
+    }
   };
   useEffect(() => {
     CalculateTotal();
-    if (UpdatedProducts.length < 1) setTotal(0);
-  }, [UpdatedProducts, update]);
+    if (!UpdatedProducts) setTotal(0);
+  }, [update]);
   return (
     <div className="payment-card-holder">
       <div className="payment-card-section">

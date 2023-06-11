@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../componentStyle/Payment/CartCard.css";
 import removeIcon from "../../Image/delete.png";
-
 export default function CartCard(props) {
-  const productData = props.productData;
+  const [productData, setProductData] = useState(props.productData);
   const handleDeletProduct = () => {
     props.handleDeleteProduct(props.id);
   };
@@ -12,15 +11,14 @@ export default function CartCard(props) {
       <div
         className="cart-card-item-product-image"
         style={{
-          backgroundImage: `url("${productData.productImages[0].fileName}")`,
-        }}
-      ></div>
+          backgroundImage: `url("${productData.Product.productImages[0]?.fileName}")`,
+        }}></div>
       <div className="cart-card-item-product-name">
-        {productData.productName} <br />
-        <span className="cart-card-item-product-name-span">{`Quantity : ${productData.productQuntity}`}</span>
+        {productData.Product.productName} <br />
+        <span className="cart-card-item-product-name-span">{`Quantity : ${productData.ProductQuantity}`}</span>
       </div>
       <div className="cart-card-item-product-name-span">
-        ${productData.productPrice}
+        ${productData.Product.productPrice}
       </div>
       <button
         className="cart-card-item-product-button-remove"

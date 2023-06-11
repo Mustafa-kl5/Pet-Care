@@ -28,7 +28,7 @@ export default function InformationandTreatmentMainPage() {
     });
     const json = await response.data;
     setdata(json.animalData);
-    setTypeImage(json.animalType.TypeImage[0].fileName);
+    setTypeImage(json.animalType.TypeImage[0]?.fileName);
     setIsLoading(false);
   };
   return (

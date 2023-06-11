@@ -8,7 +8,7 @@ import api from "../services/api";
 import { useEffect, useState } from "react";
 import LoadingBar from "../shaerdComponents/LoadingBar";
 export default function InformationTreatmentPage() {
-  const [TypeData, setTypeData] = useState();
+  const [TypeData, setTypeData] = useState([]);
   const [IsLoading, setIsLoading] = useState(false);
 
   const getType = async () => {
@@ -22,7 +22,6 @@ export default function InformationTreatmentPage() {
   useEffect(() => {
     getType();
   }, []);
-
   return (
     <MainBackGround>
       <ContentHolder>
@@ -37,12 +36,10 @@ export default function InformationTreatmentPage() {
               <Link
                 className="animal-type-link"
                 to={`/InformationBreedPage/:${ele.TypeName}/:${ele._id}`}
-                key={ele._id}
-              >
+                key={ele._id}>
                 <TypeCard
                   TypeName={ele.TypeName}
-                  TypeImage={ele.TypeImage[0].fileName}
-                ></TypeCard>
+                  TypeImage={ele.TypeImage[0]?.fileName}></TypeCard>
               </Link>
             ))}
           </InformationCardHolder>

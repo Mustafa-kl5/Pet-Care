@@ -6,8 +6,7 @@ export default function BreedCard(props) {
     <div className="breed-card">
       <div
         className="breed-image"
-        style={{ backgroundImage: `url("${props.BreedImage.fileName}")` }}
-      >
+        style={{ backgroundImage: `url("${props.BreedImage?.fileName}")` }}>
         <div className="breed-name">{props.BreedName}</div>
       </div>
     </div>
