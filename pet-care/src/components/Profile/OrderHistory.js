@@ -53,7 +53,7 @@ export default function OrderHistory() {
                       {item.Product.productName}
                     </div>
                     <div className="order-history-body-details">
-                      {item.productQuantity} x
+                      {item.ProductQuantity} x
                     </div>
                     <div className="order-history-body-details">
                       {item.Product.productPrice} $
