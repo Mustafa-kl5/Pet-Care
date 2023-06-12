@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function NoPostFound(props) {
   return (
     <div className="no-post-found">
