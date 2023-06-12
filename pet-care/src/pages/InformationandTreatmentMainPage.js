@@ -46,17 +46,17 @@ export default function InformationandTreatmentMainPage() {
         ) : (
           <div className="information-and-treatment-scroll">
             <div className="information-and-treatment-scroll-holder">
-              <InformationPageSwiper Swiper={data[0].images} />
+              <InformationPageSwiper Swiper={data[0]?.images} />
               <InformationText
                 Breed={breedName}
-                Information={data[0].information}
+                Information={data[0]?.information}
               />
 
               <LocationView
                 width="48rem"
                 height="30rem"
-                lat={data[0].clinicLocation.latitude}
-                lng={data[0].clinicLocation.longitude}
+                lat={data[0]?.clinicLocation.latitude}
+                lng={data[0]?.clinicLocation.longitude}
                 textCondition={false}
               />
             </div>

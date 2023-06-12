@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import api from "../services/api";
 import { useEffect, useState } from "react";
 import LoadingBar from "../shaerdComponents/LoadingBar";
+import NoPostFound from "../components/Profile/NoPostFound";
+import NoData from "../shaerdComponents/NoData";
 export default function InformationTreatmentPage() {
-  const [TypeData, setTypeData] = useState();
+  const [TypeData, setTypeData] = useState([]);
   const [IsLoading, setIsLoading] = useState(false);
 
   const getType = async () => {
@@ -22,7 +24,6 @@ export default function InformationTreatmentPage() {
   useEffect(() => {
     getType();
   }, []);
-
   return (
     <MainBackGround>
       <ContentHolder>
@@ -31,6 +32,8 @@ export default function InformationTreatmentPage() {
           <div className="center-loading-information">
             <LoadingBar />
           </div>
+        ) : TypeData.length === 0 || !TypeData ? (
+          <NoPostFound massage={"No blogs found!"} />
         ) : (
           <InformationCardHolder>
             {TypeData?.map((ele) => (

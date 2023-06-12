@@ -14,11 +14,11 @@ export default function OrderHistory() {
   const getOrders = async () => {
     setIsLoading(true);
     const response = await api.post(`/getOrderHistory/:${getUserId()}`);
-    setOrder(response.data.userOrder);
+    const json = await response.data;
+    setOrder(json.userOrder);
     setIsLoading(false);
   };
   let OrderID = 1;
-  console.log(order);
   return isLoading ? (
     <div className="order-history-loading-center">
       <LoadingBar />
@@ -40,21 +40,29 @@ export default function OrderHistory() {
           </tr>
         </thead>
         <tbody>
-          {order.map((order) => (
-            <tr key={order._id} className="order-row">
+          {order.map((ele, index) => (
+            <tr key={ele._id} className="order-row">
               <th scope="row">#{OrderID++}</th>
-              <td>{order._id}</td>
+              <td>{ele._id}</td>
               <td>
-                {order.products.map((product) => (
-                  <div className="order-history-products-qunaitity-holder">
-                    <div>{product.productName}</div>
-                    <div>{product.productQuntity} x</div>
-                    <div>{product.productPrice} $</div>
+                {ele.Order?.products?.map((item, productIndex) => (
+                  <div
+                    className="order-history-products-qunaitity-holder"
+                    key={productIndex}>
+                    <div className="order-history-body-details">
+                      {item.Product.productName}
+                    </div>
+                    <div className="order-history-body-details">
+                      {item.productQuantity} x
+                    </div>
+                    <div className="order-history-body-details">
+                      {item.Product.productPrice} $
+                    </div>
                   </div>
                 ))}
               </td>
-              <td>{order.totalPrice}$</td>
-              <td>{order.orderState}</td>
+              <td>{ele.Order?.totalPrice}$</td>
+              <td>{ele.Order?.orderState}</td>
             </tr>
           ))}
         </tbody>

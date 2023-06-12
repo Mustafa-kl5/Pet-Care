@@ -10,29 +10,26 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function ShopingCart(props) {
   const { OrderData, ID, handleUpdate, isLoading } = props;
-  const Order = OrderData || {};
-  const products = Order.products || [];
-  const [updatedProducts, setUpdatedProducts] = useState(products);
-
+  const [updatedProducts, setUpdatedProducts] = useState(
+    !OrderData.products ? [] : OrderData.products
+  );
   useEffect(() => {
-    setUpdatedProducts(products);
-  }, [products]);
-
+    setUpdatedProducts(updatedProducts);
+  }, [updatedProducts]);
   const deleteProduct = async (id) => {
     await api.delete("/OrderPage/deleteProductsFromPasket", {
-      data: { OrderId: Order._id, ProductId: id, userID: ID },
+      data: { OrderId: OrderData._id, ProductId: id, userID: ID },
     });
     notifySuccess();
     handleUpdate();
   };
-
   const handleDeleteProduct = async (id) => {
     await deleteProduct(id);
     const updatedData = updatedProducts.filter((ele) => ele._id !== id);
     setUpdatedProducts(updatedData);
   };
   const notifySuccess = () =>
-    toast.success("The Item Removed From pasket Successfully", {
+    toast.success("The item has been from your basket successfully", {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -42,23 +39,24 @@ export default function ShopingCart(props) {
       progress: undefined,
       theme: "light",
     });
+
   return (
     <div className="shoping-cart-holder">
       <div className="shoping-cart-logo-word">
         <div
           className="shoping-cart-logo"
-          style={{ backgroundImage: `url("${cartIcon}")` }}
-        ></div>
+          style={{ backgroundImage: `url("${cartIcon}")` }}></div>
         <div className="shoping-cart-word">Your Order</div>
       </div>
       <div className="shoping-cart-word-scroll">
         <div className="shoping-cart-word">
           Shopping cart <br />
           <span className="shoping-cart-word-span">
-            {`You have ${updatedProducts.length} item in your cart`}
+            {`You have ${
+              updatedProducts.length === 0 ? "0" : updatedProducts.length
+            } item in your cart`}
           </span>
         </div>
-
         {isLoading ? (
           <div className="payment-loading-center">
             <LoadingBar />

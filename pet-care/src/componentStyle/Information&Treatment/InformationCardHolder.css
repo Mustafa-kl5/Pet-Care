@@ -6,7 +6,6 @@
   overflow-x: hidden;
   padding-bottom: 1rem;
 }
-
 .Information-Holder {
   display: grid;
   grid-template-columns: repeat(2, 24rem);

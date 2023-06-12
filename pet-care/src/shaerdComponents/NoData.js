@@ -6,9 +6,9 @@ export default function NoData(props) {
     <div className="no-data-holder">
       <div className="no-data-image"></div>
       <div className="no-data-label">
-        No Product In Your Pasket
+        You don't have any products yet!
         <br />
-        Go Now To By some Thing for Your Pet
+        Go now to but something for your pet!
       </div>
     </div>
   );

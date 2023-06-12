@@ -23,7 +23,7 @@ export default function ProductCard(props) {
       "/StorePage/sendSelectedProducts",
       {
         ProductID: props.id,
-        ProductQuintity: quantity,
+        ProductQuantity: quantity,
       },
       {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -49,8 +49,7 @@ export default function ProductCard(props) {
     <div className="product-card-item">
       <div
         className="product-card-item-image"
-        style={{ backgroundImage: `url("${props.image}")` }}
-      ></div>
+        style={{ backgroundImage: `url("${props.image}")` }}></div>
       <div className="product-card-item-produt-name">{props.name}</div>
       <div className="product-card-item-produt-name">{props.price}$</div>
       <div className="quantity-holder">
@@ -71,8 +70,7 @@ export default function ProductCard(props) {
       <button
         className="product-card-item-add-button"
         type="button"
-        onClick={handleAddToCart}
-      >
+        onClick={handleAddToCart}>
         {isLoading ? <span className="button-loader"></span> : "ADD TO CART"}
       </button>
       <ToastContainer />

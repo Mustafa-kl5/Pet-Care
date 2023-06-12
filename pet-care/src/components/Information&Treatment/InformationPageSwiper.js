@@ -17,7 +17,7 @@ export default function InformationPageSwiper(props) {
         modules={[Pagination, Navigation]}
         className="animal-breed-swiper"
       >
-        {swiper.map((ele, index) => {
+        {swiper?.map((ele, index) => {
           return (
             <SwiperSlide key={index}>
               <img className="animal-breed-image" src={ele.fileName} />
