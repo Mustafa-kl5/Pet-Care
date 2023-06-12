@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Ranga-Bold";
-  src: url("./assest/Fonts/Ranga-Regular.ttf");
+  font-family: "mustfa";
+  src: url("./assest/Fonts/RobotoMono-Italic-VariableFont_wght.ttf");
 }
 
 html,
@@ -8,9 +8,9 @@ body {
   padding: 0;
   margin: 0;
   --swiper-theme-color: rgba(123, 97, 255, 1);
-  font-family: "Ranga-Bold";
+  font-family: "mustfa";
 }
 button,
 input {
-  font-family: "Ranga-Bold";
+  font-family: "mustfa";
 }

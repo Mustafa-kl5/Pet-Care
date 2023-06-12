@@ -41,7 +41,7 @@ export default function InformationTreatmentPage() {
               >
                 <TypeCard
                   TypeName={ele.TypeName}
-                  TypeImage={ele.TypeImage[0].fileName}
+                  TypeImage={ele.TypeImage[0]?.fileName}
                 ></TypeCard>
               </Link>
             ))}

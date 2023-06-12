@@ -6,8 +6,9 @@
 }
 
 .status-section {
-  width: 6.5rem;
-  height: 3rem;
+  width: 7.5rem;
+  height: 3.4rem;
+  line-height: 1;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -76,7 +76,7 @@ export default function SaveChangeButton(props) {
   return (
     <>
       <LoadingProgress show={isLoading} />
-      <div className="save-button">
+      <div className="save-button ">
         <button
           type="button"
           className="next-previse-button"

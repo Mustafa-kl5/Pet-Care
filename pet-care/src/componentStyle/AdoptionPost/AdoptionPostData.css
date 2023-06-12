@@ -29,7 +29,7 @@
 .user-information-pet-information {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .user-contact-post-status {
   display: flex;

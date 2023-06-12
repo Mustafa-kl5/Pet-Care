@@ -30,6 +30,7 @@
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
+  text-align: center;
   color: rgba(56, 78, 183, 0.3);
 }
 .open-map:hover {

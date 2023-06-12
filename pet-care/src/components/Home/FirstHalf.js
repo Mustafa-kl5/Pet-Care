@@ -5,7 +5,7 @@ export default function FirstHalf() {
     <>
       <div className="First-Half-Holder">
         <div className="Text-Section">
-          <div className="First-P">Taking care for your Pet !</div>
+          <div className="First-P">Taking care for your Pet</div>
           <div className="Sec-P">
             Human–canine bonding is the relationship between dogs and pet.
           </div>

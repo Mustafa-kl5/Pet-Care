@@ -28,7 +28,7 @@ export default function InformationBreedPage() {
       });
 
       const json = await response.data;
-      setImagePath(json.animalType.TypeImage[0].fileName);
+      setImagePath(json.animalType.TypeImage[0]?.fileName);
       setInformationData(json.informationBlog);
       setIsLoading(false);
     } catch (error) {
