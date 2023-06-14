@@ -1,0 +1,54 @@
+.table-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 32.5rem;
+  height: 6rem;
+  border: 0.1rem solid #e0d4d4;
+  border-top: 0;
+  border-right: 0;
+  border-bottom-left-radius: 1rem;
+}
+.animal-information-header {
+  height: calc(6rem / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-bottom: 0.1rem solid #e0d4d4;
+  width: 32.66rem;
+  background-color: rgb(211, 215, 216);
+  border-top-right-radius: 1rem;
+}
+.animal-information-data {
+  height: calc(6rem / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+}
+.animal-information-header-item {
+  width: calc(32.5rem / 3);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animal-information-data-item {
+  width: calc(32.5rem / 3);
+  text-align: center;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animal-information-header-item:nth-child(2) {
+  border-left: 0.1rem solid #e0d4d4;
+  border-right: 0.1rem solid #e0d4d4;
+}
+.animal-information-data-item:nth-child(2) {
+  border-left: 0.1rem solid #e0d4d4;
+  border-right: 0.1rem solid #e0d4d4;
+}

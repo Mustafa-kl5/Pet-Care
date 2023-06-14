@@ -1,0 +1,38 @@
+.adoption-post-data-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.adoption-post-data-description-comment-carosil-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adoption-post-data-description-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 18rem;
+  height: calc(42rem - 6rem);
+  gap: 0.5rem;
+}
+.adoption-post-data-carosil {
+  width: calc(51rem - 18rem);
+  height: calc(42rem - 6rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.user-information-pet-information {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user-contact-post-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}

@@ -1,0 +1,19 @@
+.profile-header-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0.8rem 1rem;
+  border-bottom: 0.2rem solid rgba(224, 212, 212, 1);
+}
+.gear-icon {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../../Image/Setting-logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.profile-management-word {
+  font-size: 1.3rem;
+  font-weight: bold;
+}

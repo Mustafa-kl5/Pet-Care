@@ -2,17 +2,17 @@
   overflow-y: scroll;
   overflow-x: hidden;
   height: calc(50rem - 15rem);
-  width: 49rem;
-
+  width: 48.3rem;
   padding-right: 2.8rem;
 }
+
 .Information-Scroll::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #e0d4d4;
-  -webkit-border-radius: 1ex;
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
 }
 
 .Information-Scroll::-webkit-scrollbar-thumb {
-  background: #124c5f;
+  background: #00000088;
   -webkit-border-radius: 1ex;
 }

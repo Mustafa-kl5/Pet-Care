@@ -1,0 +1,32 @@
+.profile-favourite-adoption-post {
+  width: calc(100% - 1rem);
+  height: calc(95% - 1rem);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.profile-favourite-adoption-post-card-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 18.8rem);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 2.5rem 1rem;
+}
+.profile-favourite-adoption-post::-webkit-scrollbar {
+  width: 0.2rem;
+  background: #00000017;
+  border-radius: 1rem;
+}
+
+.profile-favourite-adoption-post::-webkit-scrollbar-thumb {
+  background: #000000c0;
+  -webkit-border-radius: 1ex;
+}
+.center-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

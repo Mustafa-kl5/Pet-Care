@@ -3,8 +3,9 @@ import "../shaerdComponentStyle/ScrollBar.css";
 export default function ScrollBar(props) {
   return (
     <div
-      className="Information-Scroll"
-      style={{ height: `calc( ${props.Height}rem - 15rem)` }}
+      className={
+        props.isLoading ? "product-card-holder-loading" : "Information-Scroll"
+      }
     >
       {props.children}
     </div>

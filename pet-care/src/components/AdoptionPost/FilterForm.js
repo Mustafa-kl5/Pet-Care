@@ -1,34 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/AdoptionPost/FilterForm.css";
-function FilterForm() {
+import { citySelector } from "../../Constant/CitySelector";
+import { animalTypeSelector } from "../../Constant/AnimalTypeSelector";
+function FilterForm(props) {
+  const [filterAdoption, setFilterAdoption] = useState({
+    city: "City",
+    animalType: "AnimalType",
+  });
+  useEffect(() => {
+    props.sendFilterAdoption(filterAdoption);
+  }, [filterAdoption]);
+  const handleSelectChangeAnimalType = (event) => {
+    setFilterAdoption({ ...filterAdoption, animalType: event.target.value });
+  };
+  const handleSelectChangeCity = (event) => {
+    setFilterAdoption({ ...filterAdoption, city: event.target.value });
+  };
   return (
-    <div>
-      <form className="form">
-        <div className="Text">Filter : </div>
-        <select>
-          <option value="City">City</option>
-          <option>Irbid</option>
-          <option>Amman</option>
-          <option>Zarqa</option>
-          <option>Jerash</option>
-        </select>
-        <select>
-          <option>Animal Type</option>
-          <option>Cat</option>
-          <option>Dog</option>
-          <option>Hamster</option>
-          <option>Bird</option>
-        </select>
-        <select>
-          <option>Animal Breed</option>
-          <option></option>
-          <option></option>
-          <option></option>
-          <option></option>
-        </select>
-        <input type="text" placeholder="Search"></input>
-      </form>
-      <hr></hr>
+    <div className="filter-holder">
+      <div className="filter-word">Filter</div>
+      <select
+        className="filter-adoption"
+        onChange={handleSelectChangeCity}
+        value={filterAdoption.city}
+      >
+        <option value={"City"}>City</option>
+        {citySelector()}
+      </select>
+      <select
+        className="filter-adoption"
+        onChange={handleSelectChangeAnimalType}
+        value={filterAdoption.animalType}
+      >
+        <option value={"AnimalType"}>Animal Type</option>
+        {animalTypeSelector()}
+      </select>
     </div>
   );
 }

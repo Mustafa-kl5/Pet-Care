@@ -1,0 +1,56 @@
+.OTP-Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.otp-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+.otp-input {
+  width: 5rem;
+  height: 5rem;
+  font-size: 30px;
+  text-align: center;
+}
+.otp-logo {
+  background-image: url("../../Image/verifyotp.png");
+  background-size: cover;
+  background-position: center;
+  width: 10rem;
+  height: 10rem;
+}
+.otp-text {
+  font-size: 2.1rem;
+}
+.otp-btn {
+  width: 10rem;
+  height: 2.5rem;
+  background: #4375a3;
+  color: white;
+  text-align: center;
+  transition: all 0.3s;
+  font-size: 20px;
+}
+.otp-btn:hover {
+  box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+  background-color: white;
+  color: #4375a3;
+}
+.ResendOTP {
+  font-size: 22px;
+  color: grey;
+}
+.Send-OTP-again {
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}

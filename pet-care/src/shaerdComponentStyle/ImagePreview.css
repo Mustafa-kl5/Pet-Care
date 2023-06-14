@@ -1,8 +1,8 @@
 .image-preview-holder {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .preview-logo-word {
   display: flex;
@@ -23,14 +23,14 @@
   overflow-y: scroll;
   overflow-x: hidden;
   width: 28rem;
-  height: 26rem;
+  height: 25rem;
+  margin-bottom: 1rem;
 }
 .card-image-preview-holder {
   width: 27.5rem;
-  min-height: 22.5rem;
+  min-height: 25rem;
   background: rgb(191, 225, 243);
-  border-radius: 2rem;
-
+  border-radius: 0.5rem;
   display: grid;
   grid-template-columns: repeat(2, calc(25rem / 2));
   grid-auto-rows: minmax(100px, auto);
@@ -46,7 +46,7 @@
   background-size: cover;
   border-radius: 1rem;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .delete-icon {
   width: 2rem;
@@ -59,11 +59,50 @@
 }
 .preview-scrollholder::-webkit-scrollbar {
   width: 0.625rem;
-  background: #baaaaa;
-  border-radius: 1rem;
+  background: #00000017;
+  border-radius: 2rem;
 }
 
 .preview-scrollholder::-webkit-scrollbar-thumb {
-  background: #124c5f;
+  background: #000000af;
   -webkit-border-radius: 1ex;
+  height: 1rem;
+}
+
+.empty-image-section-holder {
+  width: 27.5rem;
+  min-height: 25rem;
+  background: rgb(191, 225, 243);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-image-section-holder::-webkit-scrollbar {
+  width: 0.625rem;
+  background: #00000017;
+  border-radius: 2rem;
+}
+.empty-image-section-holder::-webkit-scrollbar-thumb {
+  background: #000000;
+  -webkit-border-radius: 1ex;
+  height: 1rem;
+}
+
+.empty-image-section {
+  background-image: url("../Image/empty.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 7rem;
+  height: 7rem;
+}
+.empty-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.empty-image-hint {
+  font-size: 1.2rem;
 }

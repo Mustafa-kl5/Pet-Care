@@ -1,6 +1,6 @@
 .user-information-holder {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   width: 16rem;
   height: 5rem;
@@ -20,7 +20,7 @@
 .user-text {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }

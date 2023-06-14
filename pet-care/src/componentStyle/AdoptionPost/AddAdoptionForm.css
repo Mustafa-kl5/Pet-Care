@@ -1,0 +1,106 @@
+.add-adoption-form-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-adoption-form-left-section {
+  width: calc(58rem / 2);
+  height: calc(39rem - 5.6rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-right: 0.2rem solid rgba(224, 212, 212, 1);
+  gap: 0.5rem;
+  padding-left: 2rem;
+}
+.add-adoption-form-right-section {
+  width: calc(60rem / 2);
+  height: calc(39rem - 5.6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.add-adoption-animal-information {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.header-word {
+  font-size: 1.3rem;
+}
+.add-adoption-animal-type-name-breed {
+  display: grid;
+  grid-template-columns: repeat(2, 12rem);
+  gap: 1rem 2rem;
+}
+.add-adoption-input {
+  width: 12rem;
+  padding-left: 1rem;
+  border: 0;
+  background: rgba(238, 242, 243, 1);
+  height: 1.8rem;
+  border-radius: 0.5rem;
+}
+.add-adoption-description-social-media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.add-adoption-description {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.add-adoption-input-description {
+  width: 12rem;
+  height: 7.7rem;
+  padding-left: 1rem;
+  border: 0;
+  background: rgba(238, 242, 243, 1);
+}
+.add-adoption-social-media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.add-adoption-upload-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.add-adoption-submit-button {
+  border: none;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  border-radius: 2rem;
+  background: rgba(14, 38, 49, 1);
+  color: white;
+}
+.add-adoption-select-input {
+  width: 13.1rem;
+  padding-left: 1rem;
+  border: 0;
+
+  background: rgba(238, 242, 243, 1);
+  height: 1.9rem;
+  border-radius: 0.5rem;
+}
+.add-adoption-input-description::-webkit-scrollbar {
+  width: 0.3rem;
+  background: #00000060;
+  border-radius: 2rem;
+}
+
+.add-adoption-input-description::-webkit-scrollbar-thumb {
+  background: #00000088;
+  -webkit-border-radius: 1ex;
+}

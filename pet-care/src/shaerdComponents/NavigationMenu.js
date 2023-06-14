@@ -8,8 +8,12 @@ import storeIcon from "../Image/store.png";
 import infoIcon from "../Image/information.png";
 import settingIcon from "../Image/setting.png";
 import logOutIcon from "../Image/logout.png";
+import { logeOut } from "../hooks/auth/Logout";
 
 export default function NavigationMenu() {
+  const handleLogOut = () => {
+    logeOut();
+  };
   return (
     <div className="navigation-holder">
       <div className="link-item">
@@ -66,14 +70,12 @@ export default function NavigationMenu() {
           <div>Profile Setting</div>
         </Link>
       </div>
-      <div className="link-item">
-        <Link to={"/Posts"} className="link-item-path">
-          <div
-            className="item-icon"
-            style={{ backgroundImage: `url("${logOutIcon}")` }}
-          ></div>
-          <div>Log Out</div>
-        </Link>
+      <div className="link-item link-item-path" onClick={handleLogOut}>
+        <div
+          className="item-icon"
+          style={{ backgroundImage: `url("${logOutIcon}")` }}
+        ></div>
+        <div>Log Out</div>
       </div>
     </div>
   );

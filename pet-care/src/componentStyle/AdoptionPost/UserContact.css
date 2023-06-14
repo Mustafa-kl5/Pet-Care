@@ -1,0 +1,30 @@
+.contact-holder {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-self: flex-start;
+  padding-left: 1rem;
+}
+.contact-item-holder {
+  display: flex;
+  align-self: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  background-image: url("../../Image/facebook.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 2rem;
+  height: 2rem;
+}
+.contact-item:nth-child(2) {
+  background-image: url("../../Image/whatsapp.gif");
+}
+.contact-item:nth-child(3) {
+  background-image: url("../../Image/phone.png");
+}
+
+.owner-word {
+  font-size: 1rem;
+}

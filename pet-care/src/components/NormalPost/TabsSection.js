@@ -4,18 +4,17 @@ import "../../componentStyle/NormalPost/TabsSection.css";
 
 function TabsSection(props) {
   const [activeTab, setActiveTab] = useState("asking");
-  const [isactive, setIsActive] = useState(true);
 
   const handleAskingPost = () => {
     setActiveTab("asking");
-    setIsActive(true);
     props.activStateus("asking");
   };
+
   const handleMissingPost = () => {
     setActiveTab("missing");
-    setIsActive(false);
     props.activStateus("missing");
   };
+
   return (
     <div className="tabs-holder">
       <div
@@ -23,14 +22,14 @@ function TabsSection(props) {
         style={{ backgroundImage: `url("${tabIcon}")` }}
       ></div>
       <div
-        className={`tab-item ${isactive ? "active" : ""}`}
+        className={`tab-item ${activeTab === "asking" ? "active" : ""}`}
         onClick={handleAskingPost}
       >
         Asking
       </div>
       <div className="bar" />
       <div
-        className={`tab-item ${!isactive ? "active" : ""}`}
+        className={`tab-item ${activeTab === "missing" ? "active" : ""}`}
         onClick={handleMissingPost}
       >
         Missing

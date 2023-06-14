@@ -1,0 +1,17 @@
+.location-view-holder {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.location-word {
+  font-size: 1.3rem;
+}
+.loaction-holder {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.clinic-location-word {
+  font-size: 2.5rem;
+}

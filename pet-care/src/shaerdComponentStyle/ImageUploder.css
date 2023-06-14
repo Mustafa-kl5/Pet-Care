@@ -1,9 +1,9 @@
 .image-upload-holder {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: start;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 .upload-word {
   font-size: 1.3rem;
@@ -26,6 +26,7 @@
 .drag-massage {
   font-size: 1rem;
   font-weight: bolder;
+  text-align: center;
 }
 .browse-word {
   color: rgba(72, 62, 168, 1);
@@ -33,4 +34,5 @@
 }
 .support-type {
   color: #676767;
+  text-align: center;
 }

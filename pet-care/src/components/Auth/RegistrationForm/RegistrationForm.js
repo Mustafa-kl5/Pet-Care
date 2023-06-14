@@ -1,33 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../componentStyle/RegistrationForm/RegistrationForm.css";
 import "../../../shaerdComponentStyle/inputFIledStyle.css";
 import LeftImage from "../LoginForm/LeftImage";
 import { Link } from "react-router-dom";
-
+import {
+  isValidEmail,
+  isValidPassword,
+  notifyError,
+  checkStringVariables,
+  birthDayValidation,
+  nameValidation,
+  cityValidation,
+  validationPhoneNumber,
+} from "../../../Validation/InputValidtion";
+import { ToastContainer } from "react-toastify";
+import { Selector } from "../../../Constant/DaysSelector";
+import { citySelector } from "../../../Constant/CitySelector";
 export default function RegistrationForm(props) {
   const dayOption = [];
   const monthOption = [];
   const yearsOption = [];
-  const Selector = (statrindex, lastIndex, arrayTarget) => {
-    for (let index = statrindex; index <= lastIndex; index++) {
-      if (index < 10) {
-        arrayTarget.push(
-          <option key={index} value={`0${index}`}>
-            0{index}
-          </option>
-        );
-      } else {
-        arrayTarget.push(
-          <option key={index} value={`${index}`}>
-            {index}
-          </option>
-        );
-      }
-    }
-  };
+
   Selector(1, 31, dayOption);
   Selector(1, 12, monthOption);
   Selector(1970, 2020, yearsOption);
+  const [isValidInput, setIsValidInput] = useState(false);
 
   const [formState, setFormState] = useState({
     firstName: "",
@@ -35,12 +32,12 @@ export default function RegistrationForm(props) {
     email: "",
     password: "",
     retypePassword: "",
-    city: "",
+    city: "City",
     phoneNumber: "",
     address: "",
-    dayOfBirth: "",
-    monthOfBirth: "",
-    yearOfBirth: "",
+    dayOfBirth: null,
+    monthOfBirth: null,
+    yearOfBirth: null,
   });
   const dayhandleInput = (event) => {
     setFormState({ ...formState, dayOfBirth: event.target.value });
@@ -53,19 +50,63 @@ export default function RegistrationForm(props) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     const userData = { ...formState };
-    props.forwordRegistrationData(userData);
+    if (
+      !nameValidation(formState.firstName) ||
+      !nameValidation(formState.lastName)
+    ) {
+      notifyError("Please Enter A Valid First Name Or Last Name ");
+      return;
+    }
+
+    if (!isValidEmail(formState.email)) {
+      notifyError("Please Enter A Valid Email Address");
+      return;
+    }
+
+    if (!validationPhoneNumber(formState.phoneNumber)) {
+      notifyError("Please Enter A Valid Phone Number");
+      return;
+    }
+
+    if (!isValidPassword(formState.password)) {
+      notifyError(
+        "Password Must Contain At Least 6 Character And One Number And One Symbol."
+      );
+      return;
+    }
+
+    if (formState.password !== formState.retypePassword) {
+      notifyError("Passwords Did Not Match");
+      return;
+    }
+    if (cityValidation(formState.city)) {
+      notifyError("Please Pick Your City");
+      return;
+    }
+    props.getData(userData);
   };
+
+  const HandleRegisterForm = (event) => {
+    event.preventDefault();
+  };
+  useEffect(() => {
+    if (checkStringVariables(formState) && birthDayValidation(formState)) {
+      setIsValidInput(true);
+    } else {
+      setIsValidInput(false);
+    }
+  }, [formState]);
+
   return (
     <div className="registration-container">
       <LeftImage width="calc(73rem - 43.75rem)" />
       <div className="registration-form-holder">
         <div className="logo-registration"></div>
         <div className="signup-word">Sign in</div>
-        <form onSubmit={handleSubmit} id="registrationForm">
+        <form onSubmit={HandleRegisterForm} id="registrationForm">
           <div className="inpuFeild-holder">
-            <div className="left-section">
+            <div className="registration-left-section">
               <input
                 className="input-filed-shape"
                 placeholder="First Name"
@@ -90,14 +131,17 @@ export default function RegistrationForm(props) {
                 }
                 type="password"
               />
-              <input
-                className="input-filed-shape"
+              <select
+                className="selected-filed-shape"
                 placeholder="City"
-                type="text"
                 onChange={(e) =>
                   setFormState({ ...formState, city: e.target.value })
                 }
-              />
+              >
+                <option value={"City"}>City</option>
+
+                {citySelector()}
+              </select>
             </div>
             <div className="rigth-section">
               <input
@@ -153,7 +197,7 @@ export default function RegistrationForm(props) {
                   className="selector"
                   onChange={monthhandleInput}
                 >
-                  <option value="DD">MM</option>
+                  <option value="MM">MM</option>
                   {monthOption}
                 </select>
               </div>
@@ -163,19 +207,30 @@ export default function RegistrationForm(props) {
                   className="selector"
                   onChange={yearhandleInput}
                 >
-                  <option value="DD">YYYY</option>
+                  <option value="YYYY">YYYY</option>
                   {yearsOption}
                 </select>
               </div>
             </div>
           </div>
+          <ToastContainer />
         </form>
         <button
-          type="submit"
-          className="form-button-registration"
+          type="button"
+          className={
+            isValidInput
+              ? "form-button-registration-active"
+              : "form-button-registration"
+          }
+          disabled={!isValidInput}
           form="registrationForm"
+          onClick={handleSubmit}
         >
-          Sign Up
+          {props.isLoading ? (
+            <span className="button-loader"></span>
+          ) : (
+            "Sign In"
+          )}
         </button>
         <Link to="/Login" className="AlreadyAccount">
           Already Have Account?

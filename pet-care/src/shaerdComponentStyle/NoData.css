@@ -1,0 +1,23 @@
+.no-data-holder {
+  width: 28rem;
+  height: 27rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.no-data-image {
+  width: 15rem;
+  height: 15rem;
+  background-image: url("../Image/EmptyOrder.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.no-data-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}

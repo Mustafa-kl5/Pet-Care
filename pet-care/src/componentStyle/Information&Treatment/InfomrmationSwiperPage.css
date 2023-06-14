@@ -1,25 +1,11 @@
-.mySwiper {
-  padding-left: 6.25rem;
-  padding-top: 4.688rem;
-  padding-bottom: 3.125rem;
-  margin-left: 1.875rem;
-}
-.swiper-image {
-  width: 37.5rem;
-  height: 25rem;
-  background-image: url("../../Image/Cat-Breed2.png");
-  background-position: center;
-  background-size: cover;
-  border-radius: 1.875rem;
+.animal-breed-swiper {
+  width: 48rem;
+  height: 35rem;
+  border-radius: 1.5rem;
 }
 
-.swiper-button-prev {
-  color: #124c5f;
-  margin-left: 3.125rem;
-}
-.swiper-button-next {
-  color: #124c5f;
-}
-.swiper-pagination {
-  margin-left: 1.875rem;
+.animal-breed-image {
+  width: 48rem;
+  height: 35rem;
+  border-radius: 1.5rem;
 }

@@ -1,38 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../componentStyle/NormalPost/NormalPostcard.css";
-import postIcon from "../../Image/cat.jpg";
-import likeIcon from "../../Image/like.png";
-import commentIcon from "../../Image/comments.png";
+import { Link, useNavigate } from "react-router-dom";
+import PostLikeCommentSection from "./PostLikeCommentSection";
 
-function NormalPostcard() {
+function NormalPostcard(props) {
+  const [postData, setPostData] = useState(props.data);
+
+  const navigate = useNavigate();
+  const handleComment = () => {
+    navigate(`/postData/:${props.id}`);
+  };
+  useEffect(() => {
+    setPostData(props.data);
+  }, [props.data]);
   return (
     <div className="normal-post-card-body">
-      <div className="normal-post-card-image"></div>
+      <Link to={`/postData/:${props.id}`}>
+        <div>
+          <img
+            className="normal-post-card-image"
+            src={postData.postImage?.fileName}
+            alt="post image"
+          />
+        </div>
+      </Link>
       <div className="footer-section">
         <div className="normal-post-card-user-info">
           <div
             className="normal-post-card-user-image"
-            style={{ backgroundImage: `url("${postIcon}")` }}
+            style={{ backgroundImage: `url("${postData.ownerImage}")` }}
           ></div>
-          <div className="normal-post-card-user-name">Mustafa mahmood</div>
+          <div className="normal-post-card-user-name">{postData.postOwner}</div>
         </div>
 
-        <div className="like-comment-section">
-          <div className="normal-post-item">
-            <div
-              className="like-comment-icon"
-              style={{ backgroundImage: `url("${likeIcon}")` }}
-            ></div>
-            <div className="like-comment-number">158</div>
-          </div>
-          <div className="normal-post-item">
-            <div
-              className="comment-icon"
-              style={{ backgroundImage: `url("${commentIcon}")` }}
-            ></div>
-            <div className="like-comment-number">158</div>
-          </div>
-        </div>
+        <PostLikeCommentSection
+          postID={props.id}
+          height="1rem"
+          width="1rem"
+          height1="1.5rem"
+          width1="1.5rem"
+          commentFunction={handleComment}
+        />
       </div>
     </div>
   );

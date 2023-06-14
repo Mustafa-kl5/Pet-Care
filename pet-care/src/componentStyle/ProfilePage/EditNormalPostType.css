@@ -1,0 +1,18 @@
+.edit-post-type-holder {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 27rem;
+}
+.edit-post-type-word {
+  font-size: 1.6rem;
+}
+.edit-post-type-select {
+  width: 15rem;
+  height: 3rem;
+  background: rgba(238, 242, 243, 1);
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+}

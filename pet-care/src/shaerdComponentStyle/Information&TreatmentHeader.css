@@ -5,12 +5,11 @@
   height: 1.813rem;
 }
 .Info-Text {
-  font-family: Roboto;
-  font-weight: 400;
   font-size: 1.875rem;
-  line-height: 1.831rem;
+  font-weight: bold;
 }
 .info-Header {
   display: flex;
   padding: 1.25rem 1.25rem;
+  border-bottom: 0.2rem solid #e0d4d4;
 }

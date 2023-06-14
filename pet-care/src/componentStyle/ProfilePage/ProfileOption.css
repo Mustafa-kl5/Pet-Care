@@ -1,0 +1,45 @@
+.profile-option-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  height: calc(42rem - 4rem);
+  padding: 2rem 2rem 0rem 2rem;
+}
+.profile-option-word {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.option-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+.option-item {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 47rem;
+  background-color: rgb(237, 233, 233);
+  height: 4rem;
+  box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  background-color: rgb(237, 233, 233);
+}
+.option-icon {
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 1rem;
+  margin-left: 3rem;
+}
+.option-item:hover {
+  /* Add desired background animation */
+  background-color: rgb(220, 220, 220);
+}

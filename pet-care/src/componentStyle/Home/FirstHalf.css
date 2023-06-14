@@ -1,0 +1,59 @@
+.First-Half-Holder {
+  display: inline-grid;
+  gap: 4rem;
+
+  width: 100%;
+  height: 50%;
+  background-color: #f0e3a3e6;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.Text-Section {
+  width: 19.59rem;
+  height: 13.753rem;
+  grid-row: 1;
+  text-align: center;
+  padding-top: 1.875px;
+}
+.First-P {
+  font-size: 3.125rem;
+  line-height: 3.125rem;
+  letter-spacing: 0.05em;
+
+  color: #000000;
+}
+.Sec-P {
+  font-size: 19px;
+  line-height: 137.9%;
+
+  letter-spacing: 0.05em;
+
+  color: #181817;
+}
+.Image-Section {
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  grid-row: 1;
+
+  justify-content: center;
+  align-items: center;
+}
+.Image-Holder {
+  background-image: url("../../Image/ImageHolder.png");
+  background-size: contain;
+  width: 12.5rem;
+  height: 18.75rem;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.Image {
+  background-image: url("../../Image/HomeDog.png");
+  width: 60%;
+  height: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

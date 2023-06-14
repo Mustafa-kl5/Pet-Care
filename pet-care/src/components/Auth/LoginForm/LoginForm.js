@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../componentStyle/LoginForm/LoginForm.css";
 import LeftImage from "./LeftImage";
-
 import { Link } from "react-router-dom";
+import { isValidEmail, notifyError } from "../../../Validation/InputValidtion";
+import { ToastContainer } from "react-toastify";
+import ResetPasswordBackdrop from "./ResetPasswordBackdrop";
+import resetIcon from "../../../Image/reset.png";
+import ResetPassword from "../../Profile/ResetPassword";
 
 export default function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isValidInput, setIsValidInput] = useState(false);
+  const [forgetPasswordModle, setForgetPasswordModle] = useState(false);
+  const [showExitAnimation, setShowExitAnimation] = useState(false);
 
   const emailHandler = (event) => {
     setEmail(event.target.value);
@@ -14,16 +21,43 @@ export default function LoginForm(props) {
   const passwordHandler = (event) => {
     setPassword(event.target.value);
   };
+
+  useEffect(() => {
+    if (email.length > 0 && password.length > 0) {
+      setIsValidInput(true);
+    } else {
+      setIsValidInput(false);
+    }
+  }, [email, password]);
+
   const submitHandler = (event) => {
     event.preventDefault();
     const userData = {
       userEmail: email,
       userPassword: password,
     };
-
     setEmail("");
     setPassword("");
+    if (!isValidEmail(userData.userEmail)) {
+      notifyError("Please enter a valid email address");
+      return;
+    }
+
+    if (userData.userPassword.length < 8) {
+      notifyError("Password must be at least 8 characters long");
+      return;
+    }
     props.sendLoginData(userData);
+  };
+  const handleForgetPassword = () => {
+    setForgetPasswordModle(true);
+  };
+  const closebackdrop = () => {
+    setShowExitAnimation(true);
+    setTimeout(() => {
+      setForgetPasswordModle(false);
+      setShowExitAnimation(false);
+    }, 1100);
   };
   return (
     <div className="Login-form-container">
@@ -46,17 +80,36 @@ export default function LoginForm(props) {
             onChange={passwordHandler}
             value={password}
           />
-          <a href="linkto:google.com" className="forget-password">
+          <div className="forget-password" onClick={handleForgetPassword}>
             ForgetYouPassword?
-          </a>
-          <button type="submit" className="form-button">
-            Login
+          </div>
+          <button
+            disabled={!isValidInput}
+            type="submit"
+            className={isValidInput ? "form-button-active" : "form-button"}
+          >
+            {props.isLoading ? (
+              <span className="button-loader"></span>
+            ) : (
+              "Login"
+            )}
           </button>
         </form>
+
+        <ResetPasswordBackdrop
+          show={forgetPasswordModle}
+          closebackdrop={closebackdrop}
+          showExitAnimation={showExitAnimation}
+          title="Password Reset"
+          icon={resetIcon}
+        >
+          <ResetPassword closeBackDrop={closebackdrop} />
+        </ResetPasswordBackdrop>
         <Link to="/Registration" className="account-sign-up">
           Don t have An Account? sign up
         </Link>
       </div>
+      <ToastContainer />
     </div>
   );
 }

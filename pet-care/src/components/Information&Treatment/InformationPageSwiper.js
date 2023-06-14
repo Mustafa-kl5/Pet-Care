@@ -1,55 +1,29 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import React from "react";
 import "../../componentStyle/Information&Treatment/InfomrmationSwiperPage.css";
-import CatBreed from "../../Image/Cat-Breed1.png";
-// import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-
-export default function InformationPageSwiper() {
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+export default function InformationPageSwiper(props) {
+  const swiper = props.Swiper;
   return (
     <>
       <Swiper
-        cssMode={true}
+        pagination={{
+          type: "progressbar",
+        }}
         navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper"
+        modules={[Pagination, Navigation]}
+        className="animal-breed-swiper"
       >
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-image"></div>
-        </SwiperSlide>
+        {swiper?.map((ele, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <img className="animal-breed-image" src={ele.fileName} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );

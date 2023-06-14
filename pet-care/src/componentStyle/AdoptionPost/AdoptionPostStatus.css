@@ -1,0 +1,27 @@
+.adoption-post-status-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-section {
+  width: 7.5rem;
+  height: 3.4rem;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 0.1rem solid rgb(0, 0, 0);
+}
+
+.adopted {
+  background: rgb(255, 1, 1);
+  color: rgb(18, 18, 18);
+}
+.not-adopted {
+  background: rgb(84, 167, 203);
+  color: rgb(252, 252, 252);
+}

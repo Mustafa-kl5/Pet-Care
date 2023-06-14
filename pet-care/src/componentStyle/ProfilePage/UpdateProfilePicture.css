@@ -1,0 +1,28 @@
+.update-image-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: calc(39rem - 5.5rem);
+}
+.update-user-image {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+.uploade-user-image-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  height: 1.8rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background: rgba(14, 38, 49, 1);
+  border-radius: 0.5rem;
+  color: white;
+}
+.uploade-user-image-button:hover {
+  filter: blur(1px);
+}
