@@ -9,10 +9,12 @@ import { useParams } from "react-router-dom";
 import "../componentStyle/Information&Treatment/InformationandTreatmentMainPage.css";
 import api from "../services/api";
 import LoadingBar from "../shaerdComponents/LoadingBar";
+import { SplitArtical } from "../Constant/SplitArtical";
 export default function InformationandTreatmentMainPage() {
   const [data, setdata] = useState([]);
   const [typeImage, setTypeImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [Artical, setArtical] = useState([]);
   let { breed, type, src } = useParams();
   let breedName = breed.replace(":", "");
   let typeName = type.replace(":", "");
@@ -26,11 +28,15 @@ export default function InformationandTreatmentMainPage() {
       breed: breedName,
       typeID: TypeID,
     });
+
     const json = await response.data;
     setdata(json.animalData);
     setTypeImage(json.animalType.TypeImage[0]?.fileName);
+    setArtical(SplitArtical(json.animalData.information));
+    console.log(json.animalData.clinicLocation.latitude);
     setIsLoading(false);
   };
+
   return (
     <MainBackGround>
       <ContentHolder>
@@ -46,19 +52,20 @@ export default function InformationandTreatmentMainPage() {
         ) : (
           <div className="information-and-treatment-scroll">
             <div className="information-and-treatment-scroll-holder">
-              <InformationPageSwiper Swiper={data[0]?.images} />
-              <InformationText
-                Breed={breedName}
-                Information={data[0]?.information}
-              />
+              <InformationPageSwiper Swiper={data.images} />
+              <InformationText Breed={breedName} Information={Artical} />
 
               <LocationView
                 width="48rem"
                 height="30rem"
-                lat={data[0]?.clinicLocation.latitude}
-                lng={data[0]?.clinicLocation.longitude}
+                lat={data.clinicLocation.latitude}
+                lng={data.clinicLocation.longitude}
                 textCondition={false}
               />
+              {console.log(
+                data.clinicLocation.latitude,
+                data.clinicLocation.longitude
+              )}
             </div>
           </div>
         )}

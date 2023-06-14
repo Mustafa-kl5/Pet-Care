@@ -5,6 +5,7 @@ export default function CartCard(props) {
   const [productData, setProductData] = useState(props.productData);
   const handleDeletProduct = () => {
     props.handleDeleteProduct(props.id);
+    props.showTost();
   };
   return (
     <div className="cart-card-item-holder">
@@ -12,7 +13,8 @@ export default function CartCard(props) {
         className="cart-card-item-product-image"
         style={{
           backgroundImage: `url("${productData.Product.productImages[0]?.fileName}")`,
-        }}></div>
+        }}
+      ></div>
       <div className="cart-card-item-product-name">
         {productData.Product.productName} <br />
         <span className="cart-card-item-product-name-span">{`Quantity : ${productData.ProductQuantity}`}</span>

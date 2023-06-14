@@ -48,12 +48,13 @@ export default function OrderHistory() {
                 {ele.Order?.products?.map((item, productIndex) => (
                   <div
                     className="order-history-products-qunaitity-holder"
-                    key={productIndex}>
+                    key={productIndex}
+                  >
                     <div className="order-history-body-details">
                       {item.Product.productName}
                     </div>
                     <div className="order-history-body-details">
-                      {item.productQuantity} x
+                      {item.ProductQuantity} x
                     </div>
                     <div className="order-history-body-details">
                       {item.Product.productPrice} $

@@ -20,13 +20,15 @@ export default function ShopingCart(props) {
     await api.delete("/OrderPage/deleteProductsFromPasket", {
       data: { OrderId: OrderData._id, ProductId: id, userID: ID },
     });
-    notifySuccess();
     handleUpdate();
   };
   const handleDeleteProduct = async (id) => {
     await deleteProduct(id);
     const updatedData = updatedProducts.filter((ele) => ele._id !== id);
     setUpdatedProducts(updatedData);
+  };
+  const showTost = () => {
+    notifySuccess();
   };
   const notifySuccess = () =>
     toast.success("The item has been from your basket successfully", {
@@ -39,13 +41,13 @@ export default function ShopingCart(props) {
       progress: undefined,
       theme: "light",
     });
-
   return (
     <div className="shoping-cart-holder">
       <div className="shoping-cart-logo-word">
         <div
           className="shoping-cart-logo"
-          style={{ backgroundImage: `url("${cartIcon}")` }}></div>
+          style={{ backgroundImage: `url("${cartIcon}")` }}
+        ></div>
         <div className="shoping-cart-word">Your Order</div>
       </div>
       <div className="shoping-cart-word-scroll">
@@ -72,6 +74,7 @@ export default function ShopingCart(props) {
                 id={ele._id}
                 index={index}
                 handleDeleteProduct={handleDeleteProduct}
+                showTost={showTost}
               />
             ))}
           </div>
