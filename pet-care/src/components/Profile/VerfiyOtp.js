@@ -31,7 +31,7 @@ export default function VerfiyOtp(props) {
       return;
     }
     setIsLoading(true);
-    const response = await api.post("/auth//VerfiyOtp", {
+    const response = await api.post("/auth/VerfiyOtp", {
       otpId: otpId,
       otpCode: otp,
     });

@@ -2,7 +2,6 @@ import React from "react";
 import "../../componentStyle/ProfilePage/OrderInformation.css";
 export default function OrderInformation(props) {
   const userOrderData = props.userOrder;
-  console.log(userOrderData);
   return (
     <div className="order-information">
       <div className="order-data-header-holder">

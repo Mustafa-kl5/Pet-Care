@@ -10,19 +10,25 @@ export default function UserContact(props) {
           rel="noopener noreferrer"
           className="contact-item"
           href={`${props.facebookLink}`}
-        ></a>
+        >
+          &nbsp;
+        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           className="contact-item"
           href={`https://api.whatsapp.com/send?phone=${props.whatsappNumber}`}
-        ></a>
+        >
+          &nbsp;
+        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           className="contact-item"
           href={`tel:${props.phoneNumber}`}
-        ></a>
+        >
+          &nbsp;
+        </a>
       </div>
     </div>
   );

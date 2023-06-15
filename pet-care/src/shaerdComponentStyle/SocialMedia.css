@@ -15,52 +15,9 @@
   height: 2.7rem;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 .copy-right {
   font-size: 1rem;
   text-align: center;
 }
-/* .social-media-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.social-media-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.social-media-item {
-  width: 2.7rem;
-  height: 2.7rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: shake 0.5s infinite;
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-1px);
-  }
-  50% {
-    transform: translateX(1px);
-  }
-  75% {
-    transform: translateX(-1px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.copy-right {
-  font-size: 1rem;
-  text-align: center;
-} */

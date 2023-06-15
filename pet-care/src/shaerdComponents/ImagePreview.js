@@ -19,12 +19,12 @@ export default function ImagePreview(props) {
       <div className="preview-scrollholder">
         <div
           className={
-            props.images.length != 0
+            props.images.length !== 0
               ? "card-image-preview-holder"
               : "empty-image-section-holder"
           }
         >
-          {props.images.length != 0 ? (
+          {props.images.length !== 0 ? (
             props.images.map((imageUrl, index) => {
               return (
                 <div

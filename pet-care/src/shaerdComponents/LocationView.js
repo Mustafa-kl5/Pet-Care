@@ -18,7 +18,6 @@ export default function LocationView(props) {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
-    // Check if the Google Maps API script is already loaded
     if (!window.google) {
       const script = document.createElement("script");
       script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY`;
@@ -34,7 +33,6 @@ export default function LocationView(props) {
         document.head.removeChild(script);
       };
     } else {
-      // If the script is already loaded, mark it as loaded
       setMapLoaded(true);
     }
   }, []);

@@ -17,7 +17,7 @@ export default function UpdateProfilePicture() {
       const base64String = reader.result;
       setUserImage(base64String);
 
-      const response = await api.post(`/changeUserImage/:${getUserId()}`, {
+      await api.post(`/changeUserImage/:${getUserId()}`, {
         userImageToUpload: base64String,
       });
       notifySuccess();

@@ -8,7 +8,7 @@ import api from "../services/api";
 import { useEffect, useState } from "react";
 import LoadingBar from "../shaerdComponents/LoadingBar";
 import NoPostFound from "../components/Profile/NoPostFound";
-import NoData from "../shaerdComponents/NoData";
+
 export default function InformationTreatmentPage() {
   const [TypeData, setTypeData] = useState([]);
   const [IsLoading, setIsLoading] = useState(false);

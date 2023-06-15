@@ -33,7 +33,6 @@ export default function InformationandTreatmentMainPage() {
     setdata(json.animalData);
     setTypeImage(json.animalType.TypeImage[0]?.fileName);
     setArtical(SplitArtical(json.animalData.information));
-    console.log(json.animalData.clinicLocation.latitude);
     setIsLoading(false);
   };
 
@@ -62,10 +61,6 @@ export default function InformationandTreatmentMainPage() {
                 lng={data.clinicLocation.longitude}
                 textCondition={false}
               />
-              {console.log(
-                data.clinicLocation.latitude,
-                data.clinicLocation.longitude
-              )}
             </div>
           </div>
         )}

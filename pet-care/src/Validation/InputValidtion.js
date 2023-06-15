@@ -31,12 +31,12 @@ export const checkStringVariables = (obj) => {
 };
 export const birthDayValidation = (obj) => {
   if (
-    obj.dayOfBirth != null &&
-    obj.monthOfBirth != null &&
-    obj.yearOfBirth != null &&
-    obj.dayOfBirth != "DD" &&
-    obj.monthOfBirth != "MM" &&
-    obj.yearOfBirth != "YYYY"
+    obj.dayOfBirth !== null &&
+    obj.monthOfBirth !== null &&
+    obj.yearOfBirth !== null &&
+    obj.dayOfBirth !== "DD" &&
+    obj.monthOfBirth !== "MM" &&
+    obj.yearOfBirth !== "YYYY"
   ) {
     return true;
   }
